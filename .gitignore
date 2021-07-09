@@ -1,0 +1,7 @@
+data/modelnet*
+logs/
+*.pyc
+.DS_Store
+.vscode
+__pycache__
+scripts/
