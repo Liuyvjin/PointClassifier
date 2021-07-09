@@ -1,19 +1,17 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-import os.path as osp
 import shutil
 import argparse
 import numpy as np
-from tqdm import tqdm
 import torch
-import torch.optim as optim
+import torch.nn as nn
 from torch.utils.data import DataLoader
-from torchvision import transforms
-from torch.optim.lr_scheduler import CosineAnnealingLR
 import sklearn.metrics as metrics
+from tqdm import tqdm
 
-from data.data_utils import ModelNet40, dgcnn_transforms
-from models.dgcnn import PointNet, DGCNN, get_loss
+from data.data_utils import ModelNet40, pointcnn_transforms
+
+from models.pointcnn import RandPointCNN_cls, get_loss
 
 from pointfield.model import CombinedModel
 from pointfield.train_utils import log_init
@@ -22,84 +20,63 @@ BASE_DIR = '/'.join(__file__.split('/')[0:-1])
 
 def parse_args():
     '''PARAMETERS'''
-    parser = argparse.ArgumentParser(description='Point Cloud Recognition')
-    parser.add_argument('--exp_name',   type=str,   default='dgcnn_exp',      metavar='N', help='Name of the experiment')
-    parser.add_argument('--model',      type=str,   default='dgcnn',    metavar='N', choices=['pointnet', 'dgcnn'],
-                                        help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--dataset',    type=str,   default='modelnet40',   metavar='N', choices=['modelnet40'])
-    parser.add_argument('--batch_size', type=int,   default=32,         metavar='batch_size', help='Size of batch')
-    parser.add_argument('--epochs',     type=int,   default=250,        metavar='N', help='number of episode to train ')
-    parser.add_argument('--use_sgd',    type=bool,  default=True,       help='Use SGD')
-    parser.add_argument('--lr',         type=float, default=0.001,      metavar='LR',
-                                        help='min learning rate (default: 0.001, 0.1 if using sgd)')
-    parser.add_argument('--momentum',   type=float, default=0.9,        metavar='M', help='SGD momentum (default: 0.9)')
-    parser.add_argument('--no_cuda',    type=bool,  default=False,      help='enables CUDA training')
-    parser.add_argument('--seed',       type=int,   default=1,          metavar='S', help='random seed (default: 1)')
-    parser.add_argument('--eval',       type=bool,  default=False,      help='evaluate the model')
-    parser.add_argument('--num_points', type=int,   default=1024,       help='num of points to use')
-    parser.add_argument('--dropout',    type=float, default=0.5,        help='dropout rate')
-    parser.add_argument('--emb_dims',   type=int,   default=1024,       metavar='N', help='Dimension of embeddings')
-    parser.add_argument('--k',          type=int,   default=20,         metavar='N', help='Num of nearest neighbors to use')
-    parser.add_argument('--num_workers',type=int,   default=8,          metavar='N', help='num of workers')
-    args = parser.parse_args()
-    args.cuda = not args.no_cuda and torch.cuda.is_available()
-    return args
+    parser = argparse.ArgumentParser(description='Relation-Shape CNN Pointcloud Classification Training')
+    parser.add_argument('--exp_name',   type=str,   default='PointCNN_exp', help='Name of the experiment')
+    parser.add_argument('--num_workers',type=int,   default=8,              help='num of workers [default: 8]')
+    parser.add_argument('--num_points', type=int,   default=1024,           help='num of points to use [default: 1024]')
+    parser.add_argument('--batch_size', type=int,   default=32,             help='Size of batch [default: 32]')
+    parser.add_argument('--epochs',     type=int,   default=200,            help='number of episode to train ')
+    parser.add_argument('--normal',     type=bool,  default=False,          help='Whether to use normal information [default: False]')
+    parser.add_argument('--seed',       type=int,   default=1,              help='random seed (default: 1)')
+    parser.add_argument('--cuda',       type=bool,  default=True,           help='enables CUDA training')
+    parser.add_argument('--lr',         type=float, default=0.001,          help='Initial learning rate [default: 0.001]')
+    parser.add_argument('--momentum',   type=float, default=0.9,            help='Initial learning rate [default: 0.9]')
+    parser.add_argument('--optimizer',  type=str,   default='adam',         help='adam or momentum [default: adam]')
+    parser.add_argument('--decay_rate', type=float, default=0.7,            help='Decay rate for lr decay [default: 0.8]')
+
+    return parser.parse_args()
+
+
 
 def main():
     #--- Training settings
     args = parse_args()
     logger = log_init(exp_name=args.exp_name, trainfile=__file__)
-
     logger.cprint('PARAMETERS...')
     logger.cprint(args)
 
     torch.manual_seed(args.seed)
-    if args.cuda:
-        logger.cprint('Using GPU : ' + str(torch.cuda.current_device()) + ' from ' +
-                  str(torch.cuda.device_count()) + ' devices')
-        torch.cuda.manual_seed(args.seed)
-    else:
-        logger.cprint('Using CPU')
+    torch.cuda.manual_seed(args.seed)
+    device = torch.device("cuda" if args.cuda else "cpu")
 
     # --- DataLoader
     print('Load dataset...')
 
-    train_loader = DataLoader(  ModelNet40(partition='train', num_points=args.num_points, transform=dgcnn_transforms),
+    train_loader = DataLoader(  ModelNet40(partition='train', num_points=args.num_points, transform=pointcnn_transforms),
                                 num_workers=args.num_workers,   batch_size=args.batch_size,
                                 shuffle=True,   drop_last=True)
     test_loader = DataLoader(   ModelNet40(partition='test', num_points=args.num_points),
                                 num_workers=args.num_workers,   batch_size=args.batch_size,
                                 shuffle=False,   drop_last=False)
-    device = torch.device("cuda" if args.cuda else "cpu")
 
     # --- Create Model
-    if args.model == 'pointnet':
-        classifier = PointNet(args).to(device)
-    elif args.model == 'dgcnn':
-        classifier = DGCNN(args).to(device)
-    else:
-        raise Exception("Not implemented")
-
-    criterion = get_loss
+    classifier = RandPointCNN_cls(num_class=40).to(device)
+    criterion = get_loss()
     comb_model = CombinedModel(classifier).to(device)
 
     # --- Optimizer
-    if args.use_sgd:
-        print("Use SGD")
-        optimizer = optim.SGD(
-            comb_model.parameters(),
-            lr=args.lr*100,
-            momentum=args.momentum,
-            weight_decay=1e-4
-        )
-    else:
-        print("Use Adam")
-        optimizer = optim.Adam(
+    if args.optimizer == 'Adam':
+        optimizer = torch.optim.Adam(
             comb_model.parameters(),
             lr=args.lr,
-            weight_decay=1e-4
+            betas=(0.9, 0.999),
+            eps=1e-08,
+            weight_decay=args.decay_rate
         )
-    scheduler = CosineAnnealingLR(optimizer, args.epochs, eta_min=args.lr)
+    else:
+        optimizer = torch.optim.SGD(comb_model.parameters(), lr=0.01, momentum=0.9)
+    scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.7)
+
 
     # --- Load Checkpoint
     try:
@@ -128,11 +105,12 @@ def main():
         train_true = []
         with tqdm(train_loader, total=len(train_loader), smoothing=0.9) as t:
             comb_model.train()
+
             for data, label in t:
                 data, label = data.to(device), label.to(device).squeeze()
 
                 optimizer.zero_grad()
-                preds = comb_model(data, label)  ##
+                preds = comb_model(data, label)  ## preds - B x c
                 cls_loss = criterion(preds, label)
                 loss = cls_loss + comb_model.tri_loss + comb_model.reg_loss
                 loss.backward()
@@ -188,6 +166,7 @@ def main():
             if test_inst_acc >= best_inst_acc:
                 logger.cprint('Saving best model at %sbest_model.t7' % save_dir)
                 shutil.copy(save_dir+'model.t7', save_dir+'best_model.t7')
+
         logger.cprint('Test Instance Accuracy: %f, Class Accuracy: %f'% (test_inst_acc, test_class_acc))
         logger.cprint('Best Instance Accuracy: %f, Class Accuracy: %f'% (best_inst_acc, best_class_acc))
     logger.cprint('End of training...')

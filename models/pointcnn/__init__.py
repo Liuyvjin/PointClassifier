@@ -1,0 +1,1 @@
+from .model import RandPointCNN_cls, get_loss

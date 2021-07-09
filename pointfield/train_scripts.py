@@ -53,14 +53,10 @@ def main():
     logger = log_init(exp_name=args.exp_name, trainfile=__file__)
     logger.cprint('PARAMETERS...')
     logger.cprint(args)
-    #
+
     torch.manual_seed(args.seed)
-    if args.cuda:
-        logger.cprint('Using GPU : ' + str(torch.cuda.current_device()) + ' from ' +
-                  str(torch.cuda.device_count()) + ' devices')
-        torch.cuda.manual_seed(args.seed)
-    else:
-        logger.cprint('Using CPU')
+    torch.cuda.manual_seed(args.seed)
+    device = torch.device("cuda" if args.cuda else "cpu")
 
     # --- DataLoader
     print('Load dataset...')
@@ -70,7 +66,6 @@ def main():
     test_loader = DataLoader(   ModelNet40(partition='test', num_points=args.num_points),
                                 num_workers=args.num_workers,   batch_size=args.batch_size,
                                 shuffle=False,   drop_last=False)
-    device = torch.device("cuda" if args.cuda else "cpu")
 
     # --- Create Model
     classifier = $xxx$
@@ -83,7 +78,7 @@ def main():
 
     # --- Load Checkpoint
     try:
-        checkpoint = torch.load(BASE_DIR+'logs/%s/checkpoints/model.t7' % args.exp_name)
+        checkpoint = torch.load(BASE_DIR+'/logs/%s/checkpoints/model.t7' % args.exp_name)
         start_epoch = checkpoint['epoch']
         best_inst_acc = checkpoint['inst_acc']
         best_class_acc = checkpoint['class_acc']
@@ -116,13 +111,13 @@ def main():
                 #     continue
 
                 optimizer.zero_grad()
-                preds = comb_model(data, label)  ## preds - B x 1
+                preds = comb_model(data, label)  ##
                 cls_loss = criterion(preds, label)
                 loss = cls_loss + comb_model.tri_loss + comb_model.reg_loss
                 loss.backward()
                 optimizer.step()
 
-                preds = preds.max(dim=1)[1]
+                preds = preds.max(dim=1)[1]   ## preds - B x 1
                 train_true.append(label.cpu().numpy())
                 train_pred.append(preds.detach().cpu().numpy())
                 t.set_postfix(  cls_loss = cls_loss.item(),
@@ -151,7 +146,7 @@ def main():
         test_class_acc = metrics.balanced_accuracy_score(test_true, test_pred)
 
         # Save Checkpoint
-        save_dir = BASE_DIR+'logs/%s/checkpoints/' % args.exp_name
+        save_dir = BASE_DIR+'/logs/%s/checkpoints/' % args.exp_name
         if (test_class_acc > best_class_acc):
             best_class_acc = test_class_acc
         if test_inst_acc>=best_inst_acc or (epoch+1)%10==0:

@@ -49,6 +49,6 @@ class CombinedModel(nn.Module):
         if label is not None:  # update reg_loss and tri_loss
             self.reg_loss = self.models['pf'].grid.abs().mean()
             self.tri_loss, _ = self.tri_criterion(x, label)
-        x = x.transpose(2, 1)
+
         return self.models['cls'](x)
 

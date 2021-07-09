@@ -13,8 +13,23 @@ import sys
 import glob
 import h5py
 import numpy as np
+from numpy.lib.index_tricks import AxisConcatenator
 from torch.utils.data import Dataset
 from torchvision import transforms
+
+def rot_angle_axis(angle, axis):
+    """
+    Returns a 3x3 rotation matrix that performs a rotation around axis by angle
+    """
+    u = axis / np.linalg.norm(axis)
+    cosval, sinval = np.cos(angle), np.sin(angle)
+    cross_prod_mat = np.array([[0.0, -u[2], u[1]],
+                                [u[2], 0.0, -u[0]],
+                                [-u[1], u[0], 0.0]])
+    R = cosval * np.eye(3) + sinval * cross_prod_mat + (1.0 - cosval) * np.outer(u, u)
+
+    return R
+
 
 def farthest_point_sample(point, npoint):
     """
@@ -38,6 +53,15 @@ def farthest_point_sample(point, npoint):
         farthest = np.argmax(distance, -1)
     point = point[centroids.astype(np.int32)]
     return point
+
+def rotate_pointcloud(pointcloud):
+    axis = np.random.uniform(0.0001, 1, 3)
+    angle = np.random.uniform(1) * 2 * np.pi
+    rot_mat = rot_angle_axis(angle, axis)
+    pointcloud[:,:3] = pointcloud[:,:3].dot(rot_mat)
+    if pointcloud.shape[1] == 6:
+        pointcloud[:,3:] = pointcloud[:,3:].dot(rot_mat)
+    return pointcloud
 
 def normalize_pointcloud(pointcloud):
     xyz = pointcloud[:,:3]
@@ -119,13 +143,12 @@ def load_data(partition, normal_channel):
 
 
 class ModelNet40(Dataset):
-    def __init__(self, num_points, partition='train', model=None, uniform=False, normal_channel=False, transform=None):
+    def __init__(self, num_points, partition='train', uniform=False, normal_channel=False, transform=None):
         self.data, self.label = load_data(partition, normal_channel)
         self.num_points = num_points
         self.partition = partition
         self.uniform = uniform
         self.transform = transform
-        self.model = model
 
     def __getitem__(self, item):
         label = self.label[item]
@@ -137,12 +160,8 @@ class ModelNet40(Dataset):
         else:
             pointcloud = pointcloud[:self.num_points]
 
-        # model behavior
-        if self.model in ['pointnet', 'pointnet2']:
-            pointcloud = normalize_pointcloud(pointcloud)
-
         # transform
-        if self.partition == 'train' and self.transform:
+        if self.transform:
             pointcloud = self.transform(pointcloud)
 
         return pointcloud, label
@@ -154,6 +173,19 @@ class ModelNet40(Dataset):
 dgcnn_transforms = transforms.Compose([ translate_pointcloud,
                                         shuffle_pointcloud ])
 
+pointnet_train_transforms = transforms.Compose([    normalize_pointcloud,
+                                                    dropout_pointcloud,
+                                                    scale_pointcloud,
+                                                    shift_pointcloud])
+
+pointnet_test_transforms = transforms.Compose([ normalize_pointcloud])
+
+rscnn_transforms = transforms.Compose([ shuffle_pointcloud,
+                                        translate_pointcloud,
+                                        dropout_pointcloud ])
+
+pointcnn_transforms = transforms.Compose([  rotate_pointcloud,
+                                            jitter_pointcloud])
 
 if __name__ == '__main__':
     import torch
