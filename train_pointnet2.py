@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 import shutil
 import argparse
+import os.path as osp
 import numpy as np
 from tqdm import tqdm
 import sklearn.metrics as metrics
@@ -17,7 +18,7 @@ from models.pointnet2_cls_ssg import get_model, get_loss
 from pointfield.model import CombinedModel
 from pointfield.train_utils import log_init
 
-BASE_DIR = '/'.join(__file__.split('/')[0:-1])
+BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
 
 def parse_args():
     '''PARAMETERS'''

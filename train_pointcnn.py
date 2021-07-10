@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import shutil
+import os.path as osp
 import argparse
 import numpy as np
 import torch
@@ -18,7 +19,7 @@ from models.pointcnn import RandPointCNN_cls, get_loss
 from pointfield.model import CombinedModel
 from pointfield.train_utils import log_init
 
-BASE_DIR = '/'.join(__file__.split('/')[0:-1])
+BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
 
 def parse_args():
     '''PARAMETERS'''

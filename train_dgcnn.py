@@ -18,7 +18,7 @@ from models.dgcnn import PointNet, DGCNN, get_loss
 from pointfield.model import CombinedModel
 from pointfield.train_utils import log_init
 
-BASE_DIR = '/'.join(__file__.split('/')[0:-1])
+BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
 
 def parse_args():
     '''PARAMETERS'''
