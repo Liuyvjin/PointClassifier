@@ -23,8 +23,9 @@ class LogTool():
 
 
 def log_init( exp_name, trainfile):
-    filename = trainfile.split('/')[-1]
-    root_dir = '/'.join(trainfile.split('/')[0:-1])
+    filepath = os.path.abspath(trainfile)
+    filename = filepath.split('\\')[-1]
+    root_dir = '/'.join(filepath.split('\\')[0:-1])
     log_dir = root_dir + '/logs/' + exp_name
     if not os.path.exists(log_dir):
         os.makedirs(log_dir)
