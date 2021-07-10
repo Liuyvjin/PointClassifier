@@ -82,8 +82,8 @@ def main():
         start_epoch = checkpoint['epoch']
         best_inst_acc = checkpoint['inst_acc']
         best_class_acc = checkpoint['class_acc']
-        comb_model.models['cls'].load_state_dict(checkpoint['classifier_state_dict'])
-        comb_model.models['pf'].load_state_dict(checkpoint['pointfield_state_dict'])
+        comb_model.classifier.load_state_dict(checkpoint['classifier_state_dict'])
+        comb_model.pointfield.load_state_dict(checkpoint['pointfield_state_dict'])
         optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         scheduler.load_state_dict(checkpoint['scheduler_state_dict'])
         logger.cprint('Use pretrain model')
@@ -157,8 +157,8 @@ def main():
                 'epoch': epoch + 1,
                 'inst_acc': test_inst_acc,
                 'class_acc': test_class_acc,
-                'classifier_state_dict': comb_model.models['cls'].state_dict(),
-                'pointfield_state_dict': comb_model.models['pf'].state_dict(),
+                'classifier_state_dict': comb_model.classifier.state_dict(),
+                'pointfield_state_dict': comb_model.pointfield.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
                 'scheduler_state_dict': scheduler.state_dict()
             }

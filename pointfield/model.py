@@ -31,10 +31,9 @@ class PointField(nn.Module):
 class CombinedModel(nn.Module):
     def __init__(self, classifier, point_field_dim=64, tri_criterion=None):
         super().__init__()
-        self.models =   nn.ModuleDict({
-                            'pf': PointField(point_field_dim),
-                            'cls': classifier
-                        })
+        self.pointfield = PointField(point_field_dim)
+        self.classifier = classifier
+
         if tri_criterion == None:
             selector = HardestNegativeTripletSelector(0.3, cpu=False, dist_func=pdist_pc)
             tri_criterion = OnlineTripletLoss(  margin = 0.3,
@@ -45,10 +44,10 @@ class CombinedModel(nn.Module):
         self.tri_loss = 0
 
     def forward(self, x, label=None):
-        x = self.models['pf'](x)
+        x = self.pointfield(x)
         if label is not None:  # update reg_loss and tri_loss
-            self.reg_loss = self.models['pf'].grid.abs().mean()
+            self.reg_loss = self.pointfield.grid.abs().mean()
             self.tri_loss, _ = self.tri_criterion(x, label)
 
-        return self.models['cls'](x)
+        return self.classifier(x)
 
