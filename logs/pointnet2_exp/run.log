@@ -1,0 +1,21 @@
+2021-07-09 11:38:24,007 - Default - INFO - Namespace(batch_size=24, cuda=True, decay_rate=0.0001, epochs=200, exp_name='pointnet2_exp', learning_rate=0.001, log_dir=None, normal=True, num_points=1024, num_workers=8, optimizer='Adam', seed=1)
+2021-07-09 11:38:28,984 - Default - INFO - No existing model, starting training from scratch...
+2021-07-09 11:38:28,984 - Default - INFO - Start training...
+2021-07-09 11:38:28,985 - Default - INFO - Epoch 1/200:
+2021-07-09 11:43:07,213 - Default - INFO - Train Instance Accuracy: 0.481504
+2021-07-09 11:43:56,384 - Default - INFO - Saving model at d:/work/PointClassifier/logs/pointnet2_exp/checkpoints/model.t7
+2021-07-09 11:43:56,437 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/pointnet2_exp/checkpoints/best_model.t7
+2021-07-09 11:43:56,468 - Default - INFO - Test Instance Accuracy: 0.584684, Class Accuracy: 0.494401
+2021-07-09 11:43:56,468 - Default - INFO - Best Instance Accuracy: 0.584684, Class Accuracy: 0.494401
+2021-07-09 11:43:56,468 - Default - INFO - Epoch 2/200:
+2021-07-10 00:37:23,372 - Default - INFO - PARAMETERS...
+2021-07-10 00:37:23,372 - Default - INFO - Namespace(batch_size=24, cuda=True, decay_rate=0.0001, epochs=200, exp_name='pointnet2_exp', learning_rate=0.001, normal=True, num_points=1024, num_workers=8, optimizer='Adam', seed=1)
+2021-07-10 00:37:28,886 - Default - INFO - Use pretrain model
+2021-07-10 00:37:28,886 - Default - INFO - Start training...
+2021-07-10 00:37:28,887 - Default - INFO - Epoch 2/200:
+2021-07-10 00:42:00,488 - Default - INFO - Train Instance Accuracy: 0.674289
+2021-07-10 00:42:46,668 - Default - INFO - Saving model at d:/work/PointClassifier/logs/pointnet2_exp/checkpoints/model.t7
+2021-07-10 00:42:46,744 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/pointnet2_exp/checkpoints/best_model.t7
+2021-07-10 00:42:46,770 - Default - INFO - Test Instance Accuracy: 0.592788, Class Accuracy: 0.496192
+2021-07-10 00:42:46,771 - Default - INFO - Best Instance Accuracy: 0.592788, Class Accuracy: 0.496192
+2021-07-10 00:42:46,771 - Default - INFO - Epoch 3/200:

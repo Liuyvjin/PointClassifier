@@ -34,6 +34,14 @@ def log_init( exp_name, trainfile):
     print('Log file: %s' % log_dir + '/run.log')
     return LogTool(log_dir + '/run.log')
 
+
+def train_epoch():
+
+    pass
+
+
+
+
 def accuracy_score(y_true, y_pred):
     if len(y_pred) != len(y_true):
         raise ValueError

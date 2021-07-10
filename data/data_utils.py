@@ -123,22 +123,18 @@ def load_data(partition, normal_channel):
     DATA_DIR = BASE_DIR #os.path.join(BASE_DIR, 'data')
     all_data = []
     all_label = []
-    all_normal = []
     for h5_name in glob.glob(os.path.join(DATA_DIR, 'modelnet40_ply_hdf5_2048', 'ply_data_%s*.h5'%partition)):
         f = h5py.File(h5_name, mode='r')
-        data = f['data'][:].astype('float32')
         label = f['label'][:].astype('int64')
         if normal_channel:
-            normal = f['normal'][:].astype('float32')
-            all_normal.append(normal)
+            data = np.concatenate([f['data'][:], f['normal'][:]], axis=-1).astype('float32')
+        else:
+            data = f['data'][:].astype('float32')
         all_data.append(data)
         all_label.append(label)
     all_data = np.concatenate(all_data, axis=0)
     all_label = np.concatenate(all_label, axis=0)
 
-    if normal_channel:
-        all_normal = np.concatenate(all_normal, axis=0)
-        all_data = np.concatenate([all_data, all_normal], axis=2)
     return all_data, all_label
 
 
@@ -184,8 +180,12 @@ rscnn_transforms = transforms.Compose([ shuffle_pointcloud,
                                         translate_pointcloud,
                                         dropout_pointcloud ])
 
-pointcnn_transforms = transforms.Compose([  rotate_pointcloud,
+# pointcnn_transforms = transforms.Compose([  rotate_pointcloud,
+                                            # jitter_pointcloud])
+pointcnn_transforms = transforms.Compose([
+                                            scale_pointcloud,
                                             jitter_pointcloud])
+
 
 if __name__ == '__main__':
     import torch

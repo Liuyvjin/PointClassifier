@@ -1,5 +1,5 @@
 data/modelnet*
-logs/
+logs/*/checkpoints
 *.pyc
 .DS_Store
 .vscode
