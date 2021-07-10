@@ -3,13 +3,14 @@
 import shutil
 import argparse
 import numpy as np
+from torch._C import NoopLogger
 from tqdm import tqdm
 import sklearn.metrics as metrics
 import torch
 from torch.utils.data import DataLoader
 from torchvision import transforms
 
-from data.data_utils import ModelNet40, pointnet_train_transforms, pointnet_test_transforms
+from data.data_utils import ModelNet40
 import data.data_utils as dutil
 
 from models.pointnet2_cls_ssg import get_model, get_loss
@@ -28,8 +29,9 @@ def parse_args():
     parser.add_argument('--learning_rate',  default=0.001,  type=float, help='learning rate in training [default: 0.001]')
     parser.add_argument('--cuda',           default=True,   type=bool,  help='use cuda [default: cuda]')
     parser.add_argument('--num_points',     default=1024,   type=int,   help='Point Number [default: 1024]')
-    parser.add_argument('--num_workers',    default=8,      type=int,   help='Worker Number [default: 8]')
+    parser.add_argument('--num_workers',    default=12,     type=int,   help='Worker Number [default: 8]')
     parser.add_argument('--optimizer',      default='Adam', type=str,   help='optimizer for training [default: Adam]')
+    parser.add_argument('--log_dir',        default=None,   type=str,   help='experiment root')
     parser.add_argument('--decay_rate',     default=1e-4,   type=float, help='decay rate [default: 1e-4]')
     parser.add_argument('--normal',         default=True,   action='store_true', help='Whether to use normal information [default: True]')
     parser.add_argument('--seed',           default=1,      type=int,   help='random seed (default: 1)')
@@ -47,12 +49,13 @@ def main():
 
     # --- DataLoader
     print('Load dataset...')
-    train_transforms = pointnet_train_transforms
-    test_transforms = pointnet_test_transforms
-    train_loader = DataLoader(  ModelNet40(normal_channel=args.normal, partition='train', num_points=args.num_points, transform=train_transforms),
+    train_transforms = transforms.Compose([ dutil.dropout_pointcloud,
+                                            dutil.scale_pointcloud,
+                                            dutil.shift_pointcloud ])
+    train_loader = DataLoader(  ModelNet40(model='pointnet', partition='train', num_points=args.num_points, transform=train_transforms, normal_channel=True),
                                 num_workers=args.num_workers,   batch_size=args.batch_size,
                                 shuffle=True,   drop_last=True)
-    test_loader = DataLoader(   ModelNet40(normal_channel=args.normal, partition='test', num_points=args.num_points, transform=test_transforms),
+    test_loader = DataLoader(   ModelNet40(model='pointnet', partition='test', num_points=args.num_points, normal_channel=True),
                                 num_workers=args.num_workers,   batch_size=args.batch_size,
                                 shuffle=False,   drop_last=False)
     device = torch.device("cuda" if args.cuda else "cpu")
@@ -110,13 +113,13 @@ def main():
                 #     continue
 
                 optimizer.zero_grad()
-                preds, trans_feat = comb_model(data, label)  ##
-                cls_loss = criterion(preds, label)
+                preds, trans_feat = comb_model(data, label)  ## preds - B x 1
+                cls_loss = criterion(preds, label, trans_feat)
                 loss = cls_loss + comb_model.tri_loss + comb_model.reg_loss
                 loss.backward()
                 optimizer.step()
 
-                preds = preds.max(dim=1)[1]  ## preds - B x 1
+                preds = preds.max(dim=1)[1]
                 train_true.append(label.cpu().numpy())
                 train_pred.append(preds.detach().cpu().numpy())
                 t.set_postfix(  cls_loss = cls_loss.item(),
@@ -155,8 +158,8 @@ def main():
                 best_inst_acc = test_inst_acc
             state = {
                 'epoch': epoch + 1,
-                'inst_acc': best_inst_acc,
-                'class_acc': best_class_acc,
+                'inst_acc': test_inst_acc,
+                'class_acc': test_class_acc,
                 'classifier_state_dict': comb_model.models['cls'].state_dict(),
                 'pointfield_state_dict': comb_model.models['pf'].state_dict(),
                 'optimizer_state_dict': optimizer.state_dict(),
