@@ -318,3 +318,573 @@
 2021-07-10 17:18:06,106 - Default - INFO - Test Instance Accuracy: 0.810373, Class Accuracy: 0.766948
 2021-07-10 17:18:06,106 - Default - INFO - Best Instance Accuracy: 0.830227, Class Accuracy: 0.782959
 2021-07-10 17:18:06,107 - Default - INFO - Epoch 65/200:
+2021-07-10 17:31:25,806 - Default - INFO - Train Instance Accuracy: 0.873473
+2021-07-10 17:34:24,223 - Default - INFO - Test Instance Accuracy: 0.816451, Class Accuracy: 0.750453
+2021-07-10 17:34:24,223 - Default - INFO - Best Instance Accuracy: 0.830227, Class Accuracy: 0.782959
+2021-07-10 17:34:24,224 - Default - INFO - Epoch 66/200:
+2021-07-10 17:47:42,052 - Default - INFO - Train Instance Accuracy: 0.868791
+2021-07-10 17:50:38,878 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-10 17:50:38,925 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/best_model.t7
+2021-07-10 17:50:38,935 - Default - INFO - Test Instance Accuracy: 0.838331, Class Accuracy: 0.778977
+2021-07-10 17:50:38,935 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 17:50:38,936 - Default - INFO - Epoch 67/200:
+2021-07-10 18:03:58,352 - Default - INFO - Train Instance Accuracy: 0.872761
+2021-07-10 18:06:45,252 - Default - INFO - Test Instance Accuracy: 0.831037, Class Accuracy: 0.767320
+2021-07-10 18:06:45,252 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 18:06:45,253 - Default - INFO - Epoch 68/200:
+2021-07-10 18:19:28,540 - Default - INFO - Train Instance Accuracy: 0.875000
+2021-07-10 18:22:16,168 - Default - INFO - Test Instance Accuracy: 0.823339, Class Accuracy: 0.770942
+2021-07-10 18:22:16,169 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 18:22:16,169 - Default - INFO - Epoch 69/200:
+2021-07-10 18:34:46,541 - Default - INFO - Train Instance Accuracy: 0.873677
+2021-07-10 18:37:35,026 - Default - INFO - Test Instance Accuracy: 0.824149, Class Accuracy: 0.754459
+2021-07-10 18:37:35,027 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 18:37:35,027 - Default - INFO - Epoch 70/200:
+2021-07-10 18:50:33,188 - Default - INFO - Train Instance Accuracy: 0.874695
+2021-07-10 18:53:27,087 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-10 18:53:27,135 - Default - INFO - Test Instance Accuracy: 0.816856, Class Accuracy: 0.763337
+2021-07-10 18:53:27,135 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 18:53:27,135 - Default - INFO - Epoch 71/200:
+2021-07-10 19:06:47,867 - Default - INFO - Train Instance Accuracy: 0.878359
+2021-07-10 19:09:45,235 - Default - INFO - Test Instance Accuracy: 0.831037, Class Accuracy: 0.777070
+2021-07-10 19:09:45,235 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 19:09:45,236 - Default - INFO - Epoch 72/200:
+2021-07-10 19:23:19,340 - Default - INFO - Train Instance Accuracy: 0.874695
+2021-07-10 19:26:17,899 - Default - INFO - Test Instance Accuracy: 0.818476, Class Accuracy: 0.752785
+2021-07-10 19:26:17,899 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 19:26:17,900 - Default - INFO - Epoch 73/200:
+2021-07-10 19:39:49,579 - Default - INFO - Train Instance Accuracy: 0.874898
+2021-07-10 19:42:40,789 - Default - INFO - Test Instance Accuracy: 0.825365, Class Accuracy: 0.743355
+2021-07-10 19:42:40,790 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 19:42:40,790 - Default - INFO - Epoch 74/200:
+2021-07-10 19:55:52,432 - Default - INFO - Train Instance Accuracy: 0.875102
+2021-07-10 19:58:47,922 - Default - INFO - Test Instance Accuracy: 0.826175, Class Accuracy: 0.775779
+2021-07-10 19:58:47,922 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 19:58:47,923 - Default - INFO - Epoch 75/200:
+2021-07-10 20:12:02,786 - Default - INFO - Train Instance Accuracy: 0.878156
+2021-07-10 20:14:59,924 - Default - INFO - Test Instance Accuracy: 0.811994, Class Accuracy: 0.765128
+2021-07-10 20:14:59,924 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 20:14:59,925 - Default - INFO - Epoch 76/200:
+2021-07-10 20:28:18,641 - Default - INFO - Train Instance Accuracy: 0.879275
+2021-07-10 20:31:17,627 - Default - INFO - Test Instance Accuracy: 0.824149, Class Accuracy: 0.768285
+2021-07-10 20:31:17,627 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 20:31:17,627 - Default - INFO - Epoch 77/200:
+2021-07-10 20:44:36,274 - Default - INFO - Train Instance Accuracy: 0.878156
+2021-07-10 20:47:32,317 - Default - INFO - Test Instance Accuracy: 0.831848, Class Accuracy: 0.761401
+2021-07-10 20:47:32,317 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 20:47:32,318 - Default - INFO - Epoch 78/200:
+2021-07-10 21:01:15,033 - Default - INFO - Train Instance Accuracy: 0.881413
+2021-07-10 21:04:20,197 - Default - INFO - Test Instance Accuracy: 0.837925, Class Accuracy: 0.775390
+2021-07-10 21:04:20,197 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 21:04:20,198 - Default - INFO - Epoch 79/200:
+2021-07-10 21:18:20,421 - Default - INFO - Train Instance Accuracy: 0.877239
+2021-07-10 21:21:29,734 - Default - INFO - Test Instance Accuracy: 0.817261, Class Accuracy: 0.753948
+2021-07-10 21:21:29,735 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 21:21:29,735 - Default - INFO - Epoch 80/200:
+2021-07-10 21:35:40,400 - Default - INFO - Train Instance Accuracy: 0.878054
+2021-07-10 21:38:45,097 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-10 21:38:45,165 - Default - INFO - Test Instance Accuracy: 0.812399, Class Accuracy: 0.743541
+2021-07-10 21:38:45,165 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 21:38:45,166 - Default - INFO - Epoch 81/200:
+2021-07-10 21:52:45,894 - Default - INFO - Train Instance Accuracy: 0.886502
+2021-07-10 21:55:49,498 - Default - INFO - Test Instance Accuracy: 0.818882, Class Accuracy: 0.751145
+2021-07-10 21:55:49,498 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 21:55:49,498 - Default - INFO - Epoch 82/200:
+2021-07-10 22:09:05,685 - Default - INFO - Train Instance Accuracy: 0.889149
+2021-07-10 22:12:04,423 - Default - INFO - Test Instance Accuracy: 0.826175, Class Accuracy: 0.772651
+2021-07-10 22:12:04,423 - Default - INFO - Best Instance Accuracy: 0.838331, Class Accuracy: 0.782959
+2021-07-10 22:12:04,424 - Default - INFO - Epoch 83/200:
+2021-07-10 22:25:27,229 - Default - INFO - Train Instance Accuracy: 0.888233
+2021-07-10 22:28:29,719 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-10 22:28:30,011 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/best_model.t7
+2021-07-10 22:28:30,026 - Default - INFO - Test Instance Accuracy: 0.839951, Class Accuracy: 0.779279
+2021-07-10 22:28:30,027 - Default - INFO - Best Instance Accuracy: 0.839951, Class Accuracy: 0.782959
+2021-07-10 22:28:30,027 - Default - INFO - Epoch 84/200:
+2021-07-10 22:41:57,406 - Default - INFO - Train Instance Accuracy: 0.886095
+2021-07-10 22:44:49,194 - Default - INFO - Test Instance Accuracy: 0.816045, Class Accuracy: 0.752657
+2021-07-10 22:44:49,195 - Default - INFO - Best Instance Accuracy: 0.839951, Class Accuracy: 0.782959
+2021-07-10 22:44:49,195 - Default - INFO - Epoch 85/200:
+2021-07-10 22:58:32,957 - Default - INFO - Train Instance Accuracy: 0.885077
+2021-07-10 23:01:22,818 - Default - INFO - Test Instance Accuracy: 0.829822, Class Accuracy: 0.768070
+2021-07-10 23:01:22,818 - Default - INFO - Best Instance Accuracy: 0.839951, Class Accuracy: 0.782959
+2021-07-10 23:01:22,819 - Default - INFO - Epoch 86/200:
+2021-07-10 23:14:24,168 - Default - INFO - Train Instance Accuracy: 0.887113
+2021-07-10 23:17:18,832 - Default - INFO - Test Instance Accuracy: 0.830632, Class Accuracy: 0.778360
+2021-07-10 23:17:18,833 - Default - INFO - Best Instance Accuracy: 0.839951, Class Accuracy: 0.782959
+2021-07-10 23:17:18,833 - Default - INFO - Epoch 87/200:
+2021-07-10 23:30:42,204 - Default - INFO - Train Instance Accuracy: 0.889658
+2021-07-10 23:33:59,242 - Default - INFO - Test Instance Accuracy: 0.837520, Class Accuracy: 0.786523
+2021-07-10 23:33:59,242 - Default - INFO - Best Instance Accuracy: 0.839951, Class Accuracy: 0.786523
+2021-07-10 23:33:59,243 - Default - INFO - Epoch 88/200:
+2021-07-10 23:46:57,606 - Default - INFO - Train Instance Accuracy: 0.891287
+2021-07-10 23:49:34,772 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-10 23:49:35,098 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/best_model.t7
+2021-07-10 23:49:35,119 - Default - INFO - Test Instance Accuracy: 0.847650, Class Accuracy: 0.786093
+2021-07-10 23:49:35,119 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.786523
+2021-07-10 23:49:35,120 - Default - INFO - Epoch 89/200:
+2021-07-11 00:01:37,762 - Default - INFO - Train Instance Accuracy: 0.892610
+2021-07-11 00:04:14,628 - Default - INFO - Test Instance Accuracy: 0.818882, Class Accuracy: 0.763942
+2021-07-11 00:04:14,628 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.786523
+2021-07-11 00:04:14,629 - Default - INFO - Epoch 90/200:
+2021-07-11 00:16:13,491 - Default - INFO - Train Instance Accuracy: 0.887317
+2021-07-11 00:18:50,922 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 00:18:50,956 - Default - INFO - Test Instance Accuracy: 0.837115, Class Accuracy: 0.777686
+2021-07-11 00:18:50,956 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.786523
+2021-07-11 00:18:50,957 - Default - INFO - Epoch 91/200:
+2021-07-11 00:30:49,577 - Default - INFO - Train Instance Accuracy: 0.887317
+2021-07-11 00:33:26,456 - Default - INFO - Test Instance Accuracy: 0.823744, Class Accuracy: 0.756401
+2021-07-11 00:33:26,456 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.786523
+2021-07-11 00:33:26,457 - Default - INFO - Epoch 92/200:
+2021-07-11 00:45:23,595 - Default - INFO - Train Instance Accuracy: 0.888945
+2021-07-11 00:48:00,849 - Default - INFO - Test Instance Accuracy: 0.832658, Class Accuracy: 0.783116
+2021-07-11 00:48:00,849 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.786523
+2021-07-11 00:48:00,850 - Default - INFO - Epoch 93/200:
+2021-07-11 00:59:56,013 - Default - INFO - Train Instance Accuracy: 0.889963
+2021-07-11 01:02:32,441 - Default - INFO - Test Instance Accuracy: 0.817261, Class Accuracy: 0.745558
+2021-07-11 01:02:32,441 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.786523
+2021-07-11 01:02:32,442 - Default - INFO - Epoch 94/200:
+2021-07-11 01:14:23,360 - Default - INFO - Train Instance Accuracy: 0.889353
+2021-07-11 01:16:59,771 - Default - INFO - Test Instance Accuracy: 0.837520, Class Accuracy: 0.785570
+2021-07-11 01:16:59,771 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.786523
+2021-07-11 01:16:59,772 - Default - INFO - Epoch 95/200:
+2021-07-11 01:28:47,477 - Default - INFO - Train Instance Accuracy: 0.896478
+2021-07-11 01:31:24,231 - Default - INFO - Test Instance Accuracy: 0.830227, Class Accuracy: 0.772965
+2021-07-11 01:31:24,231 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.786523
+2021-07-11 01:31:24,231 - Default - INFO - Epoch 96/200:
+2021-07-11 01:43:10,011 - Default - INFO - Train Instance Accuracy: 0.890371
+2021-07-11 01:45:50,480 - Default - INFO - Test Instance Accuracy: 0.840762, Class Accuracy: 0.788326
+2021-07-11 01:45:50,481 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.788326
+2021-07-11 01:45:50,481 - Default - INFO - Epoch 97/200:
+2021-07-11 01:57:58,399 - Default - INFO - Train Instance Accuracy: 0.891490
+2021-07-11 02:00:43,754 - Default - INFO - Test Instance Accuracy: 0.814019, Class Accuracy: 0.766116
+2021-07-11 02:00:43,755 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.788326
+2021-07-11 02:00:43,755 - Default - INFO - Epoch 98/200:
+2021-07-11 02:12:40,269 - Default - INFO - Train Instance Accuracy: 0.893424
+2021-07-11 02:15:22,580 - Default - INFO - Test Instance Accuracy: 0.837115, Class Accuracy: 0.785244
+2021-07-11 02:15:22,581 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.788326
+2021-07-11 02:15:22,581 - Default - INFO - Epoch 99/200:
+2021-07-11 02:27:18,084 - Default - INFO - Train Instance Accuracy: 0.889454
+2021-07-11 02:30:01,044 - Default - INFO - Test Instance Accuracy: 0.816045, Class Accuracy: 0.755000
+2021-07-11 02:30:01,044 - Default - INFO - Best Instance Accuracy: 0.847650, Class Accuracy: 0.788326
+2021-07-11 02:30:01,045 - Default - INFO - Epoch 100/200:
+2021-07-11 02:42:02,220 - Default - INFO - Train Instance Accuracy: 0.892814
+2021-07-11 02:44:45,384 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 02:44:45,680 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/best_model.t7
+2021-07-11 02:44:45,690 - Default - INFO - Test Instance Accuracy: 0.849271, Class Accuracy: 0.790017
+2021-07-11 02:44:45,690 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.790017
+2021-07-11 02:44:45,691 - Default - INFO - Epoch 101/200:
+2021-07-11 02:56:50,821 - Default - INFO - Train Instance Accuracy: 0.895358
+2021-07-11 02:59:35,314 - Default - INFO - Test Instance Accuracy: 0.836710, Class Accuracy: 0.783314
+2021-07-11 02:59:35,315 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.790017
+2021-07-11 02:59:35,315 - Default - INFO - Epoch 102/200:
+2021-07-11 03:11:46,633 - Default - INFO - Train Instance Accuracy: 0.897598
+2021-07-11 03:14:31,311 - Default - INFO - Test Instance Accuracy: 0.828201, Class Accuracy: 0.772390
+2021-07-11 03:14:31,312 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.790017
+2021-07-11 03:14:31,312 - Default - INFO - Epoch 103/200:
+2021-07-11 03:26:34,251 - Default - INFO - Train Instance Accuracy: 0.894544
+2021-07-11 03:29:15,773 - Default - INFO - Test Instance Accuracy: 0.840762, Class Accuracy: 0.794267
+2021-07-11 03:29:15,774 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 03:29:15,774 - Default - INFO - Epoch 104/200:
+2021-07-11 03:41:31,218 - Default - INFO - Train Instance Accuracy: 0.895358
+2021-07-11 03:44:21,198 - Default - INFO - Test Instance Accuracy: 0.821313, Class Accuracy: 0.754116
+2021-07-11 03:44:21,199 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 03:44:21,199 - Default - INFO - Epoch 105/200:
+2021-07-11 03:56:36,600 - Default - INFO - Train Instance Accuracy: 0.894951
+2021-07-11 03:59:20,128 - Default - INFO - Test Instance Accuracy: 0.825770, Class Accuracy: 0.774192
+2021-07-11 03:59:20,128 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 03:59:20,129 - Default - INFO - Epoch 106/200:
+2021-07-11 04:11:29,307 - Default - INFO - Train Instance Accuracy: 0.896885
+2021-07-11 04:14:15,409 - Default - INFO - Test Instance Accuracy: 0.832253, Class Accuracy: 0.776849
+2021-07-11 04:14:15,409 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 04:14:15,410 - Default - INFO - Epoch 107/200:
+2021-07-11 04:26:39,218 - Default - INFO - Train Instance Accuracy: 0.897292
+2021-07-11 04:29:20,787 - Default - INFO - Test Instance Accuracy: 0.843193, Class Accuracy: 0.779360
+2021-07-11 04:29:20,787 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 04:29:20,788 - Default - INFO - Epoch 108/200:
+2021-07-11 04:41:25,665 - Default - INFO - Train Instance Accuracy: 0.894442
+2021-07-11 04:44:05,197 - Default - INFO - Test Instance Accuracy: 0.825770, Class Accuracy: 0.779523
+2021-07-11 04:44:05,197 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 04:44:05,198 - Default - INFO - Epoch 109/200:
+2021-07-11 04:56:06,471 - Default - INFO - Train Instance Accuracy: 0.899328
+2021-07-11 04:58:46,231 - Default - INFO - Test Instance Accuracy: 0.834279, Class Accuracy: 0.778866
+2021-07-11 04:58:46,231 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 04:58:46,231 - Default - INFO - Epoch 110/200:
+2021-07-11 05:10:47,176 - Default - INFO - Train Instance Accuracy: 0.896580
+2021-07-11 05:13:26,869 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 05:13:27,148 - Default - INFO - Test Instance Accuracy: 0.841572, Class Accuracy: 0.793186
+2021-07-11 05:13:27,148 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 05:13:27,149 - Default - INFO - Epoch 111/200:
+2021-07-11 05:25:59,275 - Default - INFO - Train Instance Accuracy: 0.898514
+2021-07-11 05:28:37,367 - Default - INFO - Test Instance Accuracy: 0.839546, Class Accuracy: 0.790273
+2021-07-11 05:28:37,368 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 05:28:37,368 - Default - INFO - Epoch 112/200:
+2021-07-11 05:41:11,733 - Default - INFO - Train Instance Accuracy: 0.900143
+2021-07-11 05:43:49,520 - Default - INFO - Test Instance Accuracy: 0.841977, Class Accuracy: 0.793198
+2021-07-11 05:43:49,520 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 05:43:49,520 - Default - INFO - Epoch 113/200:
+2021-07-11 05:55:40,548 - Default - INFO - Train Instance Accuracy: 0.898310
+2021-07-11 05:58:18,986 - Default - INFO - Test Instance Accuracy: 0.844003, Class Accuracy: 0.787599
+2021-07-11 05:58:18,986 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 05:58:18,986 - Default - INFO - Epoch 114/200:
+2021-07-11 06:10:48,947 - Default - INFO - Train Instance Accuracy: 0.900651
+2021-07-11 06:13:27,345 - Default - INFO - Test Instance Accuracy: 0.839546, Class Accuracy: 0.792860
+2021-07-11 06:13:27,345 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 06:13:27,346 - Default - INFO - Epoch 115/200:
+2021-07-11 06:25:55,906 - Default - INFO - Train Instance Accuracy: 0.900855
+2021-07-11 06:28:33,936 - Default - INFO - Test Instance Accuracy: 0.831037, Class Accuracy: 0.767913
+2021-07-11 06:28:33,936 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 06:28:33,937 - Default - INFO - Epoch 116/200:
+2021-07-11 06:41:01,219 - Default - INFO - Train Instance Accuracy: 0.898717
+2021-07-11 06:43:38,923 - Default - INFO - Test Instance Accuracy: 0.831442, Class Accuracy: 0.771070
+2021-07-11 06:43:38,923 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 06:43:38,924 - Default - INFO - Epoch 117/200:
+2021-07-11 06:56:07,606 - Default - INFO - Train Instance Accuracy: 0.898107
+2021-07-11 06:58:46,487 - Default - INFO - Test Instance Accuracy: 0.820908, Class Accuracy: 0.758110
+2021-07-11 06:58:46,488 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 06:58:46,488 - Default - INFO - Epoch 118/200:
+2021-07-11 07:11:16,715 - Default - INFO - Train Instance Accuracy: 0.900855
+2021-07-11 07:13:54,680 - Default - INFO - Test Instance Accuracy: 0.840357, Class Accuracy: 0.792645
+2021-07-11 07:13:54,681 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 07:13:54,681 - Default - INFO - Epoch 119/200:
+2021-07-11 07:26:24,897 - Default - INFO - Train Instance Accuracy: 0.899328
+2021-07-11 07:29:02,360 - Default - INFO - Test Instance Accuracy: 0.834279, Class Accuracy: 0.776314
+2021-07-11 07:29:02,361 - Default - INFO - Best Instance Accuracy: 0.849271, Class Accuracy: 0.794267
+2021-07-11 07:29:02,361 - Default - INFO - Epoch 120/200:
+2021-07-11 07:41:34,874 - Default - INFO - Train Instance Accuracy: 0.900957
+2021-07-11 07:44:12,111 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 07:44:12,141 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/best_model.t7
+2021-07-11 07:44:12,153 - Default - INFO - Test Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 07:44:12,154 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 07:44:12,154 - Default - INFO - Epoch 121/200:
+2021-07-11 07:56:01,845 - Default - INFO - Train Instance Accuracy: 0.903909
+2021-07-11 07:58:40,495 - Default - INFO - Test Instance Accuracy: 0.842382, Class Accuracy: 0.791140
+2021-07-11 07:58:40,495 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 07:58:40,496 - Default - INFO - Epoch 122/200:
+2021-07-11 08:11:10,170 - Default - INFO - Train Instance Accuracy: 0.905741
+2021-07-11 08:13:48,140 - Default - INFO - Test Instance Accuracy: 0.845624, Class Accuracy: 0.782145
+2021-07-11 08:13:48,141 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 08:13:48,141 - Default - INFO - Epoch 123/200:
+2021-07-11 08:26:17,306 - Default - INFO - Train Instance Accuracy: 0.904825
+2021-07-11 08:28:55,106 - Default - INFO - Test Instance Accuracy: 0.835900, Class Accuracy: 0.782610
+2021-07-11 08:28:55,106 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 08:28:55,106 - Default - INFO - Epoch 124/200:
+2021-07-11 08:41:25,610 - Default - INFO - Train Instance Accuracy: 0.906963
+2021-07-11 08:44:04,338 - Default - INFO - Test Instance Accuracy: 0.832253, Class Accuracy: 0.763808
+2021-07-11 08:44:04,339 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 08:44:04,339 - Default - INFO - Epoch 125/200:
+2021-07-11 08:56:38,277 - Default - INFO - Train Instance Accuracy: 0.904723
+2021-07-11 08:59:16,148 - Default - INFO - Test Instance Accuracy: 0.845624, Class Accuracy: 0.798477
+2021-07-11 08:59:16,148 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 08:59:16,149 - Default - INFO - Epoch 126/200:
+2021-07-11 09:11:50,812 - Default - INFO - Train Instance Accuracy: 0.902382
+2021-07-11 09:14:28,173 - Default - INFO - Test Instance Accuracy: 0.835494, Class Accuracy: 0.778355
+2021-07-11 09:14:28,174 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 09:14:28,174 - Default - INFO - Epoch 127/200:
+2021-07-11 09:27:02,276 - Default - INFO - Train Instance Accuracy: 0.906250
+2021-07-11 09:29:40,923 - Default - INFO - Test Instance Accuracy: 0.837520, Class Accuracy: 0.797267
+2021-07-11 09:29:40,923 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 09:29:40,924 - Default - INFO - Epoch 128/200:
+2021-07-11 09:41:30,012 - Default - INFO - Train Instance Accuracy: 0.906454
+2021-07-11 09:44:08,010 - Default - INFO - Test Instance Accuracy: 0.833468, Class Accuracy: 0.782657
+2021-07-11 09:44:08,011 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 09:44:08,011 - Default - INFO - Epoch 129/200:
+2021-07-11 09:56:41,001 - Default - INFO - Train Instance Accuracy: 0.907166
+2021-07-11 09:59:19,775 - Default - INFO - Test Instance Accuracy: 0.822123, Class Accuracy: 0.777163
+2021-07-11 09:59:19,776 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 09:59:19,776 - Default - INFO - Epoch 130/200:
+2021-07-11 10:11:56,201 - Default - INFO - Train Instance Accuracy: 0.907777
+2021-07-11 10:14:34,218 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 10:14:34,247 - Default - INFO - Test Instance Accuracy: 0.842788, Class Accuracy: 0.782267
+2021-07-11 10:14:34,248 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 10:14:34,248 - Default - INFO - Epoch 131/200:
+2021-07-11 10:27:01,724 - Default - INFO - Train Instance Accuracy: 0.906759
+2021-07-11 10:29:44,060 - Default - INFO - Test Instance Accuracy: 0.841167, Class Accuracy: 0.788483
+2021-07-11 10:29:44,060 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 10:29:44,061 - Default - INFO - Epoch 132/200:
+2021-07-11 10:42:22,339 - Default - INFO - Train Instance Accuracy: 0.906861
+2021-07-11 10:45:04,199 - Default - INFO - Test Instance Accuracy: 0.839546, Class Accuracy: 0.788866
+2021-07-11 10:45:04,199 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 10:45:04,200 - Default - INFO - Epoch 133/200:
+2021-07-11 10:57:40,354 - Default - INFO - Train Instance Accuracy: 0.907370
+2021-07-11 11:00:22,772 - Default - INFO - Test Instance Accuracy: 0.824149, Class Accuracy: 0.773773
+2021-07-11 11:00:22,772 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 11:00:22,773 - Default - INFO - Epoch 134/200:
+2021-07-11 11:13:05,681 - Default - INFO - Train Instance Accuracy: 0.906555
+2021-07-11 11:15:48,073 - Default - INFO - Test Instance Accuracy: 0.834684, Class Accuracy: 0.784483
+2021-07-11 11:15:48,074 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 11:15:48,075 - Default - INFO - Epoch 135/200:
+2021-07-11 11:28:31,658 - Default - INFO - Train Instance Accuracy: 0.907675
+2021-07-11 11:31:12,852 - Default - INFO - Test Instance Accuracy: 0.829822, Class Accuracy: 0.774703
+2021-07-11 11:31:12,853 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 11:31:12,853 - Default - INFO - Epoch 136/200:
+2021-07-11 11:44:07,188 - Default - INFO - Train Instance Accuracy: 0.908286
+2021-07-11 11:46:48,711 - Default - INFO - Test Instance Accuracy: 0.835494, Class Accuracy: 0.782442
+2021-07-11 11:46:48,711 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 11:46:48,711 - Default - INFO - Epoch 137/200:
+2021-07-11 11:59:36,358 - Default - INFO - Train Instance Accuracy: 0.905436
+2021-07-11 12:02:18,112 - Default - INFO - Test Instance Accuracy: 0.842382, Class Accuracy: 0.802360
+2021-07-11 12:02:18,112 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 12:02:18,112 - Default - INFO - Epoch 138/200:
+2021-07-11 12:15:40,019 - Default - INFO - Train Instance Accuracy: 0.903705
+2021-07-11 12:18:37,365 - Default - INFO - Test Instance Accuracy: 0.835494, Class Accuracy: 0.788140
+2021-07-11 12:18:37,365 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 12:18:37,365 - Default - INFO - Epoch 139/200:
+2021-07-11 12:32:24,062 - Default - INFO - Train Instance Accuracy: 0.910729
+2021-07-11 12:35:27,824 - Default - INFO - Test Instance Accuracy: 0.842788, Class Accuracy: 0.782890
+2021-07-11 12:35:27,824 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 12:35:27,825 - Default - INFO - Epoch 140/200:
+2021-07-11 12:49:10,459 - Default - INFO - Train Instance Accuracy: 0.906759
+2021-07-11 12:52:10,857 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 12:52:10,891 - Default - INFO - Test Instance Accuracy: 0.835494, Class Accuracy: 0.795442
+2021-07-11 12:52:10,891 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 12:52:10,892 - Default - INFO - Epoch 141/200:
+2021-07-11 13:05:48,263 - Default - INFO - Train Instance Accuracy: 0.908184
+2021-07-11 13:08:40,722 - Default - INFO - Test Instance Accuracy: 0.835900, Class Accuracy: 0.784436
+2021-07-11 13:08:40,723 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 13:08:40,723 - Default - INFO - Epoch 142/200:
+2021-07-11 13:22:06,164 - Default - INFO - Train Instance Accuracy: 0.912256
+2021-07-11 13:25:00,677 - Default - INFO - Test Instance Accuracy: 0.841977, Class Accuracy: 0.792564
+2021-07-11 13:25:00,677 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 13:25:00,677 - Default - INFO - Epoch 143/200:
+2021-07-11 13:38:03,595 - Default - INFO - Train Instance Accuracy: 0.911950
+2021-07-11 13:40:59,159 - Default - INFO - Test Instance Accuracy: 0.835089, Class Accuracy: 0.772686
+2021-07-11 13:40:59,159 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 13:40:59,160 - Default - INFO - Epoch 144/200:
+2021-07-11 13:54:32,334 - Default - INFO - Train Instance Accuracy: 0.912561
+2021-07-11 13:57:30,860 - Default - INFO - Test Instance Accuracy: 0.837925, Class Accuracy: 0.786930
+2021-07-11 13:57:30,860 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 13:57:30,861 - Default - INFO - Epoch 145/200:
+2021-07-11 14:10:15,757 - Default - INFO - Train Instance Accuracy: 0.910831
+2021-07-11 14:12:58,098 - Default - INFO - Test Instance Accuracy: 0.843598, Class Accuracy: 0.802855
+2021-07-11 14:12:58,098 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 14:12:58,098 - Default - INFO - Epoch 146/200:
+2021-07-11 14:25:54,788 - Default - INFO - Train Instance Accuracy: 0.908998
+2021-07-11 14:28:44,566 - Default - INFO - Test Instance Accuracy: 0.848865, Class Accuracy: 0.787529
+2021-07-11 14:28:44,566 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 14:28:44,567 - Default - INFO - Epoch 147/200:
+2021-07-11 14:41:46,191 - Default - INFO - Train Instance Accuracy: 0.908795
+2021-07-11 14:44:43,629 - Default - INFO - Test Instance Accuracy: 0.844814, Class Accuracy: 0.794186
+2021-07-11 14:44:43,630 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 14:44:43,630 - Default - INFO - Epoch 148/200:
+2021-07-11 14:58:06,078 - Default - INFO - Train Instance Accuracy: 0.913172
+2021-07-11 15:00:57,727 - Default - INFO - Test Instance Accuracy: 0.833874, Class Accuracy: 0.780535
+2021-07-11 15:00:57,727 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 15:00:57,727 - Default - INFO - Epoch 149/200:
+2021-07-11 15:14:06,874 - Default - INFO - Train Instance Accuracy: 0.907777
+2021-07-11 15:17:02,688 - Default - INFO - Test Instance Accuracy: 0.840357, Class Accuracy: 0.799064
+2021-07-11 15:17:02,688 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 15:17:02,688 - Default - INFO - Epoch 150/200:
+2021-07-11 15:30:00,811 - Default - INFO - Train Instance Accuracy: 0.910831
+2021-07-11 15:32:47,585 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 15:32:47,622 - Default - INFO - Test Instance Accuracy: 0.836710, Class Accuracy: 0.781227
+2021-07-11 15:32:47,622 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 15:32:47,623 - Default - INFO - Epoch 151/200:
+2021-07-11 15:45:44,503 - Default - INFO - Train Instance Accuracy: 0.906861
+2021-07-11 15:48:39,366 - Default - INFO - Test Instance Accuracy: 0.838736, Class Accuracy: 0.787721
+2021-07-11 15:48:39,366 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 15:48:39,367 - Default - INFO - Epoch 152/200:
+2021-07-11 16:01:46,102 - Default - INFO - Train Instance Accuracy: 0.913783
+2021-07-11 16:04:42,816 - Default - INFO - Test Instance Accuracy: 0.846029, Class Accuracy: 0.796384
+2021-07-11 16:04:42,816 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 16:04:42,817 - Default - INFO - Epoch 153/200:
+2021-07-11 16:18:08,006 - Default - INFO - Train Instance Accuracy: 0.911747
+2021-07-11 16:21:05,595 - Default - INFO - Test Instance Accuracy: 0.841167, Class Accuracy: 0.801017
+2021-07-11 16:21:05,596 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 16:21:05,596 - Default - INFO - Epoch 154/200:
+2021-07-11 16:34:18,976 - Default - INFO - Train Instance Accuracy: 0.912052
+2021-07-11 16:37:06,723 - Default - INFO - Test Instance Accuracy: 0.842382, Class Accuracy: 0.787564
+2021-07-11 16:37:06,723 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 16:37:06,724 - Default - INFO - Epoch 155/200:
+2021-07-11 16:49:48,340 - Default - INFO - Train Instance Accuracy: 0.912866
+2021-07-11 16:52:42,328 - Default - INFO - Test Instance Accuracy: 0.847245, Class Accuracy: 0.792948
+2021-07-11 16:52:42,329 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 16:52:42,329 - Default - INFO - Epoch 156/200:
+2021-07-11 17:05:41,573 - Default - INFO - Train Instance Accuracy: 0.912968
+2021-07-11 17:08:32,671 - Default - INFO - Test Instance Accuracy: 0.830227, Class Accuracy: 0.775483
+2021-07-11 17:08:32,672 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 17:08:32,672 - Default - INFO - Epoch 157/200:
+2021-07-11 17:21:26,280 - Default - INFO - Train Instance Accuracy: 0.910627
+2021-07-11 17:24:22,840 - Default - INFO - Test Instance Accuracy: 0.839546, Class Accuracy: 0.789855
+2021-07-11 17:24:22,840 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 17:24:22,840 - Default - INFO - Epoch 158/200:
+2021-07-11 17:37:33,826 - Default - INFO - Train Instance Accuracy: 0.910729
+2021-07-11 17:40:26,549 - Default - INFO - Test Instance Accuracy: 0.845624, Class Accuracy: 0.786640
+2021-07-11 17:40:26,549 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 17:40:26,550 - Default - INFO - Epoch 159/200:
+2021-07-11 17:53:10,048 - Default - INFO - Train Instance Accuracy: 0.912154
+2021-07-11 17:55:54,307 - Default - INFO - Test Instance Accuracy: 0.838331, Class Accuracy: 0.784448
+2021-07-11 17:55:54,308 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 17:55:54,308 - Default - INFO - Epoch 160/200:
+2021-07-11 18:08:09,550 - Default - INFO - Train Instance Accuracy: 0.912459
+2021-07-11 18:10:53,342 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 18:10:53,397 - Default - INFO - Test Instance Accuracy: 0.846434, Class Accuracy: 0.804151
+2021-07-11 18:10:53,398 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 18:10:53,398 - Default - INFO - Epoch 161/200:
+2021-07-11 18:23:36,091 - Default - INFO - Train Instance Accuracy: 0.911950
+2021-07-11 18:26:35,196 - Default - INFO - Test Instance Accuracy: 0.844814, Class Accuracy: 0.797099
+2021-07-11 18:26:35,197 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 18:26:35,197 - Default - INFO - Epoch 162/200:
+2021-07-11 18:39:57,232 - Default - INFO - Train Instance Accuracy: 0.917447
+2021-07-11 18:42:58,231 - Default - INFO - Test Instance Accuracy: 0.837520, Class Accuracy: 0.778314
+2021-07-11 18:42:58,232 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 18:42:58,232 - Default - INFO - Epoch 163/200:
+2021-07-11 18:56:43,943 - Default - INFO - Train Instance Accuracy: 0.917345
+2021-07-11 18:59:44,924 - Default - INFO - Test Instance Accuracy: 0.843598, Class Accuracy: 0.792023
+2021-07-11 18:59:44,924 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 18:59:44,925 - Default - INFO - Epoch 164/200:
+2021-07-11 19:12:51,449 - Default - INFO - Train Instance Accuracy: 0.915208
+2021-07-11 19:15:40,723 - Default - INFO - Test Instance Accuracy: 0.843598, Class Accuracy: 0.780017
+2021-07-11 19:15:40,723 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 19:15:40,724 - Default - INFO - Epoch 165/200:
+2021-07-11 19:28:41,979 - Default - INFO - Train Instance Accuracy: 0.912663
+2021-07-11 19:31:36,539 - Default - INFO - Test Instance Accuracy: 0.842382, Class Accuracy: 0.798238
+2021-07-11 19:31:36,540 - Default - INFO - Best Instance Accuracy: 0.851702, Class Accuracy: 0.806058
+2021-07-11 19:31:36,540 - Default - INFO - Epoch 166/200:
+2021-07-11 19:45:03,881 - Default - INFO - Train Instance Accuracy: 0.916226
+2021-07-11 19:48:09,296 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 19:48:09,342 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/best_model.t7
+2021-07-11 19:48:09,357 - Default - INFO - Test Instance Accuracy: 0.852107, Class Accuracy: 0.801302
+2021-07-11 19:48:09,358 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 19:48:09,358 - Default - INFO - Epoch 167/200:
+2021-07-11 20:02:05,709 - Default - INFO - Train Instance Accuracy: 0.911441
+2021-07-11 20:05:19,917 - Default - INFO - Test Instance Accuracy: 0.832253, Class Accuracy: 0.779227
+2021-07-11 20:05:19,918 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 20:05:19,918 - Default - INFO - Epoch 168/200:
+2021-07-11 20:19:25,444 - Default - INFO - Train Instance Accuracy: 0.916124
+2021-07-11 20:22:33,579 - Default - INFO - Test Instance Accuracy: 0.834279, Class Accuracy: 0.780407
+2021-07-11 20:22:33,580 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 20:22:33,580 - Default - INFO - Epoch 169/200:
+2021-07-11 20:36:22,783 - Default - INFO - Train Instance Accuracy: 0.915106
+2021-07-11 20:39:25,139 - Default - INFO - Test Instance Accuracy: 0.848460, Class Accuracy: 0.796233
+2021-07-11 20:39:25,139 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 20:39:25,140 - Default - INFO - Epoch 170/200:
+2021-07-11 20:52:38,797 - Default - INFO - Train Instance Accuracy: 0.914800
+2021-07-11 20:55:39,437 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 20:55:39,477 - Default - INFO - Test Instance Accuracy: 0.843193, Class Accuracy: 0.788483
+2021-07-11 20:55:39,477 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 20:55:39,477 - Default - INFO - Epoch 171/200:
+2021-07-11 21:09:09,496 - Default - INFO - Train Instance Accuracy: 0.914902
+2021-07-11 21:12:09,982 - Default - INFO - Test Instance Accuracy: 0.844814, Class Accuracy: 0.797023
+2021-07-11 21:12:09,983 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 21:12:09,983 - Default - INFO - Epoch 172/200:
+2021-07-11 21:25:33,661 - Default - INFO - Train Instance Accuracy: 0.912561
+2021-07-11 21:28:43,951 - Default - INFO - Test Instance Accuracy: 0.845624, Class Accuracy: 0.794151
+2021-07-11 21:28:43,952 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 21:28:43,952 - Default - INFO - Epoch 173/200:
+2021-07-11 21:42:54,116 - Default - INFO - Train Instance Accuracy: 0.910322
+2021-07-11 21:45:55,501 - Default - INFO - Test Instance Accuracy: 0.844003, Class Accuracy: 0.796110
+2021-07-11 21:45:55,501 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 21:45:55,502 - Default - INFO - Epoch 174/200:
+2021-07-11 21:58:29,702 - Default - INFO - Train Instance Accuracy: 0.916327
+2021-07-11 22:01:18,140 - Default - INFO - Test Instance Accuracy: 0.848865, Class Accuracy: 0.798517
+2021-07-11 22:01:18,140 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 22:01:18,141 - Default - INFO - Epoch 175/200:
+2021-07-11 22:14:51,007 - Default - INFO - Train Instance Accuracy: 0.918058
+2021-07-11 22:17:53,454 - Default - INFO - Test Instance Accuracy: 0.839546, Class Accuracy: 0.777110
+2021-07-11 22:17:53,455 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 22:17:53,455 - Default - INFO - Epoch 176/200:
+2021-07-11 22:31:21,367 - Default - INFO - Train Instance Accuracy: 0.913783
+2021-07-11 22:34:19,766 - Default - INFO - Test Instance Accuracy: 0.837925, Class Accuracy: 0.776483
+2021-07-11 22:34:19,766 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 22:34:19,767 - Default - INFO - Epoch 177/200:
+2021-07-11 22:47:28,856 - Default - INFO - Train Instance Accuracy: 0.917956
+2021-07-11 22:50:29,072 - Default - INFO - Test Instance Accuracy: 0.849271, Class Accuracy: 0.791233
+2021-07-11 22:50:29,072 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 22:50:29,072 - Default - INFO - Epoch 178/200:
+2021-07-11 23:03:48,131 - Default - INFO - Train Instance Accuracy: 0.915920
+2021-07-11 23:06:37,073 - Default - INFO - Test Instance Accuracy: 0.836305, Class Accuracy: 0.786558
+2021-07-11 23:06:37,073 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 23:06:37,074 - Default - INFO - Epoch 179/200:
+2021-07-11 23:19:19,940 - Default - INFO - Train Instance Accuracy: 0.914292
+2021-07-11 23:22:08,452 - Default - INFO - Test Instance Accuracy: 0.845219, Class Accuracy: 0.802814
+2021-07-11 23:22:08,453 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 23:22:08,453 - Default - INFO - Epoch 180/200:
+2021-07-11 23:34:52,150 - Default - INFO - Train Instance Accuracy: 0.914393
+2021-07-11 23:37:42,734 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-11 23:37:42,780 - Default - INFO - Test Instance Accuracy: 0.841977, Class Accuracy: 0.789233
+2021-07-11 23:37:42,781 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 23:37:42,781 - Default - INFO - Epoch 181/200:
+2021-07-11 23:50:43,896 - Default - INFO - Train Instance Accuracy: 0.915309
+2021-07-11 23:53:34,620 - Default - INFO - Test Instance Accuracy: 0.841977, Class Accuracy: 0.794023
+2021-07-11 23:53:34,621 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-11 23:53:34,621 - Default - INFO - Epoch 182/200:
+2021-07-12 00:06:30,886 - Default - INFO - Train Instance Accuracy: 0.917345
+2021-07-12 00:09:22,085 - Default - INFO - Test Instance Accuracy: 0.846434, Class Accuracy: 0.785988
+2021-07-12 00:09:22,086 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 00:09:22,086 - Default - INFO - Epoch 183/200:
+2021-07-12 00:22:20,957 - Default - INFO - Train Instance Accuracy: 0.916226
+2021-07-12 00:25:12,320 - Default - INFO - Test Instance Accuracy: 0.836710, Class Accuracy: 0.780314
+2021-07-12 00:25:12,321 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 00:25:12,321 - Default - INFO - Epoch 184/200:
+2021-07-12 00:38:13,012 - Default - INFO - Train Instance Accuracy: 0.916327
+2021-07-12 00:41:04,710 - Default - INFO - Test Instance Accuracy: 0.849676, Class Accuracy: 0.796355
+2021-07-12 00:41:04,710 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 00:41:04,710 - Default - INFO - Epoch 185/200:
+2021-07-12 00:54:09,864 - Default - INFO - Train Instance Accuracy: 0.915717
+2021-07-12 00:57:01,134 - Default - INFO - Test Instance Accuracy: 0.842382, Class Accuracy: 0.791779
+2021-07-12 00:57:01,134 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 00:57:01,135 - Default - INFO - Epoch 186/200:
+2021-07-12 01:10:09,698 - Default - INFO - Train Instance Accuracy: 0.916735
+2021-07-12 01:13:02,609 - Default - INFO - Test Instance Accuracy: 0.836710, Class Accuracy: 0.787855
+2021-07-12 01:13:02,610 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 01:13:02,610 - Default - INFO - Epoch 187/200:
+2021-07-12 01:26:12,580 - Default - INFO - Train Instance Accuracy: 0.919585
+2021-07-12 01:29:04,824 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-12 01:29:04,855 - Default - INFO - Saving best model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/best_model.t7
+2021-07-12 01:29:04,866 - Default - INFO - Test Instance Accuracy: 0.852107, Class Accuracy: 0.798942
+2021-07-12 01:29:04,866 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 01:29:04,866 - Default - INFO - Epoch 188/200:
+2021-07-12 01:42:17,607 - Default - INFO - Train Instance Accuracy: 0.919890
+2021-07-12 01:45:10,608 - Default - INFO - Test Instance Accuracy: 0.844814, Class Accuracy: 0.784349
+2021-07-12 01:45:10,608 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 01:45:10,608 - Default - INFO - Epoch 189/200:
+2021-07-12 01:58:25,707 - Default - INFO - Train Instance Accuracy: 0.916429
+2021-07-12 02:01:17,058 - Default - INFO - Test Instance Accuracy: 0.845624, Class Accuracy: 0.793640
+2021-07-12 02:01:17,058 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 02:01:17,059 - Default - INFO - Epoch 190/200:
+2021-07-12 02:14:36,542 - Default - INFO - Train Instance Accuracy: 0.918872
+2021-07-12 02:17:27,381 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-12 02:17:27,409 - Default - INFO - Test Instance Accuracy: 0.846029, Class Accuracy: 0.792855
+2021-07-12 02:17:27,410 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 02:17:27,410 - Default - INFO - Epoch 191/200:
+2021-07-12 02:30:50,249 - Default - INFO - Train Instance Accuracy: 0.918974
+2021-07-12 02:33:41,721 - Default - INFO - Test Instance Accuracy: 0.844814, Class Accuracy: 0.790355
+2021-07-12 02:33:41,721 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 02:33:41,721 - Default - INFO - Epoch 192/200:
+2021-07-12 02:46:27,270 - Default - INFO - Train Instance Accuracy: 0.920195
+2021-07-12 02:49:18,678 - Default - INFO - Test Instance Accuracy: 0.841572, Class Accuracy: 0.793238
+2021-07-12 02:49:18,678 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 02:49:18,678 - Default - INFO - Epoch 193/200:
+2021-07-12 03:02:04,375 - Default - INFO - Train Instance Accuracy: 0.917447
+2021-07-12 03:04:59,303 - Default - INFO - Test Instance Accuracy: 0.842382, Class Accuracy: 0.792273
+2021-07-12 03:04:59,303 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 03:04:59,304 - Default - INFO - Epoch 194/200:
+2021-07-12 03:18:01,310 - Default - INFO - Train Instance Accuracy: 0.919788
+2021-07-12 03:20:59,029 - Default - INFO - Test Instance Accuracy: 0.842382, Class Accuracy: 0.792064
+2021-07-12 03:20:59,031 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 03:20:59,032 - Default - INFO - Epoch 195/200:
+2021-07-12 03:33:52,456 - Default - INFO - Train Instance Accuracy: 0.917549
+2021-07-12 03:36:45,410 - Default - INFO - Test Instance Accuracy: 0.848055, Class Accuracy: 0.798105
+2021-07-12 03:36:45,410 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 03:36:45,410 - Default - INFO - Epoch 196/200:
+2021-07-12 03:49:45,501 - Default - INFO - Train Instance Accuracy: 0.921722
+2021-07-12 03:52:36,592 - Default - INFO - Test Instance Accuracy: 0.844408, Class Accuracy: 0.790564
+2021-07-12 03:52:36,593 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.806058
+2021-07-12 03:52:36,593 - Default - INFO - Epoch 197/200:
+2021-07-12 04:05:26,738 - Default - INFO - Train Instance Accuracy: 0.916735
+2021-07-12 04:08:17,387 - Default - INFO - Test Instance Accuracy: 0.851297, Class Accuracy: 0.807483
+2021-07-12 04:08:17,387 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.807483
+2021-07-12 04:08:17,387 - Default - INFO - Epoch 198/200:
+2021-07-12 04:21:09,833 - Default - INFO - Train Instance Accuracy: 0.916124
+2021-07-12 04:24:01,653 - Default - INFO - Test Instance Accuracy: 0.846434, Class Accuracy: 0.794767
+2021-07-12 04:24:01,653 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.807483
+2021-07-12 04:24:01,653 - Default - INFO - Epoch 199/200:
+2021-07-12 04:36:56,067 - Default - INFO - Train Instance Accuracy: 0.918567
+2021-07-12 04:39:46,686 - Default - INFO - Test Instance Accuracy: 0.850081, Class Accuracy: 0.793692
+2021-07-12 04:39:46,686 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.807483
+2021-07-12 04:39:46,686 - Default - INFO - Epoch 200/200:
+2021-07-12 04:52:44,602 - Default - INFO - Train Instance Accuracy: 0.917752
+2021-07-12 04:55:35,334 - Default - INFO - Saving model at d:/work/PointClassifier/logs/PointCNN_exp/checkpoints/model.t7
+2021-07-12 04:55:35,363 - Default - INFO - Test Instance Accuracy: 0.834684, Class Accuracy: 0.790192
+2021-07-12 04:55:35,363 - Default - INFO - Best Instance Accuracy: 0.852107, Class Accuracy: 0.807483
+2021-07-12 04:55:35,363 - Default - INFO - End of training...
