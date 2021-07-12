@@ -111,7 +111,8 @@ def main():
                 #     continue
 
                 optimizer.zero_grad()
-                preds, trans_feat = comb_model(data, label)  ##
+                # preds, trans_feat = comb_model(data, label)  ##
+                preds = comb_model(data, label)
                 cls_loss = criterion(preds, label)
                 loss = cls_loss + comb_model.tri_loss + comb_model.reg_loss
                 loss.backward()

@@ -5,7 +5,7 @@ import os
 import os.path as osp
 from tqdm import tqdm
 import torch
-import sklearn.metrics as metrics
+from time import time
 
 class LogTool():
     def __init__(self, file_path, format=None):
@@ -23,6 +23,9 @@ class LogTool():
 
     def cprint(self, text):
         print(text)
+        self.logger.info(text)
+
+    def info(self, text):
         self.logger.info(text)
 
 
@@ -132,19 +135,24 @@ class Trainer():
         if test_inst_acc >= self.best_inst_acc:
             self.best_inst_acc = test_inst_acc
             self.save_checkpoint('best_model.t7')
+            self.save_checkpoint('recent_model.t7')
         self.logger.cprint('Best Instance Accuracy: %f, Class Accuracy: %f'% (self.best_inst_acc, self.best_class_acc))
 
 
     def train(self):
+        t0 = time()
         self.load_checkpoint('recent_model.t7')
         self.logger.cprint('Start training...')
         while self.epoch <= self.num_epochs:
+            t1 = time()
             self.logger.cprint('Epoch %d/%s:' % (self.epoch, self.num_epochs))
             self.train_epoch()
             self.eval_epoch()
             if self.epoch%10 == 0:
                 self.save_checkpoint("recent_model.t7")
             self.epoch += 1
+            self.logger.info('Epoch elapsed time: ' + self.__format_second(time()-t1))
+        self.logger.cprint('Total time: ' + self.__format_second(time()-t0))
         self.logger.cprint('End of training...')
 
 
@@ -157,7 +165,7 @@ class Trainer():
     def load_checkpoint(self, filename):
         try:
             checkpoint = torch.load(osp.join(self.exp_dir, "checkpoints", filename))
-            self.epoch = checkpoint['epoch']
+            self.epoch = checkpoint['epoch'] + 1
             self.best_inst_acc = checkpoint['best_inst_acc']
             self.best_class_acc = checkpoint['best_class_acc']
             self.model.load_state_dict(checkpoint['model_state_dict'])
@@ -202,6 +210,14 @@ class Trainer():
             else:
                 class_acc.append(0)
         return np.mean(class_acc)
+
+    def __format_second(self, time):
+        mins, s = divmod(int(time), 60)
+        h, m = divmod(mins, 60)
+        if h:
+            return '{0:d}:{1:02d}:{2:02d}'.format(h, m, s)
+        else:
+            return '{0:02d}:{1:02d}'.format(m, s)
 
 
 

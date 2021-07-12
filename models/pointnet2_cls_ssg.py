@@ -37,7 +37,7 @@ class get_model(nn.Module):
         x = F.log_softmax(x, -1)
 
 
-        return x, l3_points
+        return x  #, l3_points
 
 
 
