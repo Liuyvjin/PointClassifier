@@ -45,9 +45,11 @@ class CombinedModel(nn.Module):
 
     def forward(self, x, label=None):
         x = self.pointfield(x)
-        if label is not None:  # update reg_loss and tri_loss
+        if self.training:  # update reg_loss and tri_loss
             self.reg_loss = self.pointfield.grid.abs().mean()
             self.tri_loss, _ = self.tri_criterion(x, label)
 
         return self.classifier(x)
+
+
 
