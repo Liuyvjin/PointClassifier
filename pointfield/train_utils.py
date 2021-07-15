@@ -110,7 +110,8 @@ class Trainer():
         train_true = torch.cat(train_true)
         train_pred = torch.cat(train_pred)
         train_inst_acc = self.__accuracy_score( train_true, train_pred)
-        self.logger.cprint('Train Instance Accuracy: %f' % train_inst_acc)
+        self.logger.cprint('Train Instance Accuracy: {:f}, loss: cls={:f}, reg={:f}, tri={:f}'.format(
+                            train_inst_acc, cls_loss, self.model.reg_loss, self.model.tri_loss))
 
 
     def eval_epoch(self):

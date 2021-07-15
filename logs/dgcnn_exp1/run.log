@@ -1,30 +1,1348 @@
-2021-07-12 15:57:19,035 - Default - INFO - PARAMETERS...
-2021-07-12 15:57:19,036 - Default - INFO - Namespace(batch_size=32, cuda=True, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=False, exp_name='dgcnn_exp1', k=20, lr=0.001, model='dgcnn', momentum=0.9, no_cuda=False, num_points=1024, num_workers=8, seed=1, use_sgd=True)
-2021-07-12 15:57:19,123 - Default - INFO - Using GPU : 0 from 1 devices
-2021-07-12 15:57:26,966 - Default - INFO - No existing model, starting training from scratch...
-2021-07-12 15:57:26,966 - Default - INFO - Start training...
-2021-07-12 15:57:26,967 - Default - INFO - Epoch 1/250:
-2021-07-12 15:58:00,782 - Default - INFO - PARAMETERS...
-2021-07-12 15:58:00,783 - Default - INFO - Namespace(batch_size=32, cuda=True, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=False, exp_name='dgcnn_exp1', k=20, lr=0.001, model='dgcnn', momentum=0.9, no_cuda=False, num_points=1024, num_workers=8, seed=1, use_sgd=True)
-2021-07-12 15:58:00,786 - Default - INFO - Using GPU : 0 from 1 devices
-2021-07-12 15:58:04,244 - Default - INFO - No existing model, starting training from scratch...
-2021-07-12 15:58:04,244 - Default - INFO - Start training...
-2021-07-12 15:58:04,244 - Default - INFO - Epoch 1/250:
-2021-07-12 15:59:00,195 - Default - INFO - PARAMETERS...
-2021-07-12 15:59:00,196 - Default - INFO - Namespace(batch_size=32, cuda=True, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=False, exp_name='dgcnn_exp1', k=20, lr=0.001, model='dgcnn', momentum=0.9, no_cuda=False, num_points=1024, num_workers=8, seed=1, use_sgd=True)
-2021-07-12 15:59:00,198 - Default - INFO - Using GPU : 0 from 1 devices
-2021-07-12 15:59:03,586 - Default - INFO - No existing model, starting training from scratch...
-2021-07-12 15:59:03,586 - Default - INFO - Start training...
-2021-07-12 15:59:03,586 - Default - INFO - Epoch 1/250:
-2021-07-12 16:00:01,875 - Default - INFO - PARAMETERS...
-2021-07-12 16:00:01,875 - Default - INFO - Namespace(batch_size=32, cuda=True, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=False, exp_name='dgcnn_exp1', k=20, lr=0.001, model='dgcnn', momentum=0.9, no_cuda=False, num_points=1024, num_workers=8, seed=1, use_sgd=True)
-2021-07-12 16:00:01,878 - Default - INFO - Using GPU : 0 from 1 devices
-2021-07-12 16:00:05,158 - Default - INFO - No existing model, starting training from scratch...
-2021-07-12 16:00:05,159 - Default - INFO - Start training...
-2021-07-12 16:00:05,159 - Default - INFO - Epoch 1/250:
-2021-07-12 16:01:12,155 - Default - INFO - PARAMETERS...
-2021-07-12 16:01:12,155 - Default - INFO - Namespace(batch_size=32, cuda=True, dataset='modelnet40', dropout=0.5, emb_dims=1024, epochs=250, eval=False, exp_name='dgcnn_exp1', k=20, lr=0.001, model='dgcnn', momentum=0.9, no_cuda=False, num_points=1024, num_workers=8, seed=1, use_sgd=True)
-2021-07-12 16:01:12,157 - Default - INFO - Using GPU : 0 from 1 devices
-2021-07-12 16:01:15,364 - Default - INFO - No existing model, starting training from scratch...
-2021-07-12 16:01:15,365 - Default - INFO - Start training...
-2021-07-12 16:01:15,365 - Default - INFO - Epoch 1/250:
+2021-07-13 16:45:19,465 - Default - INFO - PARAMETERS...
+2021-07-13 16:45:19,466 - Default - INFO - Namespace(batch_size=32, cuda=True, dropout=0.5, emb_dims=1024, exp_name='dgcnn_exp1', k=20, log_dir='logs', lr=0.001, model='dgcnn', momentum=0.9, normal=True, num_epochs=250, num_points=1024, num_workers=8, optimizer='Adam', seed=1)
+2021-07-13 16:45:19,466 - Default - INFO - No existing model
+2021-07-13 16:45:19,466 - Default - INFO - Start training...
+2021-07-13 16:45:19,467 - Default - INFO - Epoch 1/250:
+2021-07-13 16:47:46,943 - Default - INFO - Train Instance Accuracy: 0.499186, loss: cls=2.506721, reg=0.020216, tri=0.340140
+2021-07-13 16:48:09,811 - Default - INFO - Test Instance Accuracy: 0.594408, Class Accuracy: 0.468907
+2021-07-13 16:48:09,856 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 16:48:09,901 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 16:48:09,902 - Default - INFO - Best Instance Accuracy: 0.594408, Class Accuracy: 0.468907
+2021-07-13 16:48:09,902 - Default - INFO - Epoch elapsed time: 02:50
+2021-07-13 16:48:09,902 - Default - INFO - Epoch 2/250:
+2021-07-13 16:50:29,114 - Default - INFO - Train Instance Accuracy: 0.666226, loss: cls=1.859531, reg=0.017970, tri=0.326868
+2021-07-13 16:50:52,196 - Default - INFO - Test Instance Accuracy: 0.720827, Class Accuracy: 0.590674
+2021-07-13 16:50:52,243 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 16:50:52,292 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 16:50:52,292 - Default - INFO - Best Instance Accuracy: 0.720827, Class Accuracy: 0.590674
+2021-07-13 16:50:52,292 - Default - INFO - Epoch elapsed time: 02:42
+2021-07-13 16:53:46,323 - Default - INFO - PARAMETERS...
+2021-07-13 16:53:46,324 - Default - INFO - Namespace(batch_size=36, cuda=True, dropout=0.5, emb_dims=1024, exp_name='dgcnn_exp1', k=20, log_dir='logs', lr=0.001, model='dgcnn', momentum=0.9, normal=True, num_epochs=250, num_points=1024, num_workers=4, optimizer='Adam', seed=1)
+2021-07-13 16:53:46,364 - Default - INFO - Load pretrain model
+2021-07-13 16:53:46,364 - Default - INFO - Start training...
+2021-07-13 16:53:46,365 - Default - INFO - Epoch 3/250:
+2021-07-13 16:55:57,559 - Default - INFO - Train Instance Accuracy: 0.724155, loss: cls=2.196396, reg=0.017225, tri=0.369086
+2021-07-13 16:56:15,657 - Default - INFO - Test Instance Accuracy: 0.754862, Class Accuracy: 0.629895
+2021-07-13 16:56:15,704 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 16:56:15,754 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 16:56:15,754 - Default - INFO - Best Instance Accuracy: 0.754862, Class Accuracy: 0.629895
+2021-07-13 16:56:15,754 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 16:56:15,754 - Default - INFO - Epoch 4/250:
+2021-07-13 16:58:27,577 - Default - INFO - Train Instance Accuracy: 0.751425, loss: cls=1.881289, reg=0.016595, tri=0.362612
+2021-07-13 16:58:45,804 - Default - INFO - Test Instance Accuracy: 0.775122, Class Accuracy: 0.684029
+2021-07-13 16:58:45,855 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 16:58:45,905 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 16:58:45,905 - Default - INFO - Best Instance Accuracy: 0.775122, Class Accuracy: 0.684029
+2021-07-13 16:58:45,905 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 17:00:05,639 - Default - INFO - Epoch 5/250:
+2021-07-13 17:02:17,684 - Default - INFO - Train Instance Accuracy: 0.807184, loss: cls=1.979550, reg=0.015966, tri=0.373449
+2021-07-13 17:02:36,122 - Default - INFO - Test Instance Accuracy: 0.791329, Class Accuracy: 0.692349
+2021-07-13 17:02:36,172 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:02:36,226 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:02:36,226 - Default - INFO - Best Instance Accuracy: 0.791329, Class Accuracy: 0.692349
+2021-07-13 17:02:36,226 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 17:02:36,227 - Default - INFO - Epoch 6/250:
+2021-07-13 17:04:47,646 - Default - INFO - Train Instance Accuracy: 0.818274, loss: cls=1.811502, reg=0.015504, tri=0.340210
+2021-07-13 17:05:05,559 - Default - INFO - Test Instance Accuracy: 0.800243, Class Accuracy: 0.696395
+2021-07-13 17:05:05,607 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:05:05,655 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:05:05,655 - Default - INFO - Best Instance Accuracy: 0.800243, Class Accuracy: 0.696395
+2021-07-13 17:05:05,655 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:05:05,655 - Default - INFO - Epoch 7/250:
+2021-07-13 17:07:16,755 - Default - INFO - Train Instance Accuracy: 0.783679, loss: cls=1.987507, reg=0.015191, tri=0.347236
+2021-07-13 17:07:35,368 - Default - INFO - Test Instance Accuracy: 0.828606, Class Accuracy: 0.751959
+2021-07-13 17:07:35,415 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:07:35,462 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:07:35,463 - Default - INFO - Best Instance Accuracy: 0.828606, Class Accuracy: 0.751959
+2021-07-13 17:07:35,463 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:07:35,463 - Default - INFO - Epoch 8/250:
+2021-07-13 17:09:48,169 - Default - INFO - Train Instance Accuracy: 0.795584, loss: cls=1.823514, reg=0.014894, tri=0.355226
+2021-07-13 17:10:06,212 - Default - INFO - Test Instance Accuracy: 0.843193, Class Accuracy: 0.758564
+2021-07-13 17:10:06,260 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:10:06,307 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:10:06,307 - Default - INFO - Best Instance Accuracy: 0.843193, Class Accuracy: 0.758564
+2021-07-13 17:10:06,307 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 17:10:06,308 - Default - INFO - Epoch 9/250:
+2021-07-13 17:12:17,572 - Default - INFO - Train Instance Accuracy: 0.803419, loss: cls=1.795551, reg=0.014605, tri=0.321593
+2021-07-13 17:12:35,813 - Default - INFO - Test Instance Accuracy: 0.832253, Class Accuracy: 0.749610
+2021-07-13 17:12:35,814 - Default - INFO - Best Instance Accuracy: 0.843193, Class Accuracy: 0.758564
+2021-07-13 17:12:35,814 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:12:35,814 - Default - INFO - Epoch 10/250:
+2021-07-13 17:14:47,800 - Default - INFO - Train Instance Accuracy: 0.811050, loss: cls=1.716469, reg=0.014339, tri=0.313767
+2021-07-13 17:15:05,695 - Default - INFO - Test Instance Accuracy: 0.828606, Class Accuracy: 0.746285
+2021-07-13 17:15:05,695 - Default - INFO - Best Instance Accuracy: 0.843193, Class Accuracy: 0.758564
+2021-07-13 17:15:05,742 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:15:05,742 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:15:05,743 - Default - INFO - Epoch 11/250:
+2021-07-13 17:17:16,066 - Default - INFO - Train Instance Accuracy: 0.822039, loss: cls=1.692264, reg=0.014146, tri=0.308145
+2021-07-13 17:17:34,374 - Default - INFO - Test Instance Accuracy: 0.835089, Class Accuracy: 0.758122
+2021-07-13 17:17:34,374 - Default - INFO - Best Instance Accuracy: 0.843193, Class Accuracy: 0.758564
+2021-07-13 17:17:34,374 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 17:17:34,374 - Default - INFO - Epoch 12/250:
+2021-07-13 17:19:44,956 - Default - INFO - Train Instance Accuracy: 0.822548, loss: cls=1.772014, reg=0.013922, tri=0.349580
+2021-07-13 17:20:03,002 - Default - INFO - Test Instance Accuracy: 0.835900, Class Accuracy: 0.748221
+2021-07-13 17:20:03,003 - Default - INFO - Best Instance Accuracy: 0.843193, Class Accuracy: 0.758564
+2021-07-13 17:20:03,003 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 17:20:03,003 - Default - INFO - Epoch 13/250:
+2021-07-13 17:22:14,323 - Default - INFO - Train Instance Accuracy: 0.829467, loss: cls=1.745818, reg=0.013727, tri=0.368383
+2021-07-13 17:22:32,439 - Default - INFO - Test Instance Accuracy: 0.857374, Class Accuracy: 0.773215
+2021-07-13 17:22:32,486 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:22:32,534 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:22:32,535 - Default - INFO - Best Instance Accuracy: 0.857374, Class Accuracy: 0.773215
+2021-07-13 17:22:32,535 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:22:32,535 - Default - INFO - Epoch 14/250:
+2021-07-13 17:24:43,342 - Default - INFO - Train Instance Accuracy: 0.831095, loss: cls=1.816402, reg=0.013566, tri=0.368794
+2021-07-13 17:25:01,327 - Default - INFO - Test Instance Accuracy: 0.861426, Class Accuracy: 0.785215
+2021-07-13 17:25:01,376 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:25:01,423 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:25:01,424 - Default - INFO - Best Instance Accuracy: 0.861426, Class Accuracy: 0.785215
+2021-07-13 17:25:01,424 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 17:25:01,424 - Default - INFO - Epoch 15/250:
+2021-07-13 17:27:12,190 - Default - INFO - Train Instance Accuracy: 0.837709, loss: cls=1.615260, reg=0.013480, tri=0.362445
+2021-07-13 17:27:30,110 - Default - INFO - Test Instance Accuracy: 0.840357, Class Accuracy: 0.770145
+2021-07-13 17:27:30,110 - Default - INFO - Best Instance Accuracy: 0.861426, Class Accuracy: 0.785215
+2021-07-13 17:27:30,110 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 17:27:30,111 - Default - INFO - Epoch 16/250:
+2021-07-13 17:29:41,498 - Default - INFO - Train Instance Accuracy: 0.836182, loss: cls=1.694807, reg=0.013297, tri=0.365280
+2021-07-13 17:29:59,640 - Default - INFO - Test Instance Accuracy: 0.842788, Class Accuracy: 0.760930
+2021-07-13 17:29:59,641 - Default - INFO - Best Instance Accuracy: 0.861426, Class Accuracy: 0.785215
+2021-07-13 17:29:59,641 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:29:59,641 - Default - INFO - Epoch 17/250:
+2021-07-13 17:32:10,244 - Default - INFO - Train Instance Accuracy: 0.838726, loss: cls=1.706849, reg=0.013172, tri=0.344834
+2021-07-13 17:32:28,251 - Default - INFO - Test Instance Accuracy: 0.856159, Class Accuracy: 0.786471
+2021-07-13 17:32:28,251 - Default - INFO - Best Instance Accuracy: 0.861426, Class Accuracy: 0.786471
+2021-07-13 17:32:28,251 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 17:32:28,251 - Default - INFO - Epoch 18/250:
+2021-07-13 17:34:39,852 - Default - INFO - Train Instance Accuracy: 0.839133, loss: cls=1.854270, reg=0.013097, tri=0.416362
+2021-07-13 17:34:58,239 - Default - INFO - Test Instance Accuracy: 0.860211, Class Accuracy: 0.783930
+2021-07-13 17:34:58,239 - Default - INFO - Best Instance Accuracy: 0.861426, Class Accuracy: 0.786471
+2021-07-13 17:34:58,239 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:34:58,239 - Default - INFO - Epoch 19/250:
+2021-07-13 17:37:10,438 - Default - INFO - Train Instance Accuracy: 0.843203, loss: cls=1.707903, reg=0.012980, tri=0.346538
+2021-07-13 17:37:29,025 - Default - INFO - Test Instance Accuracy: 0.854943, Class Accuracy: 0.788727
+2021-07-13 17:37:29,025 - Default - INFO - Best Instance Accuracy: 0.861426, Class Accuracy: 0.788727
+2021-07-13 17:37:29,026 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 17:37:29,026 - Default - INFO - Epoch 20/250:
+2021-07-13 17:39:40,622 - Default - INFO - Train Instance Accuracy: 0.844933, loss: cls=1.953848, reg=0.012887, tri=0.378033
+2021-07-13 17:39:59,322 - Default - INFO - Test Instance Accuracy: 0.856969, Class Accuracy: 0.785110
+2021-07-13 17:39:59,322 - Default - INFO - Best Instance Accuracy: 0.861426, Class Accuracy: 0.788727
+2021-07-13 17:39:59,373 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:39:59,373 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 17:39:59,374 - Default - INFO - Epoch 21/250:
+2021-07-13 17:42:12,019 - Default - INFO - Train Instance Accuracy: 0.847985, loss: cls=1.683926, reg=0.012810, tri=0.266761
+2021-07-13 17:42:30,258 - Default - INFO - Test Instance Accuracy: 0.864668, Class Accuracy: 0.793645
+2021-07-13 17:42:30,306 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:42:30,351 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:42:30,352 - Default - INFO - Best Instance Accuracy: 0.864668, Class Accuracy: 0.793645
+2021-07-13 17:42:30,352 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 17:42:30,352 - Default - INFO - Epoch 22/250:
+2021-07-13 17:44:41,255 - Default - INFO - Train Instance Accuracy: 0.849003, loss: cls=1.874364, reg=0.012755, tri=0.374970
+2021-07-13 17:44:59,558 - Default - INFO - Test Instance Accuracy: 0.849271, Class Accuracy: 0.770820
+2021-07-13 17:44:59,558 - Default - INFO - Best Instance Accuracy: 0.864668, Class Accuracy: 0.793645
+2021-07-13 17:44:59,559 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:44:59,559 - Default - INFO - Epoch 23/250:
+2021-07-13 17:47:13,400 - Default - INFO - Train Instance Accuracy: 0.850020, loss: cls=1.815651, reg=0.012699, tri=0.355962
+2021-07-13 17:47:31,574 - Default - INFO - Test Instance Accuracy: 0.865073, Class Accuracy: 0.809802
+2021-07-13 17:47:31,621 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:47:31,671 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:47:31,671 - Default - INFO - Best Instance Accuracy: 0.865073, Class Accuracy: 0.809802
+2021-07-13 17:47:31,671 - Default - INFO - Epoch elapsed time: 02:32
+2021-07-13 17:47:31,671 - Default - INFO - Epoch 24/250:
+2021-07-13 17:49:43,189 - Default - INFO - Train Instance Accuracy: 0.855210, loss: cls=1.594484, reg=0.012629, tri=0.302424
+2021-07-13 17:50:01,335 - Default - INFO - Test Instance Accuracy: 0.835900, Class Accuracy: 0.774291
+2021-07-13 17:50:01,336 - Default - INFO - Best Instance Accuracy: 0.865073, Class Accuracy: 0.809802
+2021-07-13 17:50:01,336 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:50:01,336 - Default - INFO - Epoch 25/250:
+2021-07-13 17:52:13,774 - Default - INFO - Train Instance Accuracy: 0.856024, loss: cls=1.798097, reg=0.012605, tri=0.372018
+2021-07-13 17:52:32,302 - Default - INFO - Test Instance Accuracy: 0.868314, Class Accuracy: 0.809983
+2021-07-13 17:52:32,351 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 17:52:32,399 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 17:52:32,399 - Default - INFO - Best Instance Accuracy: 0.868314, Class Accuracy: 0.809983
+2021-07-13 17:52:32,399 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 17:52:32,400 - Default - INFO - Epoch 26/250:
+2021-07-13 17:54:43,535 - Default - INFO - Train Instance Accuracy: 0.854294, loss: cls=1.745233, reg=0.012509, tri=0.335932
+2021-07-13 17:55:01,703 - Default - INFO - Test Instance Accuracy: 0.863857, Class Accuracy: 0.796314
+2021-07-13 17:55:01,703 - Default - INFO - Best Instance Accuracy: 0.868314, Class Accuracy: 0.809983
+2021-07-13 17:55:01,703 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 17:55:01,703 - Default - INFO - Epoch 27/250:
+2021-07-13 17:57:14,028 - Default - INFO - Train Instance Accuracy: 0.856227, loss: cls=1.643921, reg=0.012487, tri=0.316009
+2021-07-13 17:57:32,075 - Default - INFO - Test Instance Accuracy: 0.865478, Class Accuracy: 0.800291
+2021-07-13 17:57:32,075 - Default - INFO - Best Instance Accuracy: 0.868314, Class Accuracy: 0.809983
+2021-07-13 17:57:32,075 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 17:57:32,075 - Default - INFO - Epoch 28/250:
+2021-07-13 17:59:43,278 - Default - INFO - Train Instance Accuracy: 0.858974, loss: cls=1.694341, reg=0.012444, tri=0.341898
+2021-07-13 18:00:01,240 - Default - INFO - Test Instance Accuracy: 0.874392, Class Accuracy: 0.815837
+2021-07-13 18:00:01,288 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 18:00:01,385 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 18:00:01,385 - Default - INFO - Best Instance Accuracy: 0.874392, Class Accuracy: 0.815837
+2021-07-13 18:00:01,386 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:00:01,386 - Default - INFO - Epoch 29/250:
+2021-07-13 18:02:13,299 - Default - INFO - Train Instance Accuracy: 0.856634, loss: cls=1.633203, reg=0.012463, tri=0.469139
+2021-07-13 18:02:31,519 - Default - INFO - Test Instance Accuracy: 0.874392, Class Accuracy: 0.810209
+2021-07-13 18:02:31,565 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 18:02:31,612 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 18:02:31,612 - Default - INFO - Best Instance Accuracy: 0.874392, Class Accuracy: 0.815837
+2021-07-13 18:02:31,612 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 18:02:31,612 - Default - INFO - Epoch 30/250:
+2021-07-13 18:04:43,993 - Default - INFO - Train Instance Accuracy: 0.863757, loss: cls=1.835942, reg=0.012380, tri=0.341632
+2021-07-13 18:05:02,387 - Default - INFO - Test Instance Accuracy: 0.864263, Class Accuracy: 0.788849
+2021-07-13 18:05:02,387 - Default - INFO - Best Instance Accuracy: 0.874392, Class Accuracy: 0.815837
+2021-07-13 18:05:02,436 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 18:05:02,436 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 18:05:02,436 - Default - INFO - Epoch 31/250:
+2021-07-13 18:07:14,425 - Default - INFO - Train Instance Accuracy: 0.864774, loss: cls=1.626119, reg=0.012385, tri=0.327519
+2021-07-13 18:07:32,661 - Default - INFO - Test Instance Accuracy: 0.867099, Class Accuracy: 0.809919
+2021-07-13 18:07:32,661 - Default - INFO - Best Instance Accuracy: 0.874392, Class Accuracy: 0.815837
+2021-07-13 18:07:32,661 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 18:07:32,662 - Default - INFO - Epoch 32/250:
+2021-07-13 18:09:45,444 - Default - INFO - Train Instance Accuracy: 0.862841, loss: cls=1.812838, reg=0.012353, tri=0.368666
+2021-07-13 18:10:03,412 - Default - INFO - Test Instance Accuracy: 0.871556, Class Accuracy: 0.803849
+2021-07-13 18:10:03,412 - Default - INFO - Best Instance Accuracy: 0.874392, Class Accuracy: 0.815837
+2021-07-13 18:10:03,412 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 18:10:03,412 - Default - INFO - Epoch 33/250:
+2021-07-13 18:12:14,993 - Default - INFO - Train Instance Accuracy: 0.862637, loss: cls=1.561839, reg=0.012342, tri=0.340905
+2021-07-13 18:12:32,982 - Default - INFO - Test Instance Accuracy: 0.863047, Class Accuracy: 0.801762
+2021-07-13 18:12:32,983 - Default - INFO - Best Instance Accuracy: 0.874392, Class Accuracy: 0.815837
+2021-07-13 18:12:32,983 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:12:32,983 - Default - INFO - Epoch 34/250:
+2021-07-13 18:14:43,467 - Default - INFO - Train Instance Accuracy: 0.864265, loss: cls=1.650051, reg=0.012359, tri=0.318325
+2021-07-13 18:15:01,945 - Default - INFO - Test Instance Accuracy: 0.878039, Class Accuracy: 0.807622
+2021-07-13 18:15:01,991 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 18:15:02,038 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 18:15:02,039 - Default - INFO - Best Instance Accuracy: 0.878039, Class Accuracy: 0.815837
+2021-07-13 18:15:02,039 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:15:02,039 - Default - INFO - Epoch 35/250:
+2021-07-13 18:17:12,826 - Default - INFO - Train Instance Accuracy: 0.868844, loss: cls=1.489956, reg=0.012328, tri=0.343184
+2021-07-13 18:17:30,900 - Default - INFO - Test Instance Accuracy: 0.882496, Class Accuracy: 0.797541
+2021-07-13 18:17:30,948 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 18:17:30,994 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 18:17:30,994 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.815837
+2021-07-13 18:17:30,994 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:17:30,995 - Default - INFO - Epoch 36/250:
+2021-07-13 18:19:41,545 - Default - INFO - Train Instance Accuracy: 0.867623, loss: cls=1.664985, reg=0.012310, tri=0.388337
+2021-07-13 18:19:59,504 - Default - INFO - Test Instance Accuracy: 0.856969, Class Accuracy: 0.783802
+2021-07-13 18:19:59,505 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.815837
+2021-07-13 18:19:59,505 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:19:59,505 - Default - INFO - Epoch 37/250:
+2021-07-13 18:22:10,001 - Default - INFO - Train Instance Accuracy: 0.867114, loss: cls=1.603355, reg=0.012289, tri=0.372683
+2021-07-13 18:22:27,891 - Default - INFO - Test Instance Accuracy: 0.882091, Class Accuracy: 0.806570
+2021-07-13 18:22:27,891 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.815837
+2021-07-13 18:22:27,891 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:22:27,891 - Default - INFO - Epoch 38/250:
+2021-07-13 18:24:38,247 - Default - INFO - Train Instance Accuracy: 0.866199, loss: cls=1.680042, reg=0.012204, tri=0.368139
+2021-07-13 18:24:56,452 - Default - INFO - Test Instance Accuracy: 0.873582, Class Accuracy: 0.800587
+2021-07-13 18:24:56,453 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.815837
+2021-07-13 18:24:56,453 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:24:56,453 - Default - INFO - Epoch 39/250:
+2021-07-13 18:27:06,900 - Default - INFO - Train Instance Accuracy: 0.861416, loss: cls=1.830773, reg=0.012216, tri=0.335906
+2021-07-13 18:27:24,912 - Default - INFO - Test Instance Accuracy: 0.863047, Class Accuracy: 0.799140
+2021-07-13 18:27:24,913 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.815837
+2021-07-13 18:27:24,913 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:27:24,913 - Default - INFO - Epoch 40/250:
+2021-07-13 18:29:35,498 - Default - INFO - Train Instance Accuracy: 0.869149, loss: cls=1.740002, reg=0.012194, tri=0.368621
+2021-07-13 18:29:53,450 - Default - INFO - Test Instance Accuracy: 0.879254, Class Accuracy: 0.823180
+2021-07-13 18:29:53,450 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.823180
+2021-07-13 18:29:53,498 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 18:29:53,498 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:29:53,498 - Default - INFO - Epoch 41/250:
+2021-07-13 18:32:03,863 - Default - INFO - Train Instance Accuracy: 0.872405, loss: cls=1.702397, reg=0.012183, tri=0.387393
+2021-07-13 18:32:21,946 - Default - INFO - Test Instance Accuracy: 0.873987, Class Accuracy: 0.815727
+2021-07-13 18:32:21,946 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.823180
+2021-07-13 18:32:21,947 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:32:21,947 - Default - INFO - Epoch 42/250:
+2021-07-13 18:34:32,433 - Default - INFO - Train Instance Accuracy: 0.868742, loss: cls=1.584436, reg=0.012154, tri=0.337287
+2021-07-13 18:34:50,350 - Default - INFO - Test Instance Accuracy: 0.878444, Class Accuracy: 0.826128
+2021-07-13 18:34:50,351 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.826128
+2021-07-13 18:34:50,351 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:34:50,351 - Default - INFO - Epoch 43/250:
+2021-07-13 18:37:00,818 - Default - INFO - Train Instance Accuracy: 0.871897, loss: cls=1.573525, reg=0.012124, tri=0.353005
+2021-07-13 18:37:18,836 - Default - INFO - Test Instance Accuracy: 0.863452, Class Accuracy: 0.815238
+2021-07-13 18:37:18,836 - Default - INFO - Best Instance Accuracy: 0.882496, Class Accuracy: 0.826128
+2021-07-13 18:37:18,836 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 18:37:18,836 - Default - INFO - Epoch 44/250:
+2021-07-13 18:39:30,592 - Default - INFO - Train Instance Accuracy: 0.872304, loss: cls=1.518144, reg=0.012125, tri=0.392861
+2021-07-13 18:39:48,777 - Default - INFO - Test Instance Accuracy: 0.888979, Class Accuracy: 0.822547
+2021-07-13 18:39:48,827 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 18:39:48,877 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 18:39:48,877 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:39:48,878 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 18:39:48,878 - Default - INFO - Epoch 45/250:
+2021-07-13 18:42:00,442 - Default - INFO - Train Instance Accuracy: 0.863248, loss: cls=1.824284, reg=0.012117, tri=0.449497
+2021-07-13 18:42:18,535 - Default - INFO - Test Instance Accuracy: 0.865883, Class Accuracy: 0.814651
+2021-07-13 18:42:18,535 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:42:18,535 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:42:18,535 - Default - INFO - Epoch 46/250:
+2021-07-13 18:44:30,088 - Default - INFO - Train Instance Accuracy: 0.868844, loss: cls=1.500640, reg=0.012094, tri=0.381851
+2021-07-13 18:44:48,269 - Default - INFO - Test Instance Accuracy: 0.859400, Class Accuracy: 0.806616
+2021-07-13 18:44:48,270 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:44:48,270 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:44:48,270 - Default - INFO - Epoch 47/250:
+2021-07-13 18:46:59,617 - Default - INFO - Train Instance Accuracy: 0.873525, loss: cls=1.597221, reg=0.012089, tri=0.326658
+2021-07-13 18:47:17,921 - Default - INFO - Test Instance Accuracy: 0.873177, Class Accuracy: 0.816221
+2021-07-13 18:47:17,921 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:47:17,921 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:47:17,921 - Default - INFO - Epoch 48/250:
+2021-07-13 18:49:29,538 - Default - INFO - Train Instance Accuracy: 0.873423, loss: cls=1.565674, reg=0.012122, tri=0.286810
+2021-07-13 18:49:48,326 - Default - INFO - Test Instance Accuracy: 0.879660, Class Accuracy: 0.819215
+2021-07-13 18:49:48,327 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:49:48,327 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 18:49:48,327 - Default - INFO - Epoch 49/250:
+2021-07-13 18:51:59,747 - Default - INFO - Train Instance Accuracy: 0.874033, loss: cls=1.691001, reg=0.012103, tri=0.358127
+2021-07-13 18:52:17,994 - Default - INFO - Test Instance Accuracy: 0.876013, Class Accuracy: 0.815081
+2021-07-13 18:52:17,995 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:52:17,995 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:52:17,995 - Default - INFO - Epoch 50/250:
+2021-07-13 18:54:29,406 - Default - INFO - Train Instance Accuracy: 0.878816, loss: cls=1.635428, reg=0.012084, tri=0.337083
+2021-07-13 18:54:47,513 - Default - INFO - Test Instance Accuracy: 0.870340, Class Accuracy: 0.821308
+2021-07-13 18:54:47,513 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:54:47,565 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 18:54:47,565 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:54:47,565 - Default - INFO - Epoch 51/250:
+2021-07-13 18:56:58,942 - Default - INFO - Train Instance Accuracy: 0.872405, loss: cls=1.753244, reg=0.012087, tri=0.366988
+2021-07-13 18:57:17,166 - Default - INFO - Test Instance Accuracy: 0.878039, Class Accuracy: 0.823250
+2021-07-13 18:57:17,166 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:57:17,167 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 18:57:17,167 - Default - INFO - Epoch 52/250:
+2021-07-13 18:59:28,928 - Default - INFO - Train Instance Accuracy: 0.877188, loss: cls=1.748710, reg=0.012115, tri=0.350162
+2021-07-13 18:59:47,419 - Default - INFO - Test Instance Accuracy: 0.868720, Class Accuracy: 0.809669
+2021-07-13 18:59:47,420 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.826128
+2021-07-13 18:59:47,420 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 18:59:47,420 - Default - INFO - Epoch 53/250:
+2021-07-13 19:01:59,153 - Default - INFO - Train Instance Accuracy: 0.875458, loss: cls=1.624491, reg=0.012130, tri=0.398637
+2021-07-13 19:02:17,589 - Default - INFO - Test Instance Accuracy: 0.882901, Class Accuracy: 0.831744
+2021-07-13 19:02:17,589 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.831744
+2021-07-13 19:02:17,589 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:02:17,589 - Default - INFO - Epoch 54/250:
+2021-07-13 19:04:29,324 - Default - INFO - Train Instance Accuracy: 0.876068, loss: cls=1.578712, reg=0.012117, tri=0.295183
+2021-07-13 19:04:47,527 - Default - INFO - Test Instance Accuracy: 0.882091, Class Accuracy: 0.825052
+2021-07-13 19:04:47,527 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.831744
+2021-07-13 19:04:47,527 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:04:47,527 - Default - INFO - Epoch 55/250:
+2021-07-13 19:06:59,308 - Default - INFO - Train Instance Accuracy: 0.879731, loss: cls=1.626626, reg=0.012177, tri=0.337339
+2021-07-13 19:07:17,634 - Default - INFO - Test Instance Accuracy: 0.873177, Class Accuracy: 0.823378
+2021-07-13 19:07:17,634 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.831744
+2021-07-13 19:07:17,635 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:07:17,635 - Default - INFO - Epoch 56/250:
+2021-07-13 19:09:29,498 - Default - INFO - Train Instance Accuracy: 0.873728, loss: cls=1.630193, reg=0.012141, tri=0.345382
+2021-07-13 19:09:48,006 - Default - INFO - Test Instance Accuracy: 0.885737, Class Accuracy: 0.827814
+2021-07-13 19:09:48,006 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.831744
+2021-07-13 19:09:48,006 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:09:48,006 - Default - INFO - Epoch 57/250:
+2021-07-13 19:11:59,781 - Default - INFO - Train Instance Accuracy: 0.875458, loss: cls=1.656966, reg=0.012169, tri=0.365097
+2021-07-13 19:12:18,468 - Default - INFO - Test Instance Accuracy: 0.867099, Class Accuracy: 0.814262
+2021-07-13 19:12:18,468 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.831744
+2021-07-13 19:12:18,468 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:12:18,469 - Default - INFO - Epoch 58/250:
+2021-07-13 19:14:30,376 - Default - INFO - Train Instance Accuracy: 0.879528, loss: cls=1.566094, reg=0.012136, tri=0.354411
+2021-07-13 19:14:48,609 - Default - INFO - Test Instance Accuracy: 0.886143, Class Accuracy: 0.823750
+2021-07-13 19:14:48,609 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.831744
+2021-07-13 19:14:48,609 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:14:48,609 - Default - INFO - Epoch 59/250:
+2021-07-13 19:17:00,332 - Default - INFO - Train Instance Accuracy: 0.878307, loss: cls=1.821648, reg=0.012154, tri=0.435704
+2021-07-13 19:17:18,587 - Default - INFO - Test Instance Accuracy: 0.882496, Class Accuracy: 0.832419
+2021-07-13 19:17:18,588 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.832419
+2021-07-13 19:17:18,588 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:17:18,588 - Default - INFO - Epoch 60/250:
+2021-07-13 19:19:30,298 - Default - INFO - Train Instance Accuracy: 0.879630, loss: cls=1.720543, reg=0.012109, tri=0.425464
+2021-07-13 19:19:48,542 - Default - INFO - Test Instance Accuracy: 0.887358, Class Accuracy: 0.823419
+2021-07-13 19:19:48,542 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.832419
+2021-07-13 19:19:48,593 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 19:19:48,593 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:19:48,593 - Default - INFO - Epoch 61/250:
+2021-07-13 19:22:00,161 - Default - INFO - Train Instance Accuracy: 0.879935, loss: cls=1.764561, reg=0.012075, tri=0.344408
+2021-07-13 19:22:18,355 - Default - INFO - Test Instance Accuracy: 0.888574, Class Accuracy: 0.823128
+2021-07-13 19:22:18,355 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.832419
+2021-07-13 19:22:18,355 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:22:18,356 - Default - INFO - Epoch 62/250:
+2021-07-13 19:24:30,395 - Default - INFO - Train Instance Accuracy: 0.879833, loss: cls=1.529052, reg=0.012081, tri=0.342887
+2021-07-13 19:24:48,604 - Default - INFO - Test Instance Accuracy: 0.883712, Class Accuracy: 0.830942
+2021-07-13 19:24:48,605 - Default - INFO - Best Instance Accuracy: 0.888979, Class Accuracy: 0.832419
+2021-07-13 19:24:48,605 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:24:48,605 - Default - INFO - Epoch 63/250:
+2021-07-13 19:27:00,559 - Default - INFO - Train Instance Accuracy: 0.878510, loss: cls=1.589037, reg=0.012064, tri=0.349692
+2021-07-13 19:27:18,709 - Default - INFO - Test Instance Accuracy: 0.890600, Class Accuracy: 0.824081
+2021-07-13 19:27:18,761 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 19:27:18,810 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 19:27:18,811 - Default - INFO - Best Instance Accuracy: 0.890600, Class Accuracy: 0.832419
+2021-07-13 19:27:18,811 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:27:18,811 - Default - INFO - Epoch 64/250:
+2021-07-13 19:29:30,066 - Default - INFO - Train Instance Accuracy: 0.882580, loss: cls=1.737696, reg=0.012051, tri=0.361142
+2021-07-13 19:29:48,491 - Default - INFO - Test Instance Accuracy: 0.891815, Class Accuracy: 0.832791
+2021-07-13 19:29:48,543 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 19:29:48,594 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 19:29:48,594 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.832791
+2021-07-13 19:29:48,594 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:29:48,594 - Default - INFO - Epoch 65/250:
+2021-07-13 19:32:01,027 - Default - INFO - Train Instance Accuracy: 0.879426, loss: cls=1.724974, reg=0.012082, tri=0.353795
+2021-07-13 19:32:19,463 - Default - INFO - Test Instance Accuracy: 0.882496, Class Accuracy: 0.837494
+2021-07-13 19:32:19,463 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.837494
+2021-07-13 19:32:19,463 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:32:19,464 - Default - INFO - Epoch 66/250:
+2021-07-13 19:34:31,190 - Default - INFO - Train Instance Accuracy: 0.877493, loss: cls=1.500311, reg=0.012026, tri=0.329257
+2021-07-13 19:34:49,316 - Default - INFO - Test Instance Accuracy: 0.881280, Class Accuracy: 0.809337
+2021-07-13 19:34:49,317 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.837494
+2021-07-13 19:34:49,317 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:34:49,317 - Default - INFO - Epoch 67/250:
+2021-07-13 19:37:02,377 - Default - INFO - Train Instance Accuracy: 0.882173, loss: cls=1.574798, reg=0.012010, tri=0.350201
+2021-07-13 19:37:20,323 - Default - INFO - Test Instance Accuracy: 0.879254, Class Accuracy: 0.831581
+2021-07-13 19:37:20,323 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.837494
+2021-07-13 19:37:20,324 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 19:37:20,324 - Default - INFO - Epoch 68/250:
+2021-07-13 19:39:32,115 - Default - INFO - Train Instance Accuracy: 0.879630, loss: cls=1.507119, reg=0.012026, tri=0.294189
+2021-07-13 19:39:50,586 - Default - INFO - Test Instance Accuracy: 0.880875, Class Accuracy: 0.825291
+2021-07-13 19:39:50,586 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.837494
+2021-07-13 19:39:50,587 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:39:50,587 - Default - INFO - Epoch 69/250:
+2021-07-13 19:42:01,782 - Default - INFO - Train Instance Accuracy: 0.881665, loss: cls=1.585984, reg=0.012051, tri=0.313780
+2021-07-13 19:42:19,801 - Default - INFO - Test Instance Accuracy: 0.884117, Class Accuracy: 0.841692
+2021-07-13 19:42:19,801 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 19:42:19,801 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:42:19,801 - Default - INFO - Epoch 70/250:
+2021-07-13 19:44:32,039 - Default - INFO - Train Instance Accuracy: 0.880749, loss: cls=1.693053, reg=0.012031, tri=0.346482
+2021-07-13 19:44:50,197 - Default - INFO - Test Instance Accuracy: 0.890600, Class Accuracy: 0.829169
+2021-07-13 19:44:50,197 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 19:44:50,243 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 19:44:50,243 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:44:50,244 - Default - INFO - Epoch 71/250:
+2021-07-13 19:47:01,312 - Default - INFO - Train Instance Accuracy: 0.879528, loss: cls=1.658982, reg=0.012038, tri=0.333275
+2021-07-13 19:47:20,092 - Default - INFO - Test Instance Accuracy: 0.882091, Class Accuracy: 0.826779
+2021-07-13 19:47:20,092 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 19:47:20,093 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:47:20,093 - Default - INFO - Epoch 72/250:
+2021-07-13 19:49:31,955 - Default - INFO - Train Instance Accuracy: 0.881156, loss: cls=1.594088, reg=0.012005, tri=0.410615
+2021-07-13 19:49:50,128 - Default - INFO - Test Instance Accuracy: 0.882901, Class Accuracy: 0.837663
+2021-07-13 19:49:50,128 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 19:49:50,128 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 19:49:50,129 - Default - INFO - Epoch 73/250:
+2021-07-13 19:52:01,190 - Default - INFO - Train Instance Accuracy: 0.885836, loss: cls=1.634444, reg=0.012039, tri=0.397677
+2021-07-13 19:52:19,362 - Default - INFO - Test Instance Accuracy: 0.885332, Class Accuracy: 0.827587
+2021-07-13 19:52:19,362 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 19:52:19,362 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:52:19,363 - Default - INFO - Epoch 74/250:
+2021-07-13 19:54:31,530 - Default - INFO - Train Instance Accuracy: 0.880952, loss: cls=1.674733, reg=0.012089, tri=0.333551
+2021-07-13 19:54:50,413 - Default - INFO - Test Instance Accuracy: 0.876823, Class Accuracy: 0.830663
+2021-07-13 19:54:50,414 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 19:54:50,414 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 19:54:50,415 - Default - INFO - Epoch 75/250:
+2021-07-13 19:57:01,945 - Default - INFO - Train Instance Accuracy: 0.885328, loss: cls=1.591840, reg=0.012076, tri=0.389931
+2021-07-13 19:57:19,993 - Default - INFO - Test Instance Accuracy: 0.876823, Class Accuracy: 0.830680
+2021-07-13 19:57:19,993 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 19:57:19,994 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:57:19,994 - Default - INFO - Epoch 76/250:
+2021-07-13 19:59:31,102 - Default - INFO - Train Instance Accuracy: 0.882886, loss: cls=1.688723, reg=0.012074, tri=0.456845
+2021-07-13 19:59:49,192 - Default - INFO - Test Instance Accuracy: 0.883306, Class Accuracy: 0.834459
+2021-07-13 19:59:49,192 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 19:59:49,192 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 19:59:49,193 - Default - INFO - Epoch 77/250:
+2021-07-13 20:02:02,084 - Default - INFO - Train Instance Accuracy: 0.884107, loss: cls=1.719394, reg=0.012060, tri=0.353989
+2021-07-13 20:02:20,276 - Default - INFO - Test Instance Accuracy: 0.884927, Class Accuracy: 0.821093
+2021-07-13 20:02:20,276 - Default - INFO - Best Instance Accuracy: 0.891815, Class Accuracy: 0.841692
+2021-07-13 20:02:20,276 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 20:02:20,276 - Default - INFO - Epoch 78/250:
+2021-07-13 20:04:32,695 - Default - INFO - Train Instance Accuracy: 0.879833, loss: cls=1.466838, reg=0.012042, tri=0.309378
+2021-07-13 20:04:50,988 - Default - INFO - Test Instance Accuracy: 0.892220, Class Accuracy: 0.832419
+2021-07-13 20:04:51,035 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 20:04:51,084 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 20:04:51,084 - Default - INFO - Best Instance Accuracy: 0.892220, Class Accuracy: 0.841692
+2021-07-13 20:04:51,084 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:04:51,085 - Default - INFO - Epoch 79/250:
+2021-07-13 20:07:02,845 - Default - INFO - Train Instance Accuracy: 0.883496, loss: cls=1.578096, reg=0.012006, tri=0.344291
+2021-07-13 20:07:22,071 - Default - INFO - Test Instance Accuracy: 0.887358, Class Accuracy: 0.849337
+2021-07-13 20:07:22,071 - Default - INFO - Best Instance Accuracy: 0.892220, Class Accuracy: 0.849337
+2021-07-13 20:07:22,071 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:07:22,072 - Default - INFO - Epoch 80/250:
+2021-07-13 20:09:35,383 - Default - INFO - Train Instance Accuracy: 0.886142, loss: cls=1.456874, reg=0.012045, tri=0.328698
+2021-07-13 20:09:54,054 - Default - INFO - Test Instance Accuracy: 0.887763, Class Accuracy: 0.837116
+2021-07-13 20:09:54,055 - Default - INFO - Best Instance Accuracy: 0.892220, Class Accuracy: 0.849337
+2021-07-13 20:09:54,100 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 20:09:54,100 - Default - INFO - Epoch elapsed time: 02:32
+2021-07-13 20:09:54,101 - Default - INFO - Epoch 81/250:
+2021-07-13 20:12:05,332 - Default - INFO - Train Instance Accuracy: 0.878307, loss: cls=1.596782, reg=0.012032, tri=0.366682
+2021-07-13 20:12:23,454 - Default - INFO - Test Instance Accuracy: 0.880470, Class Accuracy: 0.822041
+2021-07-13 20:12:23,454 - Default - INFO - Best Instance Accuracy: 0.892220, Class Accuracy: 0.849337
+2021-07-13 20:12:23,454 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 20:12:23,455 - Default - INFO - Epoch 82/250:
+2021-07-13 20:14:34,604 - Default - INFO - Train Instance Accuracy: 0.883496, loss: cls=1.574084, reg=0.012044, tri=0.345845
+2021-07-13 20:14:52,810 - Default - INFO - Test Instance Accuracy: 0.885332, Class Accuracy: 0.830395
+2021-07-13 20:14:52,811 - Default - INFO - Best Instance Accuracy: 0.892220, Class Accuracy: 0.849337
+2021-07-13 20:14:52,811 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 20:14:52,811 - Default - INFO - Epoch 83/250:
+2021-07-13 20:17:05,417 - Default - INFO - Train Instance Accuracy: 0.880037, loss: cls=1.963328, reg=0.012049, tri=0.301387
+2021-07-13 20:17:23,590 - Default - INFO - Test Instance Accuracy: 0.879660, Class Accuracy: 0.826424
+2021-07-13 20:17:23,590 - Default - INFO - Best Instance Accuracy: 0.892220, Class Accuracy: 0.849337
+2021-07-13 20:17:23,591 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:17:23,591 - Default - INFO - Epoch 84/250:
+2021-07-13 20:19:36,798 - Default - INFO - Train Instance Accuracy: 0.886854, loss: cls=1.630713, reg=0.012047, tri=0.311481
+2021-07-13 20:19:55,218 - Default - INFO - Test Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:19:55,268 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 20:19:55,318 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 20:19:55,318 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:19:55,318 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 20:19:55,318 - Default - INFO - Epoch 85/250:
+2021-07-13 20:22:06,933 - Default - INFO - Train Instance Accuracy: 0.886650, loss: cls=1.572784, reg=0.012088, tri=0.343499
+2021-07-13 20:22:25,399 - Default - INFO - Test Instance Accuracy: 0.893436, Class Accuracy: 0.839337
+2021-07-13 20:22:25,399 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:22:25,399 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:22:25,399 - Default - INFO - Epoch 86/250:
+2021-07-13 20:24:38,347 - Default - INFO - Train Instance Accuracy: 0.884310, loss: cls=1.550637, reg=0.012096, tri=0.298564
+2021-07-13 20:25:47,708 - Default - INFO - PARAMETERS...
+2021-07-13 20:25:47,709 - Default - INFO - Namespace(batch_size=36, cuda=True, dropout=0.5, emb_dims=1024, exp_name='dgcnn_exp1', k=20, log_dir='logs', lr=0.001, model='dgcnn', momentum=0.9, normal=True, num_epochs=250, num_points=1024, num_workers=4, optimizer='Adam', seed=1)
+2021-07-13 20:25:47,748 - Default - INFO - Load pretrain model
+2021-07-13 20:25:47,748 - Default - INFO - Start training...
+2021-07-13 20:25:47,749 - Default - INFO - Epoch 85/250:
+2021-07-13 20:28:00,065 - Default - INFO - Train Instance Accuracy: 0.892247, loss: cls=1.696120, reg=0.012020, tri=0.378756
+2021-07-13 20:28:18,727 - Default - INFO - Test Instance Accuracy: 0.893841, Class Accuracy: 0.829465
+2021-07-13 20:28:18,727 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:28:18,727 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:28:18,727 - Default - INFO - Epoch 86/250:
+2021-07-13 20:30:30,348 - Default - INFO - Train Instance Accuracy: 0.892959, loss: cls=1.576445, reg=0.011962, tri=0.327455
+2021-07-13 20:30:48,479 - Default - INFO - Test Instance Accuracy: 0.882496, Class Accuracy: 0.827959
+2021-07-13 20:30:48,479 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:30:48,479 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 20:30:48,479 - Default - INFO - Epoch 87/250:
+2021-07-13 20:32:59,521 - Default - INFO - Train Instance Accuracy: 0.890212, loss: cls=1.581656, reg=0.012019, tri=0.331423
+2021-07-13 20:33:17,858 - Default - INFO - Test Instance Accuracy: 0.886953, Class Accuracy: 0.843378
+2021-07-13 20:33:17,858 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:33:17,858 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 20:33:17,859 - Default - INFO - Epoch 88/250:
+2021-07-13 20:35:29,562 - Default - INFO - Train Instance Accuracy: 0.887871, loss: cls=1.566986, reg=0.011980, tri=0.350613
+2021-07-13 20:35:48,156 - Default - INFO - Test Instance Accuracy: 0.884522, Class Accuracy: 0.832343
+2021-07-13 20:35:48,157 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:35:48,157 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:35:48,157 - Default - INFO - Epoch 89/250:
+2021-07-13 20:37:59,619 - Default - INFO - Train Instance Accuracy: 0.890720, loss: cls=1.667195, reg=0.011997, tri=0.324092
+2021-07-13 20:38:17,868 - Default - INFO - Test Instance Accuracy: 0.886953, Class Accuracy: 0.835872
+2021-07-13 20:38:17,868 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:38:17,868 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 20:38:17,868 - Default - INFO - Epoch 90/250:
+2021-07-13 20:40:30,728 - Default - INFO - Train Instance Accuracy: 0.886650, loss: cls=1.599100, reg=0.012028, tri=0.347941
+2021-07-13 20:40:50,078 - Default - INFO - Test Instance Accuracy: 0.882496, Class Accuracy: 0.831942
+2021-07-13 20:40:50,078 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:40:50,129 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 20:40:50,129 - Default - INFO - Epoch elapsed time: 02:32
+2021-07-13 20:40:50,129 - Default - INFO - Epoch 91/250:
+2021-07-13 20:43:03,791 - Default - INFO - Train Instance Accuracy: 0.891840, loss: cls=1.537471, reg=0.012016, tri=0.267283
+2021-07-13 20:43:21,932 - Default - INFO - Test Instance Accuracy: 0.869530, Class Accuracy: 0.824860
+2021-07-13 20:43:21,932 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:43:21,933 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 20:43:21,933 - Default - INFO - Epoch 92/250:
+2021-07-13 20:45:33,161 - Default - INFO - Train Instance Accuracy: 0.888584, loss: cls=1.618502, reg=0.012045, tri=0.374079
+2021-07-13 20:45:51,502 - Default - INFO - Test Instance Accuracy: 0.888169, Class Accuracy: 0.830215
+2021-07-13 20:45:51,503 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:45:51,503 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 20:45:51,503 - Default - INFO - Epoch 93/250:
+2021-07-13 20:48:03,793 - Default - INFO - Train Instance Accuracy: 0.887871, loss: cls=1.661951, reg=0.012094, tri=0.352564
+2021-07-13 20:48:22,153 - Default - INFO - Test Instance Accuracy: 0.886548, Class Accuracy: 0.828919
+2021-07-13 20:48:22,153 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:48:22,153 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:48:22,154 - Default - INFO - Epoch 94/250:
+2021-07-13 20:50:33,986 - Default - INFO - Train Instance Accuracy: 0.891127, loss: cls=1.593713, reg=0.012055, tri=0.339943
+2021-07-13 20:50:52,558 - Default - INFO - Test Instance Accuracy: 0.887358, Class Accuracy: 0.841122
+2021-07-13 20:50:52,559 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:50:52,559 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:50:52,559 - Default - INFO - Epoch 95/250:
+2021-07-13 20:53:03,926 - Default - INFO - Train Instance Accuracy: 0.887261, loss: cls=1.628612, reg=0.012064, tri=0.354441
+2021-07-13 20:53:22,380 - Default - INFO - Test Instance Accuracy: 0.896272, Class Accuracy: 0.835209
+2021-07-13 20:53:22,380 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:53:22,380 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 20:53:22,380 - Default - INFO - Epoch 96/250:
+2021-07-13 20:55:33,929 - Default - INFO - Train Instance Accuracy: 0.893061, loss: cls=1.583240, reg=0.012084, tri=0.363047
+2021-07-13 20:55:52,384 - Default - INFO - Test Instance Accuracy: 0.886953, Class Accuracy: 0.836209
+2021-07-13 20:55:52,385 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:55:52,385 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:55:52,385 - Default - INFO - Epoch 97/250:
+2021-07-13 20:58:04,433 - Default - INFO - Train Instance Accuracy: 0.891840, loss: cls=1.524199, reg=0.012114, tri=0.386934
+2021-07-13 20:58:22,547 - Default - INFO - Test Instance Accuracy: 0.895462, Class Accuracy: 0.842372
+2021-07-13 20:58:22,547 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 20:58:22,548 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 20:58:22,548 - Default - INFO - Epoch 98/250:
+2021-07-13 21:00:34,681 - Default - INFO - Train Instance Accuracy: 0.887973, loss: cls=1.793440, reg=0.012121, tri=0.461103
+2021-07-13 21:00:53,207 - Default - INFO - Test Instance Accuracy: 0.892626, Class Accuracy: 0.838616
+2021-07-13 21:00:53,207 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:00:53,207 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 21:00:53,207 - Default - INFO - Epoch 99/250:
+2021-07-13 21:03:06,640 - Default - INFO - Train Instance Accuracy: 0.892247, loss: cls=1.599938, reg=0.012128, tri=0.320308
+2021-07-13 21:03:24,894 - Default - INFO - Test Instance Accuracy: 0.889789, Class Accuracy: 0.840663
+2021-07-13 21:03:24,895 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:03:24,895 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 21:03:24,895 - Default - INFO - Epoch 100/250:
+2021-07-13 21:05:38,132 - Default - INFO - Train Instance Accuracy: 0.885836, loss: cls=1.893455, reg=0.012140, tri=0.369840
+2021-07-13 21:05:56,563 - Default - INFO - Test Instance Accuracy: 0.892220, Class Accuracy: 0.843593
+2021-07-13 21:05:56,563 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:05:56,612 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 21:05:56,612 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 21:05:56,613 - Default - INFO - Epoch 101/250:
+2021-07-13 21:08:09,246 - Default - INFO - Train Instance Accuracy: 0.888584, loss: cls=1.527528, reg=0.012162, tri=0.314211
+2021-07-13 21:08:27,385 - Default - INFO - Test Instance Accuracy: 0.895462, Class Accuracy: 0.837407
+2021-07-13 21:08:27,386 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:08:27,386 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 21:08:27,386 - Default - INFO - Epoch 102/250:
+2021-07-13 21:10:39,518 - Default - INFO - Train Instance Accuracy: 0.891433, loss: cls=1.777289, reg=0.012099, tri=0.349025
+2021-07-13 21:10:57,619 - Default - INFO - Test Instance Accuracy: 0.889384, Class Accuracy: 0.819413
+2021-07-13 21:10:57,619 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:10:57,619 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 21:10:57,620 - Default - INFO - Epoch 103/250:
+2021-07-13 21:13:09,032 - Default - INFO - Train Instance Accuracy: 0.885022, loss: cls=1.664007, reg=0.012138, tri=0.336408
+2021-07-13 21:13:27,702 - Default - INFO - Test Instance Accuracy: 0.890194, Class Accuracy: 0.838244
+2021-07-13 21:13:27,703 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:13:27,703 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 21:13:27,703 - Default - INFO - Epoch 104/250:
+2021-07-13 21:15:38,619 - Default - INFO - Train Instance Accuracy: 0.892654, loss: cls=1.574150, reg=0.012147, tri=0.397686
+2021-07-13 21:15:56,559 - Default - INFO - Test Instance Accuracy: 0.891005, Class Accuracy: 0.826384
+2021-07-13 21:15:56,560 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:15:56,560 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 21:15:56,560 - Default - INFO - Epoch 105/250:
+2021-07-13 21:18:12,471 - Default - INFO - Train Instance Accuracy: 0.892959, loss: cls=1.514532, reg=0.012114, tri=0.345820
+2021-07-13 21:18:32,106 - Default - INFO - Test Instance Accuracy: 0.895867, Class Accuracy: 0.841116
+2021-07-13 21:18:32,107 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:18:32,107 - Default - INFO - Epoch elapsed time: 02:35
+2021-07-13 21:18:32,107 - Default - INFO - Epoch 106/250:
+2021-07-13 21:20:51,718 - Default - INFO - Train Instance Accuracy: 0.894078, loss: cls=1.510746, reg=0.012150, tri=0.341624
+2021-07-13 21:21:11,002 - Default - INFO - Test Instance Accuracy: 0.881280, Class Accuracy: 0.821797
+2021-07-13 21:21:11,002 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:21:11,003 - Default - INFO - Epoch elapsed time: 02:38
+2021-07-13 21:21:11,003 - Default - INFO - Epoch 107/250:
+2021-07-13 21:23:30,488 - Default - INFO - Train Instance Accuracy: 0.890619, loss: cls=1.569715, reg=0.012193, tri=0.385868
+2021-07-13 21:23:50,363 - Default - INFO - Test Instance Accuracy: 0.884927, Class Accuracy: 0.831052
+2021-07-13 21:23:50,363 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:23:50,363 - Default - INFO - Epoch elapsed time: 02:39
+2021-07-13 21:23:50,364 - Default - INFO - Epoch 108/250:
+2021-07-13 21:26:12,534 - Default - INFO - Train Instance Accuracy: 0.894994, loss: cls=1.562587, reg=0.012188, tri=0.326641
+2021-07-13 21:26:32,373 - Default - INFO - Test Instance Accuracy: 0.894246, Class Accuracy: 0.840977
+2021-07-13 21:26:32,374 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:26:32,374 - Default - INFO - Epoch elapsed time: 02:42
+2021-07-13 21:26:32,374 - Default - INFO - Epoch 109/250:
+2021-07-13 21:28:45,233 - Default - INFO - Train Instance Accuracy: 0.893366, loss: cls=1.546095, reg=0.012108, tri=0.444984
+2021-07-13 21:29:03,587 - Default - INFO - Test Instance Accuracy: 0.893841, Class Accuracy: 0.844506
+2021-07-13 21:29:03,587 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:29:03,587 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 21:29:03,588 - Default - INFO - Epoch 110/250:
+2021-07-13 21:31:16,493 - Default - INFO - Train Instance Accuracy: 0.891840, loss: cls=1.678877, reg=0.012107, tri=0.413249
+2021-07-13 21:31:34,983 - Default - INFO - Test Instance Accuracy: 0.879660, Class Accuracy: 0.826052
+2021-07-13 21:31:34,983 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:31:35,031 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 21:31:35,031 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 21:31:35,031 - Default - INFO - Epoch 111/250:
+2021-07-13 21:33:46,907 - Default - INFO - Train Instance Accuracy: 0.891840, loss: cls=1.577872, reg=0.012207, tri=0.342757
+2021-07-13 21:34:05,175 - Default - INFO - Test Instance Accuracy: 0.882496, Class Accuracy: 0.838953
+2021-07-13 21:34:05,175 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:34:05,175 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 21:34:05,175 - Default - INFO - Epoch 112/250:
+2021-07-13 21:36:17,196 - Default - INFO - Train Instance Accuracy: 0.890924, loss: cls=1.714973, reg=0.012146, tri=0.401413
+2021-07-13 21:36:35,591 - Default - INFO - Test Instance Accuracy: 0.889384, Class Accuracy: 0.836122
+2021-07-13 21:36:35,592 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:36:35,592 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 21:36:35,592 - Default - INFO - Epoch 113/250:
+2021-07-13 21:38:47,190 - Default - INFO - Train Instance Accuracy: 0.888991, loss: cls=1.548062, reg=0.012122, tri=0.336494
+2021-07-13 21:39:05,813 - Default - INFO - Test Instance Accuracy: 0.872366, Class Accuracy: 0.826180
+2021-07-13 21:39:05,813 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:39:05,813 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 21:39:05,814 - Default - INFO - Epoch 114/250:
+2021-07-13 21:41:18,496 - Default - INFO - Train Instance Accuracy: 0.890720, loss: cls=1.529602, reg=0.012189, tri=0.288888
+2021-07-13 21:41:38,289 - Default - INFO - Test Instance Accuracy: 0.893436, Class Accuracy: 0.846157
+2021-07-13 21:41:38,289 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:41:38,289 - Default - INFO - Epoch elapsed time: 02:32
+2021-07-13 21:41:38,290 - Default - INFO - Epoch 115/250:
+2021-07-13 21:43:51,628 - Default - INFO - Train Instance Accuracy: 0.896113, loss: cls=1.458729, reg=0.012219, tri=0.316932
+2021-07-13 21:44:10,135 - Default - INFO - Test Instance Accuracy: 0.882496, Class Accuracy: 0.816663
+2021-07-13 21:44:10,136 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:44:10,136 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 21:44:10,136 - Default - INFO - Epoch 116/250:
+2021-07-13 21:46:23,023 - Default - INFO - Train Instance Accuracy: 0.891331, loss: cls=1.601090, reg=0.012199, tri=0.322534
+2021-07-13 21:46:41,568 - Default - INFO - Test Instance Accuracy: 0.872771, Class Accuracy: 0.812326
+2021-07-13 21:46:41,569 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:46:41,569 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 21:46:41,569 - Default - INFO - Epoch 117/250:
+2021-07-13 21:48:53,153 - Default - INFO - Train Instance Accuracy: 0.894689, loss: cls=1.449395, reg=0.012188, tri=0.343877
+2021-07-13 21:49:11,857 - Default - INFO - Test Instance Accuracy: 0.889384, Class Accuracy: 0.837291
+2021-07-13 21:49:11,857 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:49:11,857 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 21:49:11,858 - Default - INFO - Epoch 118/250:
+2021-07-13 21:51:22,926 - Default - INFO - Train Instance Accuracy: 0.893061, loss: cls=1.567130, reg=0.012162, tri=0.362653
+2021-07-13 21:51:41,203 - Default - INFO - Test Instance Accuracy: 0.892220, Class Accuracy: 0.847703
+2021-07-13 21:51:41,203 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:51:41,203 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 21:51:41,203 - Default - INFO - Epoch 119/250:
+2021-07-13 21:53:54,239 - Default - INFO - Train Instance Accuracy: 0.894790, loss: cls=1.740317, reg=0.012225, tri=0.324519
+2021-07-13 21:54:12,864 - Default - INFO - Test Instance Accuracy: 0.891815, Class Accuracy: 0.837831
+2021-07-13 21:54:12,865 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:54:12,865 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 21:54:12,865 - Default - INFO - Epoch 120/250:
+2021-07-13 21:56:23,391 - Default - INFO - Train Instance Accuracy: 0.892043, loss: cls=1.617646, reg=0.012225, tri=0.346556
+2021-07-13 21:56:41,793 - Default - INFO - Test Instance Accuracy: 0.897083, Class Accuracy: 0.854337
+2021-07-13 21:56:41,793 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:56:41,841 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 21:56:41,841 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 21:56:41,842 - Default - INFO - Epoch 121/250:
+2021-07-13 21:58:54,123 - Default - INFO - Train Instance Accuracy: 0.892755, loss: cls=1.584998, reg=0.012182, tri=0.364942
+2021-07-13 21:59:12,933 - Default - INFO - Test Instance Accuracy: 0.896677, Class Accuracy: 0.860959
+2021-07-13 21:59:12,933 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 21:59:12,933 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 21:59:12,934 - Default - INFO - Epoch 122/250:
+2021-07-13 22:01:24,801 - Default - INFO - Train Instance Accuracy: 0.894078, loss: cls=1.643410, reg=0.012206, tri=0.319707
+2021-07-13 22:01:43,346 - Default - INFO - Test Instance Accuracy: 0.887358, Class Accuracy: 0.832256
+2021-07-13 22:01:43,346 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:01:43,346 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:01:43,346 - Default - INFO - Epoch 123/250:
+2021-07-13 22:03:55,141 - Default - INFO - Train Instance Accuracy: 0.892247, loss: cls=1.536037, reg=0.012210, tri=0.382267
+2021-07-13 22:04:14,081 - Default - INFO - Test Instance Accuracy: 0.878444, Class Accuracy: 0.840384
+2021-07-13 22:04:14,081 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:04:14,081 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:04:14,081 - Default - INFO - Epoch 124/250:
+2021-07-13 22:06:26,038 - Default - INFO - Train Instance Accuracy: 0.890517, loss: cls=1.482601, reg=0.012212, tri=0.409665
+2021-07-13 22:06:44,700 - Default - INFO - Test Instance Accuracy: 0.895057, Class Accuracy: 0.841163
+2021-07-13 22:06:44,701 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:06:44,701 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:06:44,701 - Default - INFO - Epoch 125/250:
+2021-07-13 22:08:55,858 - Default - INFO - Train Instance Accuracy: 0.894180, loss: cls=1.743800, reg=0.012159, tri=0.375932
+2021-07-13 22:09:14,281 - Default - INFO - Test Instance Accuracy: 0.880875, Class Accuracy: 0.842919
+2021-07-13 22:09:14,281 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:09:14,281 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 22:09:14,282 - Default - INFO - Epoch 126/250:
+2021-07-13 22:11:25,277 - Default - INFO - Train Instance Accuracy: 0.895197, loss: cls=1.510607, reg=0.012135, tri=0.354594
+2021-07-13 22:11:43,513 - Default - INFO - Test Instance Accuracy: 0.893436, Class Accuracy: 0.833715
+2021-07-13 22:11:43,513 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:11:43,513 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 22:11:43,514 - Default - INFO - Epoch 127/250:
+2021-07-13 22:13:55,211 - Default - INFO - Train Instance Accuracy: 0.891738, loss: cls=1.529636, reg=0.012161, tri=0.358899
+2021-07-13 22:14:13,753 - Default - INFO - Test Instance Accuracy: 0.890600, Class Accuracy: 0.839878
+2021-07-13 22:14:13,753 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:14:13,753 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:14:13,754 - Default - INFO - Epoch 128/250:
+2021-07-13 22:16:25,053 - Default - INFO - Train Instance Accuracy: 0.897232, loss: cls=1.465544, reg=0.012181, tri=0.364111
+2021-07-13 22:16:43,273 - Default - INFO - Test Instance Accuracy: 0.887763, Class Accuracy: 0.835628
+2021-07-13 22:16:43,273 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:16:43,273 - Default - INFO - Epoch elapsed time: 02:29
+2021-07-13 22:16:43,274 - Default - INFO - Epoch 129/250:
+2021-07-13 22:18:55,573 - Default - INFO - Train Instance Accuracy: 0.892755, loss: cls=1.709797, reg=0.012184, tri=0.321782
+2021-07-13 22:19:13,983 - Default - INFO - Test Instance Accuracy: 0.894246, Class Accuracy: 0.847035
+2021-07-13 22:19:13,983 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:19:13,983 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:19:13,983 - Default - INFO - Epoch 130/250:
+2021-07-13 22:21:26,146 - Default - INFO - Train Instance Accuracy: 0.896317, loss: cls=1.613692, reg=0.012223, tri=0.400926
+2021-07-13 22:21:44,411 - Default - INFO - Test Instance Accuracy: 0.890600, Class Accuracy: 0.856390
+2021-07-13 22:21:44,411 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:21:44,457 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 22:21:44,457 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:21:44,457 - Default - INFO - Epoch 131/250:
+2021-07-13 22:23:56,607 - Default - INFO - Train Instance Accuracy: 0.895299, loss: cls=1.663924, reg=0.012178, tri=0.349574
+2021-07-13 22:24:15,680 - Default - INFO - Test Instance Accuracy: 0.889384, Class Accuracy: 0.832831
+2021-07-13 22:24:15,681 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:24:15,681 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 22:24:15,681 - Default - INFO - Epoch 132/250:
+2021-07-13 22:26:30,187 - Default - INFO - Train Instance Accuracy: 0.896418, loss: cls=1.621791, reg=0.012120, tri=0.341081
+2021-07-13 22:26:48,253 - Default - INFO - Test Instance Accuracy: 0.884927, Class Accuracy: 0.828331
+2021-07-13 22:26:48,253 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:26:48,254 - Default - INFO - Epoch elapsed time: 02:32
+2021-07-13 22:26:48,254 - Default - INFO - Epoch 133/250:
+2021-07-13 22:29:01,372 - Default - INFO - Train Instance Accuracy: 0.892552, loss: cls=1.541453, reg=0.012128, tri=0.380172
+2021-07-13 22:29:19,351 - Default - INFO - Test Instance Accuracy: 0.896677, Class Accuracy: 0.847826
+2021-07-13 22:29:19,352 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:29:19,352 - Default - INFO - Epoch elapsed time: 02:31
+2021-07-13 22:29:19,352 - Default - INFO - Epoch 134/250:
+2021-07-13 22:31:30,008 - Default - INFO - Train Instance Accuracy: 0.896113, loss: cls=1.488622, reg=0.012120, tri=0.294432
+2021-07-13 22:31:48,118 - Default - INFO - Test Instance Accuracy: 0.898703, Class Accuracy: 0.859494
+2021-07-13 22:31:48,119 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:31:48,119 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 22:31:48,119 - Default - INFO - Epoch 135/250:
+2021-07-13 22:33:58,597 - Default - INFO - Train Instance Accuracy: 0.893061, loss: cls=1.557899, reg=0.012175, tri=0.353530
+2021-07-13 22:34:16,851 - Default - INFO - Test Instance Accuracy: 0.889789, Class Accuracy: 0.843924
+2021-07-13 22:34:16,852 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:34:16,852 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 22:34:16,852 - Default - INFO - Epoch 136/250:
+2021-07-13 22:36:28,958 - Default - INFO - Train Instance Accuracy: 0.897843, loss: cls=1.586022, reg=0.012162, tri=0.352111
+2021-07-13 22:36:46,934 - Default - INFO - Test Instance Accuracy: 0.888169, Class Accuracy: 0.834890
+2021-07-13 22:36:46,934 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:36:46,935 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:36:46,935 - Default - INFO - Epoch 137/250:
+2021-07-13 22:38:57,250 - Default - INFO - Train Instance Accuracy: 0.895910, loss: cls=1.637122, reg=0.012134, tri=0.389617
+2021-07-13 22:39:15,410 - Default - INFO - Test Instance Accuracy: 0.886953, Class Accuracy: 0.840750
+2021-07-13 22:39:15,410 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:39:15,411 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 22:39:15,411 - Default - INFO - Epoch 138/250:
+2021-07-13 22:41:27,431 - Default - INFO - Train Instance Accuracy: 0.897131, loss: cls=1.406706, reg=0.012179, tri=0.387363
+2021-07-13 22:41:46,272 - Default - INFO - Test Instance Accuracy: 0.887358, Class Accuracy: 0.827715
+2021-07-13 22:41:46,273 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:41:46,273 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:41:46,273 - Default - INFO - Epoch 139/250:
+2021-07-13 22:44:00,597 - Default - INFO - Train Instance Accuracy: 0.893468, loss: cls=1.657739, reg=0.012176, tri=0.378486
+2021-07-13 22:44:19,602 - Default - INFO - Test Instance Accuracy: 0.894246, Class Accuracy: 0.846785
+2021-07-13 22:44:19,603 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:44:19,603 - Default - INFO - Epoch elapsed time: 02:33
+2021-07-13 22:44:19,603 - Default - INFO - Epoch 140/250:
+2021-07-13 22:46:31,655 - Default - INFO - Train Instance Accuracy: 0.893468, loss: cls=1.637076, reg=0.012131, tri=0.420774
+2021-07-13 22:46:50,064 - Default - INFO - Test Instance Accuracy: 0.891815, Class Accuracy: 0.840291
+2021-07-13 22:46:50,064 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:46:50,114 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 22:46:50,114 - Default - INFO - Epoch elapsed time: 02:30
+2021-07-13 22:46:50,114 - Default - INFO - Epoch 141/250:
+2021-07-13 22:49:03,787 - Default - INFO - Train Instance Accuracy: 0.899674, loss: cls=1.753379, reg=0.012181, tri=0.329809
+2021-07-13 22:49:22,711 - Default - INFO - Test Instance Accuracy: 0.895462, Class Accuracy: 0.845756
+2021-07-13 22:49:22,711 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:49:22,711 - Default - INFO - Epoch elapsed time: 02:32
+2021-07-13 22:49:22,711 - Default - INFO - Epoch 142/250:
+2021-07-13 22:51:36,467 - Default - INFO - Train Instance Accuracy: 0.896927, loss: cls=1.487088, reg=0.012169, tri=0.360886
+2021-07-13 22:51:55,070 - Default - INFO - Test Instance Accuracy: 0.890600, Class Accuracy: 0.837174
+2021-07-13 22:51:55,070 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:51:55,071 - Default - INFO - Epoch elapsed time: 02:32
+2021-07-13 22:51:55,071 - Default - INFO - Epoch 143/250:
+2021-07-13 22:54:05,974 - Default - INFO - Train Instance Accuracy: 0.890822, loss: cls=1.534849, reg=0.012211, tri=0.266475
+2021-07-13 22:54:23,980 - Default - INFO - Test Instance Accuracy: 0.892626, Class Accuracy: 0.846058
+2021-07-13 22:54:23,980 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:54:23,980 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 22:54:23,980 - Default - INFO - Epoch 144/250:
+2021-07-13 22:56:33,681 - Default - INFO - Train Instance Accuracy: 0.896927, loss: cls=1.727389, reg=0.012172, tri=0.335078
+2021-07-13 22:56:51,582 - Default - INFO - Test Instance Accuracy: 0.889384, Class Accuracy: 0.825628
+2021-07-13 22:56:51,582 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:56:51,582 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 22:56:51,582 - Default - INFO - Epoch 145/250:
+2021-07-13 22:59:01,593 - Default - INFO - Train Instance Accuracy: 0.892552, loss: cls=1.670820, reg=0.012199, tri=0.340075
+2021-07-13 22:59:19,782 - Default - INFO - Test Instance Accuracy: 0.881686, Class Accuracy: 0.819500
+2021-07-13 22:59:19,782 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 22:59:19,782 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 22:59:19,783 - Default - INFO - Epoch 146/250:
+2021-07-13 23:01:29,796 - Default - INFO - Train Instance Accuracy: 0.893468, loss: cls=1.468910, reg=0.012253, tri=0.349877
+2021-07-13 23:01:47,790 - Default - INFO - Test Instance Accuracy: 0.891815, Class Accuracy: 0.827953
+2021-07-13 23:01:47,791 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862012
+2021-07-13 23:01:47,791 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:01:47,791 - Default - INFO - Epoch 147/250:
+2021-07-13 23:03:57,652 - Default - INFO - Train Instance Accuracy: 0.896724, loss: cls=1.569322, reg=0.012280, tri=0.339496
+2021-07-13 23:04:15,820 - Default - INFO - Test Instance Accuracy: 0.895057, Class Accuracy: 0.862581
+2021-07-13 23:04:15,821 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:04:15,821 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:04:15,821 - Default - INFO - Epoch 148/250:
+2021-07-13 23:06:25,601 - Default - INFO - Train Instance Accuracy: 0.894892, loss: cls=1.402098, reg=0.012256, tri=0.324767
+2021-07-13 23:06:43,543 - Default - INFO - Test Instance Accuracy: 0.888574, Class Accuracy: 0.846459
+2021-07-13 23:06:43,543 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:06:43,544 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:06:43,544 - Default - INFO - Epoch 149/250:
+2021-07-13 23:08:53,418 - Default - INFO - Train Instance Accuracy: 0.897436, loss: cls=1.523863, reg=0.012256, tri=0.289262
+2021-07-13 23:09:11,283 - Default - INFO - Test Instance Accuracy: 0.889789, Class Accuracy: 0.838965
+2021-07-13 23:09:11,283 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:09:11,283 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:09:11,283 - Default - INFO - Epoch 150/250:
+2021-07-13 23:11:21,149 - Default - INFO - Train Instance Accuracy: 0.895910, loss: cls=1.546105, reg=0.012208, tri=0.281033
+2021-07-13 23:11:39,146 - Default - INFO - Test Instance Accuracy: 0.894652, Class Accuracy: 0.843372
+2021-07-13 23:11:39,147 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:11:39,193 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 23:11:39,194 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:11:39,194 - Default - INFO - Epoch 151/250:
+2021-07-13 23:13:49,208 - Default - INFO - Train Instance Accuracy: 0.890313, loss: cls=1.650677, reg=0.012238, tri=0.342472
+2021-07-13 23:14:07,277 - Default - INFO - Test Instance Accuracy: 0.891410, Class Accuracy: 0.847215
+2021-07-13 23:14:07,277 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:14:07,277 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:14:07,277 - Default - INFO - Epoch 152/250:
+2021-07-13 23:16:17,251 - Default - INFO - Train Instance Accuracy: 0.893976, loss: cls=1.635795, reg=0.012242, tri=0.394395
+2021-07-13 23:16:35,187 - Default - INFO - Test Instance Accuracy: 0.887763, Class Accuracy: 0.842581
+2021-07-13 23:16:35,188 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:16:35,188 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:16:35,188 - Default - INFO - Epoch 153/250:
+2021-07-13 23:18:45,060 - Default - INFO - Train Instance Accuracy: 0.898555, loss: cls=1.687021, reg=0.012200, tri=0.370180
+2021-07-13 23:19:03,270 - Default - INFO - Test Instance Accuracy: 0.884927, Class Accuracy: 0.840517
+2021-07-13 23:19:03,270 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:19:03,270 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:19:03,271 - Default - INFO - Epoch 154/250:
+2021-07-13 23:21:13,196 - Default - INFO - Train Instance Accuracy: 0.895808, loss: cls=1.712203, reg=0.012150, tri=0.363993
+2021-07-13 23:21:31,167 - Default - INFO - Test Instance Accuracy: 0.896272, Class Accuracy: 0.843035
+2021-07-13 23:21:31,167 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:21:31,168 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:21:31,168 - Default - INFO - Epoch 155/250:
+2021-07-13 23:23:41,167 - Default - INFO - Train Instance Accuracy: 0.897334, loss: cls=1.458332, reg=0.012163, tri=0.368504
+2021-07-13 23:23:59,090 - Default - INFO - Test Instance Accuracy: 0.881280, Class Accuracy: 0.832122
+2021-07-13 23:23:59,090 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:23:59,091 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:23:59,091 - Default - INFO - Epoch 156/250:
+2021-07-13 23:26:08,889 - Default - INFO - Train Instance Accuracy: 0.899166, loss: cls=1.644085, reg=0.012119, tri=0.463157
+2021-07-13 23:26:26,922 - Default - INFO - Test Instance Accuracy: 0.882091, Class Accuracy: 0.842122
+2021-07-13 23:26:26,922 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:26:26,922 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:26:26,922 - Default - INFO - Epoch 157/250:
+2021-07-13 23:28:36,929 - Default - INFO - Train Instance Accuracy: 0.892450, loss: cls=1.644696, reg=0.012089, tri=0.318731
+2021-07-13 23:28:54,811 - Default - INFO - Test Instance Accuracy: 0.878849, Class Accuracy: 0.812517
+2021-07-13 23:28:54,811 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:28:54,811 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:28:54,811 - Default - INFO - Epoch 158/250:
+2021-07-13 23:31:04,807 - Default - INFO - Train Instance Accuracy: 0.895910, loss: cls=1.450406, reg=0.012129, tri=0.276747
+2021-07-13 23:31:22,703 - Default - INFO - Test Instance Accuracy: 0.875608, Class Accuracy: 0.829012
+2021-07-13 23:31:22,703 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:31:22,703 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:31:22,704 - Default - INFO - Epoch 159/250:
+2021-07-13 23:33:32,648 - Default - INFO - Train Instance Accuracy: 0.895808, loss: cls=1.576224, reg=0.012115, tri=0.357768
+2021-07-13 23:33:50,761 - Default - INFO - Test Instance Accuracy: 0.899109, Class Accuracy: 0.856831
+2021-07-13 23:33:50,761 - Default - INFO - Best Instance Accuracy: 0.900324, Class Accuracy: 0.862581
+2021-07-13 23:33:50,761 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:33:50,762 - Default - INFO - Epoch 160/250:
+2021-07-13 23:36:00,872 - Default - INFO - Train Instance Accuracy: 0.896724, loss: cls=1.437644, reg=0.012134, tri=0.366688
+2021-07-13 23:36:18,891 - Default - INFO - Test Instance Accuracy: 0.901540, Class Accuracy: 0.851953
+2021-07-13 23:36:18,941 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 23:36:18,989 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 23:36:18,989 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:36:19,034 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 23:36:19,034 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:36:19,035 - Default - INFO - Epoch 161/250:
+2021-07-13 23:38:28,964 - Default - INFO - Train Instance Accuracy: 0.891941, loss: cls=1.681401, reg=0.012193, tri=0.325822
+2021-07-13 23:38:47,052 - Default - INFO - Test Instance Accuracy: 0.875608, Class Accuracy: 0.817709
+2021-07-13 23:38:47,052 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:38:47,052 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:38:47,052 - Default - INFO - Epoch 162/250:
+2021-07-13 23:40:57,427 - Default - INFO - Train Instance Accuracy: 0.895401, loss: cls=1.529453, reg=0.012198, tri=0.335996
+2021-07-13 23:41:15,506 - Default - INFO - Test Instance Accuracy: 0.887763, Class Accuracy: 0.847680
+2021-07-13 23:41:15,507 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:41:15,507 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:41:15,507 - Default - INFO - Epoch 163/250:
+2021-07-13 23:43:25,453 - Default - INFO - Train Instance Accuracy: 0.894180, loss: cls=1.691103, reg=0.012209, tri=0.323855
+2021-07-13 23:43:43,484 - Default - INFO - Test Instance Accuracy: 0.892626, Class Accuracy: 0.836424
+2021-07-13 23:43:43,485 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:43:43,485 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:43:43,485 - Default - INFO - Epoch 164/250:
+2021-07-13 23:45:53,715 - Default - INFO - Train Instance Accuracy: 0.896011, loss: cls=1.559178, reg=0.012193, tri=0.338414
+2021-07-13 23:46:11,689 - Default - INFO - Test Instance Accuracy: 0.901540, Class Accuracy: 0.844744
+2021-07-13 23:46:11,735 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-13 23:46:11,784 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-13 23:46:11,784 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:46:11,784 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:46:11,785 - Default - INFO - Epoch 165/250:
+2021-07-13 23:48:21,924 - Default - INFO - Train Instance Accuracy: 0.892552, loss: cls=1.543135, reg=0.012216, tri=0.345375
+2021-07-13 23:48:39,881 - Default - INFO - Test Instance Accuracy: 0.896272, Class Accuracy: 0.837581
+2021-07-13 23:48:39,882 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:48:39,882 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:48:39,882 - Default - INFO - Epoch 166/250:
+2021-07-13 23:50:49,750 - Default - INFO - Train Instance Accuracy: 0.893976, loss: cls=1.452483, reg=0.012214, tri=0.294977
+2021-07-13 23:51:07,717 - Default - INFO - Test Instance Accuracy: 0.892626, Class Accuracy: 0.848047
+2021-07-13 23:51:07,717 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:51:07,718 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-13 23:51:07,718 - Default - INFO - Epoch 167/250:
+2021-07-13 23:53:17,889 - Default - INFO - Train Instance Accuracy: 0.899471, loss: cls=1.700620, reg=0.012134, tri=0.388542
+2021-07-13 23:53:36,171 - Default - INFO - Test Instance Accuracy: 0.897488, Class Accuracy: 0.842913
+2021-07-13 23:53:36,172 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:53:36,172 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:53:36,172 - Default - INFO - Epoch 168/250:
+2021-07-13 23:55:46,408 - Default - INFO - Train Instance Accuracy: 0.891229, loss: cls=1.597378, reg=0.012159, tri=0.295511
+2021-07-13 23:56:04,396 - Default - INFO - Test Instance Accuracy: 0.897083, Class Accuracy: 0.844384
+2021-07-13 23:56:04,397 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:56:04,397 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:56:04,397 - Default - INFO - Epoch 169/250:
+2021-07-13 23:58:14,274 - Default - INFO - Train Instance Accuracy: 0.897436, loss: cls=1.640652, reg=0.012215, tri=0.378379
+2021-07-13 23:58:32,470 - Default - INFO - Test Instance Accuracy: 0.897488, Class Accuracy: 0.844541
+2021-07-13 23:58:32,470 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-13 23:58:32,471 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-13 23:58:32,471 - Default - INFO - Epoch 170/250:
+2021-07-14 00:00:42,466 - Default - INFO - Train Instance Accuracy: 0.897538, loss: cls=1.538472, reg=0.012252, tri=0.357054
+2021-07-14 00:01:00,612 - Default - INFO - Test Instance Accuracy: 0.898703, Class Accuracy: 0.844494
+2021-07-14 00:01:00,612 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:01:00,658 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 00:01:00,659 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:01:00,659 - Default - INFO - Epoch 171/250:
+2021-07-14 00:03:10,678 - Default - INFO - Train Instance Accuracy: 0.896825, loss: cls=1.609403, reg=0.012203, tri=0.309585
+2021-07-14 00:03:28,690 - Default - INFO - Test Instance Accuracy: 0.891815, Class Accuracy: 0.844669
+2021-07-14 00:03:28,690 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:03:28,690 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:03:28,691 - Default - INFO - Epoch 172/250:
+2021-07-14 00:05:38,781 - Default - INFO - Train Instance Accuracy: 0.890822, loss: cls=1.566871, reg=0.012201, tri=0.355276
+2021-07-14 00:05:56,812 - Default - INFO - Test Instance Accuracy: 0.896272, Class Accuracy: 0.857256
+2021-07-14 00:05:56,812 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:05:56,812 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:05:56,812 - Default - INFO - Epoch 173/250:
+2021-07-14 00:08:06,643 - Default - INFO - Train Instance Accuracy: 0.895706, loss: cls=1.526282, reg=0.012199, tri=0.438778
+2021-07-14 00:08:24,657 - Default - INFO - Test Instance Accuracy: 0.893436, Class Accuracy: 0.837756
+2021-07-14 00:08:24,657 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:08:24,658 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 00:08:24,658 - Default - INFO - Epoch 174/250:
+2021-07-14 00:10:34,600 - Default - INFO - Train Instance Accuracy: 0.895503, loss: cls=1.853920, reg=0.012224, tri=0.419533
+2021-07-14 00:10:52,652 - Default - INFO - Test Instance Accuracy: 0.899514, Class Accuracy: 0.849453
+2021-07-14 00:10:52,652 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:10:52,652 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 00:10:52,653 - Default - INFO - Epoch 175/250:
+2021-07-14 00:13:02,481 - Default - INFO - Train Instance Accuracy: 0.898046, loss: cls=1.465796, reg=0.012211, tri=0.293061
+2021-07-14 00:13:20,479 - Default - INFO - Test Instance Accuracy: 0.893841, Class Accuracy: 0.843924
+2021-07-14 00:13:20,479 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:13:20,479 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 00:13:20,480 - Default - INFO - Epoch 176/250:
+2021-07-14 00:15:30,659 - Default - INFO - Train Instance Accuracy: 0.896317, loss: cls=1.529089, reg=0.012238, tri=0.324606
+2021-07-14 00:15:48,621 - Default - INFO - Test Instance Accuracy: 0.888574, Class Accuracy: 0.830703
+2021-07-14 00:15:48,621 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:15:48,621 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:15:48,621 - Default - INFO - Epoch 177/250:
+2021-07-14 00:17:58,597 - Default - INFO - Train Instance Accuracy: 0.897131, loss: cls=1.632433, reg=0.012266, tri=0.369624
+2021-07-14 00:18:16,728 - Default - INFO - Test Instance Accuracy: 0.885332, Class Accuracy: 0.833459
+2021-07-14 00:18:16,728 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:18:16,728 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:18:16,728 - Default - INFO - Epoch 178/250:
+2021-07-14 00:20:26,714 - Default - INFO - Train Instance Accuracy: 0.894282, loss: cls=1.692267, reg=0.012275, tri=0.375273
+2021-07-14 00:20:44,712 - Default - INFO - Test Instance Accuracy: 0.885737, Class Accuracy: 0.827291
+2021-07-14 00:20:44,712 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:20:44,712 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 00:20:44,712 - Default - INFO - Epoch 179/250:
+2021-07-14 00:22:54,863 - Default - INFO - Train Instance Accuracy: 0.897334, loss: cls=1.508400, reg=0.012250, tri=0.356504
+2021-07-14 00:23:12,779 - Default - INFO - Test Instance Accuracy: 0.895057, Class Accuracy: 0.837169
+2021-07-14 00:23:12,780 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:23:12,780 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:23:12,780 - Default - INFO - Epoch 180/250:
+2021-07-14 00:25:22,713 - Default - INFO - Train Instance Accuracy: 0.898759, loss: cls=1.603348, reg=0.012223, tri=0.376471
+2021-07-14 00:25:40,761 - Default - INFO - Test Instance Accuracy: 0.886548, Class Accuracy: 0.834593
+2021-07-14 00:25:40,761 - Default - INFO - Best Instance Accuracy: 0.901540, Class Accuracy: 0.862581
+2021-07-14 00:25:40,810 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 00:25:40,810 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:25:40,810 - Default - INFO - Epoch 181/250:
+2021-07-14 00:27:50,961 - Default - INFO - Train Instance Accuracy: 0.892552, loss: cls=1.470471, reg=0.012219, tri=0.363061
+2021-07-14 00:28:08,961 - Default - INFO - Test Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:28:09,009 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-14 00:28:09,057 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 00:28:09,058 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:28:09,058 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:28:09,058 - Default - INFO - Epoch 182/250:
+2021-07-14 00:30:19,231 - Default - INFO - Train Instance Accuracy: 0.892450, loss: cls=1.605526, reg=0.012279, tri=0.326778
+2021-07-14 00:30:37,197 - Default - INFO - Test Instance Accuracy: 0.893436, Class Accuracy: 0.849750
+2021-07-14 00:30:37,197 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:30:37,197 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:30:37,198 - Default - INFO - Epoch 183/250:
+2021-07-14 00:32:47,165 - Default - INFO - Train Instance Accuracy: 0.897334, loss: cls=1.566592, reg=0.012302, tri=0.312558
+2021-07-14 00:33:05,175 - Default - INFO - Test Instance Accuracy: 0.903160, Class Accuracy: 0.853750
+2021-07-14 00:33:05,175 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:33:05,175 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 00:33:05,175 - Default - INFO - Epoch 184/250:
+2021-07-14 00:35:15,163 - Default - INFO - Train Instance Accuracy: 0.899166, loss: cls=1.459523, reg=0.012279, tri=0.321807
+2021-07-14 00:35:33,254 - Default - INFO - Test Instance Accuracy: 0.885332, Class Accuracy: 0.834663
+2021-07-14 00:35:33,255 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:35:33,255 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:35:33,255 - Default - INFO - Epoch 185/250:
+2021-07-14 00:37:43,200 - Default - INFO - Train Instance Accuracy: 0.896011, loss: cls=1.653472, reg=0.012201, tri=0.367789
+2021-07-14 00:38:01,240 - Default - INFO - Test Instance Accuracy: 0.889384, Class Accuracy: 0.843919
+2021-07-14 00:38:01,240 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:38:01,240 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 00:38:01,241 - Default - INFO - Epoch 186/250:
+2021-07-14 00:40:12,058 - Default - INFO - Train Instance Accuracy: 0.898046, loss: cls=1.459652, reg=0.012246, tri=0.351608
+2021-07-14 00:40:30,140 - Default - INFO - Test Instance Accuracy: 0.900729, Class Accuracy: 0.862448
+2021-07-14 00:40:30,140 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:40:30,140 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:40:30,141 - Default - INFO - Epoch 187/250:
+2021-07-14 00:42:40,315 - Default - INFO - Train Instance Accuracy: 0.896622, loss: cls=1.742097, reg=0.012242, tri=0.432609
+2021-07-14 00:42:58,354 - Default - INFO - Test Instance Accuracy: 0.884927, Class Accuracy: 0.850331
+2021-07-14 00:42:58,355 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:42:58,355 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:42:58,355 - Default - INFO - Epoch 188/250:
+2021-07-14 00:45:08,554 - Default - INFO - Train Instance Accuracy: 0.897843, loss: cls=1.494977, reg=0.012248, tri=0.326721
+2021-07-14 00:45:26,655 - Default - INFO - Test Instance Accuracy: 0.894652, Class Accuracy: 0.848041
+2021-07-14 00:45:26,655 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:45:26,655 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:45:26,656 - Default - INFO - Epoch 189/250:
+2021-07-14 00:47:36,600 - Default - INFO - Train Instance Accuracy: 0.899573, loss: cls=1.688569, reg=0.012244, tri=0.402594
+2021-07-14 00:47:54,625 - Default - INFO - Test Instance Accuracy: 0.897488, Class Accuracy: 0.832506
+2021-07-14 00:47:54,625 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:47:54,626 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 00:47:54,626 - Default - INFO - Epoch 190/250:
+2021-07-14 00:50:04,593 - Default - INFO - Train Instance Accuracy: 0.897232, loss: cls=1.505346, reg=0.012279, tri=0.342381
+2021-07-14 00:50:22,792 - Default - INFO - Test Instance Accuracy: 0.897083, Class Accuracy: 0.849860
+2021-07-14 00:50:22,792 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:50:22,841 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 00:50:22,842 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:50:22,842 - Default - INFO - Epoch 191/250:
+2021-07-14 00:52:32,911 - Default - INFO - Train Instance Accuracy: 0.896317, loss: cls=1.413633, reg=0.012293, tri=0.332197
+2021-07-14 00:52:50,953 - Default - INFO - Test Instance Accuracy: 0.888169, Class Accuracy: 0.830203
+2021-07-14 00:52:50,953 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:52:50,953 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:52:50,953 - Default - INFO - Epoch 192/250:
+2021-07-14 00:55:00,979 - Default - INFO - Train Instance Accuracy: 0.895706, loss: cls=1.643045, reg=0.012270, tri=0.393509
+2021-07-14 00:55:18,976 - Default - INFO - Test Instance Accuracy: 0.884117, Class Accuracy: 0.839622
+2021-07-14 00:55:18,976 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:55:18,976 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:55:18,977 - Default - INFO - Epoch 193/250:
+2021-07-14 00:57:29,137 - Default - INFO - Train Instance Accuracy: 0.895096, loss: cls=1.600608, reg=0.012268, tri=0.308492
+2021-07-14 00:57:47,326 - Default - INFO - Test Instance Accuracy: 0.893436, Class Accuracy: 0.839390
+2021-07-14 00:57:47,326 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 00:57:47,326 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 00:57:47,327 - Default - INFO - Epoch 194/250:
+2021-07-14 00:59:57,423 - Default - INFO - Train Instance Accuracy: 0.895299, loss: cls=1.501124, reg=0.012315, tri=0.339875
+2021-07-14 01:00:15,409 - Default - INFO - Test Instance Accuracy: 0.881686, Class Accuracy: 0.847221
+2021-07-14 01:00:15,409 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:00:15,409 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:00:15,409 - Default - INFO - Epoch 195/250:
+2021-07-14 01:02:25,429 - Default - INFO - Train Instance Accuracy: 0.896215, loss: cls=1.433237, reg=0.012316, tri=0.337149
+2021-07-14 01:02:43,419 - Default - INFO - Test Instance Accuracy: 0.891815, Class Accuracy: 0.828291
+2021-07-14 01:02:43,420 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:02:43,420 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:02:43,420 - Default - INFO - Epoch 196/250:
+2021-07-14 01:04:53,534 - Default - INFO - Train Instance Accuracy: 0.895808, loss: cls=1.461556, reg=0.012297, tri=0.295092
+2021-07-14 01:05:11,572 - Default - INFO - Test Instance Accuracy: 0.896272, Class Accuracy: 0.853744
+2021-07-14 01:05:11,572 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:05:11,572 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:05:11,573 - Default - INFO - Epoch 197/250:
+2021-07-14 01:07:21,735 - Default - INFO - Train Instance Accuracy: 0.901709, loss: cls=1.554841, reg=0.012267, tri=0.329922
+2021-07-14 01:07:39,737 - Default - INFO - Test Instance Accuracy: 0.891005, Class Accuracy: 0.847285
+2021-07-14 01:07:39,737 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:07:39,738 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:07:39,738 - Default - INFO - Epoch 198/250:
+2021-07-14 01:09:49,804 - Default - INFO - Train Instance Accuracy: 0.897334, loss: cls=1.445226, reg=0.012201, tri=0.317723
+2021-07-14 01:10:07,840 - Default - INFO - Test Instance Accuracy: 0.891005, Class Accuracy: 0.838541
+2021-07-14 01:10:07,841 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:10:07,841 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:10:07,841 - Default - INFO - Epoch 199/250:
+2021-07-14 01:12:17,796 - Default - INFO - Train Instance Accuracy: 0.896215, loss: cls=1.515140, reg=0.012201, tri=0.361328
+2021-07-14 01:12:35,722 - Default - INFO - Test Instance Accuracy: 0.888979, Class Accuracy: 0.837843
+2021-07-14 01:12:35,722 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:12:35,722 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 01:12:35,722 - Default - INFO - Epoch 200/250:
+2021-07-14 01:14:45,707 - Default - INFO - Train Instance Accuracy: 0.892654, loss: cls=1.608896, reg=0.012274, tri=0.385220
+2021-07-14 01:15:03,737 - Default - INFO - Test Instance Accuracy: 0.888169, Class Accuracy: 0.842494
+2021-07-14 01:15:03,738 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:15:03,785 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 01:15:03,785 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:15:03,785 - Default - INFO - Epoch 201/250:
+2021-07-14 01:17:14,069 - Default - INFO - Train Instance Accuracy: 0.895503, loss: cls=1.581191, reg=0.012310, tri=0.429809
+2021-07-14 01:17:32,202 - Default - INFO - Test Instance Accuracy: 0.893031, Class Accuracy: 0.839035
+2021-07-14 01:17:32,203 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:17:32,203 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:17:32,203 - Default - INFO - Epoch 202/250:
+2021-07-14 01:19:42,262 - Default - INFO - Train Instance Accuracy: 0.897843, loss: cls=1.554964, reg=0.012345, tri=0.385388
+2021-07-14 01:20:00,363 - Default - INFO - Test Instance Accuracy: 0.890600, Class Accuracy: 0.846965
+2021-07-14 01:20:00,364 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:20:00,364 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:20:00,364 - Default - INFO - Epoch 203/250:
+2021-07-14 01:22:10,513 - Default - INFO - Train Instance Accuracy: 0.899064, loss: cls=1.481728, reg=0.012351, tri=0.367350
+2021-07-14 01:22:28,678 - Default - INFO - Test Instance Accuracy: 0.899109, Class Accuracy: 0.850738
+2021-07-14 01:22:28,678 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:22:28,678 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:22:28,679 - Default - INFO - Epoch 204/250:
+2021-07-14 01:24:38,671 - Default - INFO - Train Instance Accuracy: 0.897232, loss: cls=1.474229, reg=0.012291, tri=0.387487
+2021-07-14 01:24:56,659 - Default - INFO - Test Instance Accuracy: 0.898298, Class Accuracy: 0.852163
+2021-07-14 01:24:56,660 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:24:56,660 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 01:24:56,660 - Default - INFO - Epoch 205/250:
+2021-07-14 01:27:06,686 - Default - INFO - Train Instance Accuracy: 0.892755, loss: cls=1.606962, reg=0.012247, tri=0.366323
+2021-07-14 01:27:24,712 - Default - INFO - Test Instance Accuracy: 0.891410, Class Accuracy: 0.851552
+2021-07-14 01:27:24,713 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:27:24,713 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:27:24,713 - Default - INFO - Epoch 206/250:
+2021-07-14 01:29:34,992 - Default - INFO - Train Instance Accuracy: 0.900183, loss: cls=1.575671, reg=0.012253, tri=0.306516
+2021-07-14 01:29:52,966 - Default - INFO - Test Instance Accuracy: 0.886143, Class Accuracy: 0.832971
+2021-07-14 01:29:52,967 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:29:52,967 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:29:52,967 - Default - INFO - Epoch 207/250:
+2021-07-14 01:32:03,282 - Default - INFO - Train Instance Accuracy: 0.899267, loss: cls=1.621729, reg=0.012184, tri=0.352665
+2021-07-14 01:32:21,241 - Default - INFO - Test Instance Accuracy: 0.897488, Class Accuracy: 0.854494
+2021-07-14 01:32:21,241 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:32:21,241 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:32:21,241 - Default - INFO - Epoch 208/250:
+2021-07-14 01:34:31,426 - Default - INFO - Train Instance Accuracy: 0.898352, loss: cls=1.622292, reg=0.012236, tri=0.298894
+2021-07-14 01:34:49,474 - Default - INFO - Test Instance Accuracy: 0.888574, Class Accuracy: 0.832831
+2021-07-14 01:34:49,474 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:34:49,474 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:34:49,475 - Default - INFO - Epoch 209/250:
+2021-07-14 01:36:59,664 - Default - INFO - Train Instance Accuracy: 0.893773, loss: cls=1.588405, reg=0.012250, tri=0.378316
+2021-07-14 01:37:17,627 - Default - INFO - Test Instance Accuracy: 0.884522, Class Accuracy: 0.840209
+2021-07-14 01:37:17,628 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:37:17,628 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:37:17,628 - Default - INFO - Epoch 210/250:
+2021-07-14 01:39:27,694 - Default - INFO - Train Instance Accuracy: 0.896520, loss: cls=1.591486, reg=0.012219, tri=0.407245
+2021-07-14 01:39:45,727 - Default - INFO - Test Instance Accuracy: 0.876013, Class Accuracy: 0.822988
+2021-07-14 01:39:45,727 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:39:45,775 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 01:39:45,776 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:39:45,776 - Default - INFO - Epoch 211/250:
+2021-07-14 01:41:55,635 - Default - INFO - Train Instance Accuracy: 0.897232, loss: cls=1.617590, reg=0.012223, tri=0.418908
+2021-07-14 01:42:13,802 - Default - INFO - Test Instance Accuracy: 0.892626, Class Accuracy: 0.840738
+2021-07-14 01:42:13,802 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:42:13,802 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:42:13,802 - Default - INFO - Epoch 212/250:
+2021-07-14 01:44:23,914 - Default - INFO - Train Instance Accuracy: 0.900590, loss: cls=1.554489, reg=0.012159, tri=0.308004
+2021-07-14 01:44:41,928 - Default - INFO - Test Instance Accuracy: 0.888169, Class Accuracy: 0.829291
+2021-07-14 01:44:41,929 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:44:41,929 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:44:41,929 - Default - INFO - Epoch 213/250:
+2021-07-14 01:46:51,922 - Default - INFO - Train Instance Accuracy: 0.898555, loss: cls=1.447555, reg=0.012165, tri=0.363382
+2021-07-14 01:47:10,127 - Default - INFO - Test Instance Accuracy: 0.896677, Class Accuracy: 0.843209
+2021-07-14 01:47:10,127 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:47:10,127 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:47:10,127 - Default - INFO - Epoch 214/250:
+2021-07-14 01:49:20,326 - Default - INFO - Train Instance Accuracy: 0.891840, loss: cls=1.404291, reg=0.012177, tri=0.297585
+2021-07-14 01:49:38,343 - Default - INFO - Test Instance Accuracy: 0.891815, Class Accuracy: 0.848041
+2021-07-14 01:49:38,343 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:49:38,343 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:49:38,344 - Default - INFO - Epoch 215/250:
+2021-07-14 01:51:48,461 - Default - INFO - Train Instance Accuracy: 0.893264, loss: cls=1.616496, reg=0.012235, tri=0.346331
+2021-07-14 01:52:06,434 - Default - INFO - Test Instance Accuracy: 0.896272, Class Accuracy: 0.850459
+2021-07-14 01:52:06,434 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:52:06,435 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:52:06,435 - Default - INFO - Epoch 216/250:
+2021-07-14 01:54:16,497 - Default - INFO - Train Instance Accuracy: 0.898962, loss: cls=1.470949, reg=0.012246, tri=0.314008
+2021-07-14 01:54:34,637 - Default - INFO - Test Instance Accuracy: 0.895057, Class Accuracy: 0.838413
+2021-07-14 01:54:34,637 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:54:34,638 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:54:34,638 - Default - INFO - Epoch 217/250:
+2021-07-14 01:56:44,767 - Default - INFO - Train Instance Accuracy: 0.897945, loss: cls=1.667196, reg=0.012227, tri=0.397371
+2021-07-14 01:57:02,788 - Default - INFO - Test Instance Accuracy: 0.893436, Class Accuracy: 0.835715
+2021-07-14 01:57:02,789 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:57:02,789 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:57:02,789 - Default - INFO - Epoch 218/250:
+2021-07-14 01:59:13,035 - Default - INFO - Train Instance Accuracy: 0.897945, loss: cls=1.561501, reg=0.012210, tri=0.394653
+2021-07-14 01:59:31,137 - Default - INFO - Test Instance Accuracy: 0.901945, Class Accuracy: 0.850372
+2021-07-14 01:59:31,138 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 01:59:31,138 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 01:59:31,138 - Default - INFO - Epoch 219/250:
+2021-07-14 02:01:41,437 - Default - INFO - Train Instance Accuracy: 0.895910, loss: cls=1.567832, reg=0.012225, tri=0.349903
+2021-07-14 02:01:59,619 - Default - INFO - Test Instance Accuracy: 0.894652, Class Accuracy: 0.843994
+2021-07-14 02:01:59,619 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:01:59,619 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:01:59,620 - Default - INFO - Epoch 220/250:
+2021-07-14 02:04:09,787 - Default - INFO - Train Instance Accuracy: 0.900285, loss: cls=1.565311, reg=0.012178, tri=0.344380
+2021-07-14 02:04:27,877 - Default - INFO - Test Instance Accuracy: 0.888169, Class Accuracy: 0.841297
+2021-07-14 02:04:27,877 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:04:27,926 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 02:04:27,927 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:04:27,927 - Default - INFO - Epoch 221/250:
+2021-07-14 02:06:38,093 - Default - INFO - Train Instance Accuracy: 0.897945, loss: cls=1.684299, reg=0.012197, tri=0.354494
+2021-07-14 02:06:56,175 - Default - INFO - Test Instance Accuracy: 0.884522, Class Accuracy: 0.834750
+2021-07-14 02:06:56,175 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:06:56,175 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:06:56,176 - Default - INFO - Epoch 222/250:
+2021-07-14 02:09:06,403 - Default - INFO - Train Instance Accuracy: 0.897436, loss: cls=1.661361, reg=0.012201, tri=0.382970
+2021-07-14 02:09:24,484 - Default - INFO - Test Instance Accuracy: 0.892626, Class Accuracy: 0.854663
+2021-07-14 02:09:24,484 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:09:24,484 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:09:24,484 - Default - INFO - Epoch 223/250:
+2021-07-14 02:11:34,396 - Default - INFO - Train Instance Accuracy: 0.898962, loss: cls=1.488806, reg=0.012229, tri=0.405127
+2021-07-14 02:11:52,412 - Default - INFO - Test Instance Accuracy: 0.894652, Class Accuracy: 0.856366
+2021-07-14 02:11:52,413 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:11:52,413 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 02:11:52,413 - Default - INFO - Epoch 224/250:
+2021-07-14 02:14:02,667 - Default - INFO - Train Instance Accuracy: 0.897232, loss: cls=1.559253, reg=0.012233, tri=0.367703
+2021-07-14 02:14:20,872 - Default - INFO - Test Instance Accuracy: 0.883712, Class Accuracy: 0.842913
+2021-07-14 02:14:20,872 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:14:20,872 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:14:20,872 - Default - INFO - Epoch 225/250:
+2021-07-14 02:16:30,971 - Default - INFO - Train Instance Accuracy: 0.891229, loss: cls=1.494131, reg=0.012236, tri=0.403038
+2021-07-14 02:16:49,017 - Default - INFO - Test Instance Accuracy: 0.895057, Class Accuracy: 0.857459
+2021-07-14 02:16:49,017 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:16:49,017 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:16:49,018 - Default - INFO - Epoch 226/250:
+2021-07-14 02:18:59,152 - Default - INFO - Train Instance Accuracy: 0.897436, loss: cls=1.682763, reg=0.012267, tri=0.378213
+2021-07-14 02:19:17,252 - Default - INFO - Test Instance Accuracy: 0.897893, Class Accuracy: 0.856297
+2021-07-14 02:19:17,252 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:19:17,252 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:19:17,252 - Default - INFO - Epoch 227/250:
+2021-07-14 02:21:27,340 - Default - INFO - Train Instance Accuracy: 0.896113, loss: cls=1.663918, reg=0.012254, tri=0.344562
+2021-07-14 02:21:45,372 - Default - INFO - Test Instance Accuracy: 0.891410, Class Accuracy: 0.841006
+2021-07-14 02:21:45,372 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:21:45,372 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:21:45,372 - Default - INFO - Epoch 228/250:
+2021-07-14 02:23:55,386 - Default - INFO - Train Instance Accuracy: 0.899573, loss: cls=1.713853, reg=0.012291, tri=0.371091
+2021-07-14 02:24:13,370 - Default - INFO - Test Instance Accuracy: 0.903566, Class Accuracy: 0.849913
+2021-07-14 02:24:13,416 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\best_model.t7
+2021-07-14 02:24:13,465 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 02:24:13,465 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:24:13,465 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:24:13,466 - Default - INFO - Epoch 229/250:
+2021-07-14 02:26:23,502 - Default - INFO - Train Instance Accuracy: 0.901302, loss: cls=1.544907, reg=0.012174, tri=0.325858
+2021-07-14 02:26:41,509 - Default - INFO - Test Instance Accuracy: 0.898298, Class Accuracy: 0.841035
+2021-07-14 02:26:41,509 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:26:41,509 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:26:41,510 - Default - INFO - Epoch 230/250:
+2021-07-14 02:28:51,696 - Default - INFO - Train Instance Accuracy: 0.897843, loss: cls=1.623172, reg=0.012188, tri=0.387986
+2021-07-14 02:29:09,789 - Default - INFO - Test Instance Accuracy: 0.897893, Class Accuracy: 0.855331
+2021-07-14 02:29:09,789 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:29:09,835 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 02:29:09,835 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:29:09,835 - Default - INFO - Epoch 231/250:
+2021-07-14 02:31:20,023 - Default - INFO - Train Instance Accuracy: 0.896215, loss: cls=1.467784, reg=0.012177, tri=0.325005
+2021-07-14 02:31:38,071 - Default - INFO - Test Instance Accuracy: 0.889789, Class Accuracy: 0.839994
+2021-07-14 02:31:38,071 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:31:38,071 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:31:38,071 - Default - INFO - Epoch 232/250:
+2021-07-14 02:33:48,059 - Default - INFO - Train Instance Accuracy: 0.898046, loss: cls=1.558068, reg=0.012143, tri=0.286075
+2021-07-14 02:34:06,161 - Default - INFO - Test Instance Accuracy: 0.900324, Class Accuracy: 0.850459
+2021-07-14 02:34:06,162 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:34:06,162 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:34:06,162 - Default - INFO - Epoch 233/250:
+2021-07-14 02:36:16,217 - Default - INFO - Train Instance Accuracy: 0.897639, loss: cls=1.534436, reg=0.012189, tri=0.335407
+2021-07-14 02:36:34,216 - Default - INFO - Test Instance Accuracy: 0.884117, Class Accuracy: 0.840878
+2021-07-14 02:36:34,217 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:36:34,217 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:36:34,217 - Default - INFO - Epoch 234/250:
+2021-07-14 02:38:44,364 - Default - INFO - Train Instance Accuracy: 0.897334, loss: cls=1.477656, reg=0.012250, tri=0.323187
+2021-07-14 02:39:02,502 - Default - INFO - Test Instance Accuracy: 0.900729, Class Accuracy: 0.844087
+2021-07-14 02:39:02,503 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:39:02,503 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:39:02,503 - Default - INFO - Epoch 235/250:
+2021-07-14 02:41:12,517 - Default - INFO - Train Instance Accuracy: 0.897945, loss: cls=1.407044, reg=0.012276, tri=0.366333
+2021-07-14 02:41:30,531 - Default - INFO - Test Instance Accuracy: 0.900729, Class Accuracy: 0.847541
+2021-07-14 02:41:30,532 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:41:30,532 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:41:30,532 - Default - INFO - Epoch 236/250:
+2021-07-14 02:43:40,931 - Default - INFO - Train Instance Accuracy: 0.899674, loss: cls=1.534291, reg=0.012231, tri=0.335406
+2021-07-14 02:43:59,023 - Default - INFO - Test Instance Accuracy: 0.897488, Class Accuracy: 0.847831
+2021-07-14 02:43:59,023 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:43:59,023 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:43:59,024 - Default - INFO - Epoch 237/250:
+2021-07-14 02:46:09,155 - Default - INFO - Train Instance Accuracy: 0.900285, loss: cls=1.528643, reg=0.012206, tri=0.289647
+2021-07-14 02:46:27,132 - Default - INFO - Test Instance Accuracy: 0.899919, Class Accuracy: 0.858756
+2021-07-14 02:46:27,132 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:46:27,132 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:46:27,132 - Default - INFO - Epoch 238/250:
+2021-07-14 02:48:37,303 - Default - INFO - Train Instance Accuracy: 0.896927, loss: cls=1.598825, reg=0.012191, tri=0.300477
+2021-07-14 02:48:55,235 - Default - INFO - Test Instance Accuracy: 0.892626, Class Accuracy: 0.842669
+2021-07-14 02:48:55,235 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:48:55,235 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:48:55,236 - Default - INFO - Epoch 239/250:
+2021-07-14 02:51:05,269 - Default - INFO - Train Instance Accuracy: 0.900081, loss: cls=1.652965, reg=0.012186, tri=0.369381
+2021-07-14 02:51:23,338 - Default - INFO - Test Instance Accuracy: 0.890194, Class Accuracy: 0.831616
+2021-07-14 02:51:23,338 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:51:23,338 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:51:23,338 - Default - INFO - Epoch 240/250:
+2021-07-14 02:53:33,688 - Default - INFO - Train Instance Accuracy: 0.900387, loss: cls=1.586727, reg=0.012169, tri=0.338612
+2021-07-14 02:53:51,738 - Default - INFO - Test Instance Accuracy: 0.898703, Class Accuracy: 0.859669
+2021-07-14 02:53:51,739 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:53:51,788 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 02:53:51,788 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:53:51,788 - Default - INFO - Epoch 241/250:
+2021-07-14 02:56:01,860 - Default - INFO - Train Instance Accuracy: 0.894383, loss: cls=1.504079, reg=0.012177, tri=0.398853
+2021-07-14 02:56:19,946 - Default - INFO - Test Instance Accuracy: 0.896677, Class Accuracy: 0.851576
+2021-07-14 02:56:19,946 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:56:19,946 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:56:19,947 - Default - INFO - Epoch 242/250:
+2021-07-14 02:58:30,139 - Default - INFO - Train Instance Accuracy: 0.898352, loss: cls=1.678078, reg=0.012135, tri=0.396550
+2021-07-14 02:58:48,117 - Default - INFO - Test Instance Accuracy: 0.891410, Class Accuracy: 0.838413
+2021-07-14 02:58:48,118 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 02:58:48,118 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 02:58:48,118 - Default - INFO - Epoch 243/250:
+2021-07-14 03:00:58,519 - Default - INFO - Train Instance Accuracy: 0.895401, loss: cls=1.472448, reg=0.012165, tri=0.289489
+2021-07-14 03:01:16,478 - Default - INFO - Test Instance Accuracy: 0.893436, Class Accuracy: 0.839785
+2021-07-14 03:01:16,479 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 03:01:16,479 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 03:01:16,479 - Default - INFO - Epoch 244/250:
+2021-07-14 03:03:26,517 - Default - INFO - Train Instance Accuracy: 0.901506, loss: cls=1.587145, reg=0.012213, tri=0.338805
+2021-07-14 03:03:44,681 - Default - INFO - Test Instance Accuracy: 0.884117, Class Accuracy: 0.833750
+2021-07-14 03:03:44,681 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 03:03:44,681 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 03:03:44,681 - Default - INFO - Epoch 245/250:
+2021-07-14 03:05:54,647 - Default - INFO - Train Instance Accuracy: 0.899064, loss: cls=1.544127, reg=0.012235, tri=0.372136
+2021-07-14 03:06:12,634 - Default - INFO - Test Instance Accuracy: 0.893841, Class Accuracy: 0.848041
+2021-07-14 03:06:12,634 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 03:06:12,634 - Default - INFO - Epoch elapsed time: 02:27
+2021-07-14 03:06:12,634 - Default - INFO - Epoch 246/250:
+2021-07-14 03:08:22,628 - Default - INFO - Train Instance Accuracy: 0.899573, loss: cls=1.563831, reg=0.012200, tri=0.340203
+2021-07-14 03:08:40,769 - Default - INFO - Test Instance Accuracy: 0.888574, Class Accuracy: 0.849000
+2021-07-14 03:08:40,769 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 03:08:40,769 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 03:08:40,769 - Default - INFO - Epoch 247/250:
+2021-07-14 03:10:51,017 - Default - INFO - Train Instance Accuracy: 0.897029, loss: cls=1.522778, reg=0.012271, tri=0.402703
+2021-07-14 03:11:09,070 - Default - INFO - Test Instance Accuracy: 0.896272, Class Accuracy: 0.844628
+2021-07-14 03:11:09,070 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 03:11:09,071 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 03:11:09,071 - Default - INFO - Epoch 248/250:
+2021-07-14 03:13:19,436 - Default - INFO - Train Instance Accuracy: 0.902422, loss: cls=1.471165, reg=0.012271, tri=0.308903
+2021-07-14 03:13:37,516 - Default - INFO - Test Instance Accuracy: 0.891005, Class Accuracy: 0.849709
+2021-07-14 03:13:37,516 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 03:13:37,516 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 03:13:37,517 - Default - INFO - Epoch 249/250:
+2021-07-14 03:15:47,731 - Default - INFO - Train Instance Accuracy: 0.900997, loss: cls=1.557827, reg=0.012285, tri=0.362745
+2021-07-14 03:16:05,800 - Default - INFO - Test Instance Accuracy: 0.892220, Class Accuracy: 0.843669
+2021-07-14 03:16:05,800 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 03:16:05,800 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 03:16:05,800 - Default - INFO - Epoch 250/250:
+2021-07-14 03:18:15,951 - Default - INFO - Train Instance Accuracy: 0.899980, loss: cls=1.577344, reg=0.012257, tri=0.457481
+2021-07-14 03:18:34,048 - Default - INFO - Test Instance Accuracy: 0.897083, Class Accuracy: 0.844186
+2021-07-14 03:18:34,048 - Default - INFO - Best Instance Accuracy: 0.903566, Class Accuracy: 0.863169
+2021-07-14 03:18:34,095 - Default - INFO - Saving model at d:\work\PointClassifier\logs\dgcnn_exp1\checkpoints\recent_model.t7
+2021-07-14 03:18:34,096 - Default - INFO - Epoch elapsed time: 02:28
+2021-07-14 03:18:34,096 - Default - INFO - Total time: 6:52:46
+2021-07-14 03:18:34,096 - Default - INFO - End of training...

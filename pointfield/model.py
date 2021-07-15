@@ -29,8 +29,9 @@ class PointField(nn.Module):
             return x + flow
 
 class CombinedModel(nn.Module):
-    def __init__(self, classifier, point_field_dim=64, tri_criterion=None):
+    def __init__(self, classifier, point_field_dim=64, tri_criterion=None, use_pointfield = True):
         super().__init__()
+        self.use_pointfield = use_pointfield
         self.pointfield = PointField(point_field_dim)
         self.classifier = classifier
 
@@ -40,15 +41,15 @@ class CombinedModel(nn.Module):
                                                 triplet_selector = selector,
                                                 dist_func = chamfer_pc)
         self.tri_criterion = tri_criterion
-        self.reg_loss = 0
-        self.tri_loss = 0
+        self.reg_loss = torch.tensor(0)
+        self.tri_loss = torch.tensor(0)
 
     def forward(self, x, label=None):
-        x = self.pointfield(x)
-        if self.training:  # update reg_loss and tri_loss
-            self.reg_loss = self.pointfield.grid.abs().mean()
-            self.tri_loss, _ = self.tri_criterion(x, label)
-
+        if self.use_pointfield:
+            x = self.pointfield(x)
+            if self.training:  # update reg_loss and tri_loss
+                self.reg_loss = self.pointfield.grid.abs().mean()
+                self.tri_loss, _ = self.tri_criterion(x, label)
         return self.classifier(x)
 
 

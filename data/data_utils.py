@@ -7,6 +7,7 @@ from numpy.lib.index_tricks import AxisConcatenator
 from torch.utils.data import Dataset
 from torchvision import transforms
 
+
 def rot_angle_axis(angle, axis):
     """
     Returns a 3x3 rotation matrix that performs a rotation around axis by angle
@@ -22,13 +23,6 @@ def rot_angle_axis(angle, axis):
 
 
 def farthest_point_sample(point, npoint):
-    """
-    Input:
-        point: pointcloud data, [N, D]
-        npoint: number of samples
-    Return:
-        centroids: sampled pointcloud index, [npoint, D]
-    """
     N, D = point.shape
     xyz = point[:,:3]
     centroids = np.zeros((npoint,))

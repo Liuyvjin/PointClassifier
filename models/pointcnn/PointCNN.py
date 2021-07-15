@@ -193,7 +193,7 @@ class PointCNN(nn.Module):
             else:
                 input_of_logits_layer = fc_layers[-1].mean(dim=1, keepdim=True)
             logits=self.net._modules["logits"].forward(input_of_logits_layer)
-            return logits
+            return logits.mean(dim=1)
         elif self.setting['task']=='seg':
             logits = self.net._modules["logits"].forward(fc_layers[-1])
             return logits

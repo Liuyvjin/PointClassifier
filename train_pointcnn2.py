@@ -27,8 +27,8 @@ BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
 def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='Relation-Shape CNN Pointcloud Classification Training')
-    parser.add_argument('--exp_name',   type=str,   default='PointCNN_fast_exp', help='Name of the experiment')
-    parser.add_argument('--num_workers',type=int,   default=8,              help='num of workers [default: 8]')
+    parser.add_argument('--exp_name',   type=str,   default='PointCNN_fast_exp1', help='Name of the experiment')
+    parser.add_argument('--num_workers',type=int,   default=3,              help='num of workers [default: 8]')
     parser.add_argument('--num_points', type=int,   default=1024,           help='num of points to use [default: 1024]')
     parser.add_argument('--batch_size', type=int,   default=32,             help='Size of batch [default: 32]')
     parser.add_argument('--epochs',     type=int,   default=200,            help='number of episode to train ')
@@ -123,7 +123,7 @@ def main():
                 data, label = data.to(device), label.to(device).squeeze()
 
                 optimizer.zero_grad()
-                preds = comb_model(data, label).mean(dim=1)  ## preds - B x c
+                preds = comb_model(data, label).mean(dim=1)  ## preds - B x classes
                 cls_loss = criterion(preds, label)
                 loss = cls_loss + comb_model.tri_loss + comb_model.reg_loss
                 loss.backward()

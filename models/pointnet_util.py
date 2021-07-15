@@ -45,9 +45,9 @@ def index_points(points, idx):
 
     Input:
         points: input points data, [B, N, C]
-        idx: sample index data, [B, S]
+        idx: sample index data, [B, S] or [B, S, nsample]
     Return:
-        new_points:, indexed points data, [B, S, C]
+        new_points:, indexed points data, [B, S, C] or [B, S, nsample, C]
     """
     device = points.device
     B = points.shape[0]
@@ -121,11 +121,11 @@ def sample_and_group(npoint, radius, nsample, xyz, points, returnfps=False):
     """
     B, N, C = xyz.shape
     S = npoint
-    fps_idx = farthest_point_sample(xyz, npoint) # [B, npoint, C]
+    fps_idx = farthest_point_sample(xyz, npoint) # [B, npoint_idx]
     torch.cuda.empty_cache()
-    new_xyz = index_points(xyz, fps_idx)
+    new_xyz = index_points(xyz, fps_idx) # [B, npoint, C]
     torch.cuda.empty_cache()
-    idx = query_ball_point(radius, nsample, xyz, new_xyz)
+    idx = query_ball_point(radius, nsample, xyz, new_xyz) # [B, npoint, nsample_idx]
     torch.cuda.empty_cache()
     grouped_xyz = index_points(xyz, idx) # [B, npoint, nsample, C]
     torch.cuda.empty_cache()
@@ -202,7 +202,7 @@ class PointNetSetAbstraction(nn.Module):
             bn = self.mlp_bns[i]
             new_points =  F.relu(bn(conv(new_points)))
 
-        new_points = torch.max(new_points, 2)[0]
+        new_points = torch.max(new_points, 2)[0] # [B, mlp[-1], npoint]
         new_xyz = new_xyz.permute(0, 2, 1)
         return new_xyz, new_points
 
