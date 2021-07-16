@@ -5,25 +5,25 @@ import argparse
 import os.path as osp
 import numpy as np
 from tqdm import tqdm
-import sklearn.metrics as metrics
 import torch
 from torch.utils.data import DataLoader
 from torchvision import transforms
 
 from data.data_utils import ModelNet40, pointnet_train_transforms, pointnet_test_transforms
 
-from models.pointnet2_cls_ssg import get_model, get_loss
+from models.pointnet2 import Pointnet2, get_loss
 
 from pointfield.model import CombinedModel
 from pointfield.train_utils import Trainer
 
-BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
+BASE_DIR = osp.dirname(osp.abspath(__file__))
+
 
 def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser('PointNet')
     parser.add_argument('--model',          type=str,   default='pointnet2',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='pointnet2_nopf',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='pointnet2_margin01_detach',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=72,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
@@ -35,7 +35,7 @@ def parse_args():
     parser.add_argument('--seed',           type=int,   default=1,      help='random seed [efault: 1]')
     parser.add_argument('--decay_rate',     type=float, default=1e-4,   help='decay rate [default: 1e-4]')
     # pointfield
-    parser.add_argument('--use_pointfield', type=bool,   default=False,         metavar='N', help='Num of nearest neighbors to use')
+    parser.add_argument('--use_pointfield', type=bool,   default=True,         metavar='N', help='Num of nearest neighbors to use')
     args = parser.parse_args()
     args.cuda = torch.cuda.is_available()
     return args
@@ -61,9 +61,10 @@ def main():
     device = torch.device("cuda" if args.cuda else "cpu")
 
     # --- Create Model
-    classifier = get_model(num_class=40, normal_channel=args.normal).to(device)
+    classifier = Pointnet2(num_class=40, normal_channel=args.normal).to(device)
     criterion = get_loss
-    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield).to(device)
+    pf_path = BASE_DIR + '\\logs\\pointfield_margin0_1_trackgrid\\checkpoints\\best_pointfield.t7'
+    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield, detach=True, pointfield_path=pf_path).to(device)
     # --- Optimizer
     if args.optimizer == 'Adam':
         optimizer = torch.optim.Adam(
@@ -78,7 +79,8 @@ def main():
     scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=20, gamma=0.6)
 
     trainer = Trainer(train_loader, test_loader, comb_model, criterion, optimizer, scheduler,
-                        num_epochs=args.num_epochs, exp_name=args.exp_name, log_dir=args.log_dir, train_file=__file__)
+                        num_epochs=args.num_epochs, exp_name=args.exp_name, log_dir=args.log_dir, train_file=__file__,
+                        track_grid=True)
 
     trainer.logger.cprint('PARAMETERS...')
     trainer.logger.cprint(args)

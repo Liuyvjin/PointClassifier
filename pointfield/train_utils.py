@@ -3,9 +3,11 @@ import numpy as np
 import shutil
 import os
 import os.path as osp
+from torch._C import TracingState
 from tqdm import tqdm
 import torch
 from time import time
+from .visualize_utils import show_grid
 
 class LogTool():
     def __init__(self, file_path, format=None):
@@ -30,7 +32,7 @@ class LogTool():
 
 class Trainer():
     def __init__(   self, train_loader, test_loader, model, criterion,
-                    optimizer, scheduler, num_epochs, exp_name, train_file, log_dir='logs'):
+                    optimizer, scheduler, num_epochs, exp_name, train_file, log_dir='logs', track_grid=False):
         self.train_file  = osp.abspath(train_file)
         self.exp_dir = osp.join(osp.dirname(self.train_file), log_dir, exp_name)
         self.logger = self.__log_init()
@@ -47,6 +49,8 @@ class Trainer():
         self.best_inst_acc  = 0
         self.best_class_acc = 0
         self.epoch = 1
+
+        self.track_grid = track_grid
 
     def __log_init(self):
         flag = False
@@ -134,8 +138,14 @@ class Trainer():
             self.logger.cprint('Epoch %d/%s:' % (self.epoch, self.num_epochs))
             self.train_epoch()
             self.eval_epoch()
-            if self.epoch%10 == 0:
+            if self.epoch%10==0:
                 self.save_checkpoint("recent_model.t7")
+            # --- track grid
+            if self.track_grid and (self.epoch%20==0 or self.epoch==1 or self.epoch==self.num_epochs):
+                show_grid(  grid        =   self.model.pointfield.grid,
+                            save        =   True,
+                            img_name    =   self.exp_dir+'\\checkpoints\\epoch_{:0>3d}.jpg'.format(self.epoch))
+
             self.epoch += 1
             self.logger.info('Epoch elapsed time: ' + self.__format_second(time()-t1))
         self.logger.cprint('Total time: ' + self.__format_second(time()-t0))
@@ -216,8 +226,12 @@ class Trainer():
             self.logger.cprint('Epoch %d/%s:' % (self.epoch, self.num_epochs))
             self.train_epoch_pointfield()
             self.eval_epoch_pointfield()
-            if self.epoch%10 == 0:
+            if self.epoch%10==0:
                 self.save_checkpoint("recent_pointfield.t7")
+            if self.epoch%20==0 or self.epoch==1 or self.epoch==self.num_epochs:
+                show_grid(  grid        =   self.model.grid,
+                            save        =   True,
+                            img_name    =   self.exp_dir+'\\checkpoints\\epoch_{:0>3d}.jpg'.format(self.epoch))
             self.epoch += 1
             self.logger.info('Epoch elapsed time: ' + self.__format_second(time()-t1))
         self.logger.cprint('Total time: ' + self.__format_second(time()-t0))

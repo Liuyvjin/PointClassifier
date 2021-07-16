@@ -35,23 +35,29 @@ get_loss = OnlineTripletLoss(   margin = 0.3,
 
 
 class CombinedModel(nn.Module):
-    def __init__(self, classifier, point_field_dim=64, tri_criterion=None, use_pointfield = True):
+    def __init__(self, classifier, pointfield_dim=64, tri_criterion=None, use_pointfield=True, detach=False, pointfield_path=None):
         super().__init__()
         self.use_pointfield = use_pointfield
-        self.pointfield = PointField(point_field_dim)
+        self.pointfield = PointField(pointfield_dim)
         self.classifier = classifier
         if tri_criterion == None:
             tri_criterion = get_loss
         self.tri_criterion = tri_criterion
         self.reg_loss = torch.tensor(0)
         self.tri_loss = torch.tensor(0)
+        self.detach = detach
+        if pointfield_path is not None:
+            self.pointfield.load_state_dict(torch.load(pointfield_path)['model_state_dict'])
 
     def forward(self, x, label=None):
         if self.use_pointfield:
             x = self.pointfield(x)
-            if self.training:  # update reg_loss and tri_loss
+            if self.detach:
+                x = x.detach()
+            elif self.training:  # update reg_loss and tri_loss
                 self.reg_loss = self.pointfield.grid.abs().mean()
                 self.tri_loss, _ = self.tri_criterion(x, label)
+
         return self.classifier(x)
 
 

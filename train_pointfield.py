@@ -11,8 +11,11 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 import data.data_utils as dutil
 from data.data_utils import ModelNet40
 
-from pointfield.model import PointField, get_loss
-from pointfield.train_utils import Trainer
+from pointfield import PointField, get_loss
+from pointfield import Trainer
+from pointfield.losses import OnlineTripletLoss
+from pointfield.loss_utils import HardestNegativeTripletSelector, pdist_pc, chamfer_pc
+
 
 BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
 
@@ -20,11 +23,11 @@ def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='DGCNN')
     parser.add_argument('--model',          type=str,   default='pointfield',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='pointfield',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='pointfield_margin0_1_trackgrid',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
-    parser.add_argument('--batch_size',     type=int,   default=72,     help='batch size in training [default: 24]')
+    parser.add_argument('--batch_size',     type=int,   default=36,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
-    parser.add_argument('--num_epochs',     type=int,   default=250,    help='number of epoch in training [default: 200]')
+    parser.add_argument('--num_epochs',     type=int,   default=200,    help='number of epoch in training [default: 200]')
     parser.add_argument('--num_workers',    type=int,   default=3,      help='Worker Number [default: 8]')
     parser.add_argument('--optimizer',      type=str,   default='SGD', help='optimizer for training [default: Adam]')
     parser.add_argument('--normal',         type=bool,  default=True,   help='Whether to use normal information [default: True]')
@@ -58,8 +61,11 @@ def main():
                                 shuffle=False,   drop_last=False)
 
     # --- Create Model
+    selector = HardestNegativeTripletSelector(0.1, cpu=False, dist_func=pdist_pc)
+    criterion = OnlineTripletLoss(   margin = 0.1,
+                                    triplet_selector = selector,
+                                    dist_func = chamfer_pc)
     pointfield = PointField(64).to(device)
-    criterion = get_loss
 
     # --- Optimizer
     if args.optimizer == 'SGD':

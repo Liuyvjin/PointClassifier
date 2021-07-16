@@ -6,3 +6,4 @@ logs/
 .vscode
 __pycache__
 scripts/
+images/

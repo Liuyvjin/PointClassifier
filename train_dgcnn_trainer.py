@@ -65,7 +65,7 @@ def main():
                                 shuffle=False,   drop_last=False)
 
     # --- Create Model
-    classifier = DGCNN(args).to(device)
+    classifier = DGCNN(args.k, args.emb_dims, args.dropout).to(device)
     criterion = get_loss
     comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield).to(device)
 
