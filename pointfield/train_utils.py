@@ -28,21 +28,6 @@ class LogTool():
     def info(self, text):
         self.logger.info(text)
 
-
-def log_init( exp_name, trainfile):
-    filepath = os.path.abspath(trainfile)
-    filename = filepath.split('\\')[-1]
-    root_dir = '/'.join(filepath.split('\\')[0:-1])
-    log_dir = root_dir + '/logs/' + exp_name
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
-    if not os.path.exists(log_dir+'/checkpoints'):
-        os.makedirs(log_dir+'/checkpoints')
-    shutil.copy(trainfile, log_dir+'/'+filename+'.backup')
-    print('Log file: %s' % log_dir + '/run.log')
-    return LogTool(log_dir + '/run.log')
-
-
 class Trainer():
     def __init__(   self, train_loader, test_loader, model, criterion,
                     optimizer, scheduler, num_epochs, exp_name, train_file, log_dir='logs'):
@@ -88,7 +73,7 @@ class Trainer():
         self.model.train()
         train_pred = []
         train_true = []
-        with tqdm(self.train_loader, total=len(self.train_loader), smoothing=0.9) as t:
+        with tqdm(self.train_loader, total=len(self.train_loader), ncols=100, smoothing=0.9) as t:
             for data, label in t:
                 data, label = data.to(self.device), label.to(self.device).squeeze()
 
@@ -119,7 +104,7 @@ class Trainer():
         test_pred = []
         test_true = []
         with torch.no_grad():
-            for data, label in tqdm(self.test_loader, total=len(self.test_loader)):
+            for data, label in tqdm(self.test_loader, total=len(self.test_loader), ncols=100):
                 data, label = data.to(self.device), label.to(self.device).squeeze()
                 logits = self.model(data)
                 preds = logits.max(dim=1)[1]
@@ -221,4 +206,65 @@ class Trainer():
             return '{0:02d}:{1:02d}'.format(m, s)
 
 
+    def train_pointfield(self):
+        t0 = time()
+        self.best_class_acc = torch.tensor(10000)
+        self.load_checkpoint('recent_pointfield.t7')
+        self.logger.cprint('Start training pointfield...')
+        while self.epoch <= self.num_epochs:
+            t1 = time()
+            self.logger.cprint('Epoch %d/%s:' % (self.epoch, self.num_epochs))
+            self.train_epoch_pointfield()
+            self.eval_epoch_pointfield()
+            if self.epoch%10 == 0:
+                self.save_checkpoint("recent_pointfield.t7")
+            self.epoch += 1
+            self.logger.info('Epoch elapsed time: ' + self.__format_second(time()-t1))
+        self.logger.cprint('Total time: ' + self.__format_second(time()-t0))
+        self.logger.cprint('End of training...')
+
+
+    def train_epoch_pointfield(self):
+        self.model.train()
+
+        with tqdm(self.train_loader, total=len(self.train_loader), ncols=100, smoothing=0.9) as t:
+            tri_loss = torch.zeros(len(self.train_loader))
+            i = 0
+            for data, label in t:
+                data, label = data.to(self.device), label.to(self.device).squeeze()
+
+                self.optimizer.zero_grad()
+                data = self.model(data)
+                loss, _ = self.criterion(data, label)
+                loss.backward()
+                self.optimizer.step()
+
+                tri_loss[i] = loss
+                i += 1
+                t.set_postfix(tri_loss = loss.item())
+
+        self.scheduler.step()
+        mean_tri_loss = tri_loss.mean()
+        self.logger.cprint('mean triplet loss: {:f}'.format(mean_tri_loss.item()))
+
+
+    def eval_epoch_pointfield(self):
+        self.model.eval()
+        i = 0
+        tri_loss = torch.zeros(len(self.test_loader))
+        with torch.no_grad():
+            for data, label in tqdm(self.test_loader, total=len(self.test_loader), ncols=100):
+                data, label = data.to(self.device), label.to(self.device).squeeze()
+                data = self.model(data)
+                loss, _ = self.criterion(data, label)
+                tri_loss[i] = loss
+                i += 1
+
+        mean_tri_loss = tri_loss.mean()
+        self.logger.cprint('test mean triplet loss: {:f}'.format(mean_tri_loss))
+        if mean_tri_loss < self.best_class_acc:
+            self.best_class_acc = mean_tri_loss
+            self.save_checkpoint('best_pointfield.t7')
+            self.save_checkpoint('recent_pointfield.t7')
+        self.logger.cprint('Best mean triplet loss: %f'% (self.best_class_acc))
 

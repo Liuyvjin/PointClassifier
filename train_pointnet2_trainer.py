@@ -23,17 +23,19 @@ def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser('PointNet')
     parser.add_argument('--model',          type=str,   default='pointnet2',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='pointnet2_exp1',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='pointnet2_nopf',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
-    parser.add_argument('--batch_size',     type=int,   default=24,     help='batch size in training [default: 24]')
+    parser.add_argument('--batch_size',     type=int,   default=72,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
     parser.add_argument('--num_epochs',     type=int,   default=200,    help='number of epoch in training [default: 200]')
-    parser.add_argument('--num_workers',    type=int,   default=8,      help='Worker Number [default: 8]')
+    parser.add_argument('--num_workers',    type=int,   default=4,      help='Worker Number [default: 8]')
     parser.add_argument('--optimizer',      type=str,   default='Adam', help='optimizer for training [default: Adam]')
     parser.add_argument('--lr',             type=float, default=0.001,  help='learning rate in training [default: 0.001, 0.1 if using sgd]')
     parser.add_argument('--normal',         type=bool,  default=True,   help='Whether to use normal information [default: True]')
     parser.add_argument('--seed',           type=int,   default=1,      help='random seed [efault: 1]')
     parser.add_argument('--decay_rate',     type=float, default=1e-4,   help='decay rate [default: 1e-4]')
+    # pointfield
+    parser.add_argument('--use_pointfield', type=bool,   default=False,         metavar='N', help='Num of nearest neighbors to use')
     args = parser.parse_args()
     args.cuda = torch.cuda.is_available()
     return args
@@ -60,9 +62,8 @@ def main():
 
     # --- Create Model
     classifier = get_model(num_class=40, normal_channel=args.normal).to(device)
-    criterion = get_loss()
-    comb_model = CombinedModel(classifier).to(device)
-
+    criterion = get_loss
+    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield).to(device)
     # --- Optimizer
     if args.optimizer == 'Adam':
         optimizer = torch.optim.Adam(

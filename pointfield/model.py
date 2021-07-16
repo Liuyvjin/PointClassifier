@@ -28,18 +28,20 @@ class PointField(nn.Module):
         else:
             return x + flow
 
+selector = HardestNegativeTripletSelector(0.3, cpu=False, dist_func=pdist_pc)
+get_loss = OnlineTripletLoss(   margin = 0.3,
+                                triplet_selector = selector,
+                                dist_func = chamfer_pc)
+
+
 class CombinedModel(nn.Module):
     def __init__(self, classifier, point_field_dim=64, tri_criterion=None, use_pointfield = True):
         super().__init__()
         self.use_pointfield = use_pointfield
         self.pointfield = PointField(point_field_dim)
         self.classifier = classifier
-
         if tri_criterion == None:
-            selector = HardestNegativeTripletSelector(0.3, cpu=False, dist_func=pdist_pc)
-            tri_criterion = OnlineTripletLoss(  margin = 0.3,
-                                                triplet_selector = selector,
-                                                dist_func = chamfer_pc)
+            tri_criterion = get_loss
         self.tri_criterion = tri_criterion
         self.reg_loss = torch.tensor(0)
         self.tri_loss = torch.tensor(0)

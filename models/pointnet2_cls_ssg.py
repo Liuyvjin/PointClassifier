@@ -1,3 +1,5 @@
+
+import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from models.pointnet_util import PointNetSetAbstraction
@@ -34,19 +36,27 @@ class get_model(nn.Module):
         x = l3_points.view(B, 1024)
         x = self.drop1(F.relu(self.bn1(self.fc1(x))))
         x = self.drop2(F.relu(self.bn2(self.fc2(x))))
-        x = self.fc3(x)
-        x = F.log_softmax(x, -1)
+        logits = self.fc3(x)
 
-
-        return x  #, l3_points
+        return logits  #, l3_points
 
 
 
-class get_loss(nn.Module):
-    def __init__(self):
-        super(get_loss, self).__init__()
+def get_loss(logits, label, smoothing=False):
+    ''' Calculate cross entropy loss, apply label smoothing if needed. '''
+    label = label.contiguous().view(-1)
 
-    def forward(self, pred, target):
-        total_loss = F.nll_loss(pred, target)
+    if smoothing:
+        eps = 0.2
+        n_class = logits.size(1)
 
-        return total_loss
+        one_hot = torch.zeros_like(logits).scatter(1, label.view(-1, 1), 1)
+        one_hot = one_hot * (1 - eps) + (1 - one_hot) * eps / (n_class - 1)
+        log_prb = F.log_softmax(logits, dim=1)
+
+        loss = -(one_hot * log_prb).sum(dim=1).mean()
+    else:
+        loss = F.cross_entropy(logits, label, reduction='mean')
+
+    return loss
+
