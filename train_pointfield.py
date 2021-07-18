@@ -9,7 +9,7 @@ from torchvision import transforms
 from torch.optim.lr_scheduler import CosineAnnealingLR
 
 import data.data_utils as dutil
-from data.data_utils import ModelNet40
+from data.data_utils import ModelNet40, pointnet_train_transforms, pointnet_test_transforms
 
 from pointfield import PointField, get_loss
 from pointfield import Trainer
@@ -23,14 +23,14 @@ def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='DGCNN')
     parser.add_argument('--model',          type=str,   default='pointfield',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='pointfield_margin0_1_trackgrid',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='pointfield_margin03_dgcnn',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=36,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
     parser.add_argument('--num_epochs',     type=int,   default=200,    help='number of epoch in training [default: 200]')
     parser.add_argument('--num_workers',    type=int,   default=3,      help='Worker Number [default: 8]')
     parser.add_argument('--optimizer',      type=str,   default='SGD', help='optimizer for training [default: Adam]')
-    parser.add_argument('--normal',         type=bool,  default=True,   help='Whether to use normal information [default: True]')
+    parser.add_argument('--normal',         type=bool,  default=False,   help='Whether to use normal information [default: True]')
     parser.add_argument('--seed',           type=int,   default=1,      help='random seed [efault: 1]')
     parser.add_argument('--lr',             type=float, default=0.001,  help='learning rate in training [default: 0.001, 0.1 if using sgd]')
     parser.add_argument('--momentum',       type=float, default=0.9,        metavar='M', help='SGD momentum (default: 0.9)')
@@ -49,20 +49,20 @@ def main():
     device = torch.device("cuda" if args.cuda else "cpu")
 
     # --- DataLoader
+    print('Load dataset...')
     train_transforms = transforms.Compose([ dutil.translate_pointcloud,
                                             dutil.shuffle_pointcloud])
-
-    print('Load dataset...')
-    train_loader = DataLoader(  ModelNet40(partition='train', num_points=args.num_points, transform=train_transforms),
+    # test_transforms = pointnet_test_transforms
+    train_loader = DataLoader(  ModelNet40(normal_channel=args.normal, partition='train', num_points=args.num_points, transform=train_transforms),
                                 num_workers=args.num_workers,   batch_size=args.batch_size,
                                 shuffle=True,   drop_last=True)
-    test_loader = DataLoader(   ModelNet40(partition='test', num_points=args.num_points),
+    test_loader = DataLoader(   ModelNet40(normal_channel=args.normal, partition='test', num_points=args.num_points),
                                 num_workers=args.num_workers,   batch_size=args.batch_size,
                                 shuffle=False,   drop_last=False)
 
     # --- Create Model
-    selector = HardestNegativeTripletSelector(0.1, cpu=False, dist_func=pdist_pc)
-    criterion = OnlineTripletLoss(   margin = 0.1,
+    selector = HardestNegativeTripletSelector(0.3, cpu=False, dist_func=pdist_pc)
+    criterion = OnlineTripletLoss(   margin = 0.3,
                                     triplet_selector = selector,
                                     dist_func = chamfer_pc)
     pointfield = PointField(64).to(device)

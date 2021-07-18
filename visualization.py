@@ -59,12 +59,12 @@ def interval_concatenate(arrays, axis=0, interval=0, fill_value=255):
 
 if __name__ == '__main__':
     Base_dir = osp.dirname(osp.abspath(__file__))
-    checkpoint = torch.load(osp.join(Base_dir, "logs\\pointfield_margin0_1\\checkpoints\\recent_pointfield.t7"))
-    model = PointField(64)
+    checkpoint = torch.load(osp.join(Base_dir, "logs\\dgcnn_margin01_detach\\checkpoints\\recent_model.t7"))
+    model = CombinedModel(DGCNN())
     model.load_state_dict(checkpoint['model_state_dict'])
     # grid = model.grid.cpu().detach().permute(1,2,3,0).numpy()
 
-    show_grid(model.grid, save=True, img_name=Base_dir+'\\images\\test.jpg')
+    show_grid(model.pointfield.grid, save=False, img_name=Base_dir+'\\images\\test.jpg')
 
 # im = Image.open("./scripts/image1.jpg")
 # n_im= Image.new("RGB", (128, 128))

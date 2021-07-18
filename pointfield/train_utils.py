@@ -242,23 +242,25 @@ class Trainer():
         self.model.train()
 
         with tqdm(self.train_loader, total=len(self.train_loader), ncols=100, smoothing=0.9) as t:
-            tri_loss = torch.zeros(len(self.train_loader))
+            track_tri_loss = torch.zeros(len(self.train_loader))
             i = 0
             for data, label in t:
                 data, label = data.to(self.device), label.to(self.device).squeeze()
 
                 self.optimizer.zero_grad()
                 data = self.model(data)
-                loss, _ = self.criterion(data, label)
+                tri_loss, _ = self.criterion(data, label)
+                reg_loss = self.model.grid.abs().mean()
+                loss = tri_loss + reg_loss
                 loss.backward()
                 self.optimizer.step()
 
-                tri_loss[i] = loss
+                track_tri_loss[i] = tri_loss
                 i += 1
-                t.set_postfix(tri_loss = loss.item())
+                t.set_postfix(tri_loss = tri_loss.item(), reg_loss = reg_loss.item())
 
         self.scheduler.step()
-        mean_tri_loss = tri_loss.mean()
+        mean_tri_loss = track_tri_loss.mean()
         self.logger.cprint('mean triplet loss: {:f}'.format(mean_tri_loss.item()))
 
 

@@ -16,20 +16,20 @@ from models.dgcnn import DGCNN, get_loss
 from pointfield.model import CombinedModel
 from pointfield.train_utils import Trainer
 
-BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
+BASE_DIR = osp.dirname(osp.abspath(__file__))
 
 def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='DGCNN')
     parser.add_argument('--model',          type=str,   default='dgcnn',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='dgcnn_exp_sgd_nopf',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='dgcnn_margin03_detach',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=36,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
-    parser.add_argument('--num_epochs',     type=int,   default=250,    help='number of epoch in training [default: 200]')
+    parser.add_argument('--num_epochs',     type=int,   default=300,    help='number of epoch in training [default: 200]')
     parser.add_argument('--num_workers',    type=int,   default=3,      help='Worker Number [default: 8]')
     parser.add_argument('--optimizer',      type=str,   default='SGD', help='optimizer for training [default: Adam]')
-    parser.add_argument('--normal',         type=bool,  default=True,   help='Whether to use normal information [default: True]')
+    parser.add_argument('--normal',         type=bool,  default=False,   help='Whether to use normal information [default: True]')
     parser.add_argument('--seed',           type=int,   default=1,      help='random seed [efault: 1]')
     parser.add_argument('--lr',             type=float, default=0.001,  help='learning rate in training [default: 0.001, 0.1 if using sgd]')
     parser.add_argument('--momentum',       type=float, default=0.9,        metavar='M', help='SGD momentum (default: 0.9)')
@@ -38,7 +38,7 @@ def parse_args():
     parser.add_argument('--emb_dims',       type=int,   default=1024,       metavar='N', help='Dimension of embeddings')
     parser.add_argument('--k',              type=int,   default=20,         metavar='N', help='Num of nearest neighbors to use')
     # pointfield
-    parser.add_argument('--use_pointfield', type=bool,   default=False,         metavar='N', help='Num of nearest neighbors to use')
+    parser.add_argument('--use_pointfield', type=bool,   default=True,         metavar='N', help='Num of nearest neighbors to use')
     args = parser.parse_args()
     args.cuda = torch.cuda.is_available()
     return args
@@ -67,7 +67,9 @@ def main():
     # --- Create Model
     classifier = DGCNN(args.k, args.emb_dims, args.dropout).to(device)
     criterion = get_loss
-    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield).to(device)
+    # comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield).to(device)
+    pf_path = BASE_DIR + '\\logs\\pointfield_margin03_dgcnn\\checkpoints\\best_pointfield.t7'
+    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield, detach=True, pointfield_path=pf_path).to(device)
 
     # --- Optimizer
     if args.optimizer == 'SGD':
@@ -80,7 +82,8 @@ def main():
     scheduler = CosineAnnealingLR(optimizer, args.num_epochs, eta_min=args.lr)
 
     trainer = Trainer(train_loader, test_loader, comb_model, criterion, optimizer, scheduler,
-                        num_epochs=args.num_epochs, exp_name=args.exp_name, log_dir=args.log_dir, train_file=__file__)
+                        num_epochs=args.num_epochs, exp_name=args.exp_name, log_dir=args.log_dir, train_file=__file__,
+                        track_grid=True)
 
     trainer.logger.cprint('PARAMETERS...')
     trainer.logger.cprint(args)

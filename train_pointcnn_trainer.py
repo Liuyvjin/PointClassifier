@@ -28,18 +28,19 @@ def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='PointCNN')
     parser.add_argument('--model',          type=str,   default='PointCNN-fast',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='PointCNN_trans',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='PointCNN_nopf',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=72,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
-    parser.add_argument('--num_epochs',     type=int,   default=250,    help='number of epoch in training [default: 200]')
+    parser.add_argument('--num_epochs',     type=int,   default=200,    help='number of epoch in training [default: 200]')
     parser.add_argument('--num_workers',    type=int,   default=4,      help='Worker Number [default: 8]')
     parser.add_argument('--optimizer',      type=str,   default='Adam', help='optimizer for training [default: Adam]')
-    parser.add_argument('--normal',         type=bool,  default=True,   help='Whether to use normal information [default: True]')
+    parser.add_argument('--normal',         type=bool,  default=False,   help='Whether to use normal information [default: True]')
     parser.add_argument('--seed',           type=int,   default=1,      help='random seed [efault: 1]')
     parser.add_argument('--lr',             type=float, default=0.01,  help='learning rate in training [default: 0.001, 0.1 if using sgd]')
     parser.add_argument('--momentum',       type=float, default=0.9,    help='Initial learning rate [default: 0.9]')
-
+    # pointfield
+    parser.add_argument('--use_pointfield', type=bool,   default=False,         metavar='N', help='Num of nearest neighbors to use')
     args = parser.parse_args()
     args.cuda = torch.cuda.is_available()
     return args
@@ -56,7 +57,6 @@ def main():
     # --- DataLoader
     print('Load dataset...')
     train_transforms = transforms.Compose([
-                                                dutil.rotate_pointcloud,
                                                 dutil.translate_pointcloud,
                                                 dutil.shuffle_pointcloud])
     train_loader = DataLoader(  ModelNet40(partition='train', num_points=args.num_points, transform=train_transforms),
@@ -69,7 +69,7 @@ def main():
     # --- Create Model
     classifier = modelnet_x3_l4().to(device)
     criterion = F.cross_entropy
-    comb_model = CombinedModel(classifier).to(device)
+    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield).to(device)
 
     # --- Optimizer
     if args.optimizer == 'SGD':

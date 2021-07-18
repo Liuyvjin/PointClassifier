@@ -23,7 +23,7 @@ def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser('PointNet')
     parser.add_argument('--model',          type=str,   default='pointnet2',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='pointnet2_margin01_detach',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='pointnet2_nopf',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=72,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
@@ -35,7 +35,7 @@ def parse_args():
     parser.add_argument('--seed',           type=int,   default=1,      help='random seed [efault: 1]')
     parser.add_argument('--decay_rate',     type=float, default=1e-4,   help='decay rate [default: 1e-4]')
     # pointfield
-    parser.add_argument('--use_pointfield', type=bool,   default=True,         metavar='N', help='Num of nearest neighbors to use')
+    parser.add_argument('--use_pointfield', type=bool,   default=False,         metavar='N', help='Num of nearest neighbors to use')
     args = parser.parse_args()
     args.cuda = torch.cuda.is_available()
     return args
@@ -63,7 +63,7 @@ def main():
     # --- Create Model
     classifier = Pointnet2(num_class=40, normal_channel=args.normal).to(device)
     criterion = get_loss
-    pf_path = BASE_DIR + '\\logs\\pointfield_margin0_1_trackgrid\\checkpoints\\best_pointfield.t7'
+    pf_path = BASE_DIR + '\\logs\\pointfield_margin03_pointnet\\checkpoints\\recent_pointfield.t7'
     comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield, detach=True, pointfield_path=pf_path).to(device)
     # --- Optimizer
     if args.optimizer == 'Adam':
