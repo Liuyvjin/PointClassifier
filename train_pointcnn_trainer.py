@@ -11,7 +11,8 @@ from tqdm import tqdm
 import os.path as osp
 from data.data_utils import ModelNet40
 import data.data_utils as dutil
-
+import sched
+import time
 # from models.pointcnn import RandPointCNN_cls, get_loss
 
 from pointfield.model import CombinedModel
@@ -28,7 +29,7 @@ def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='PointCNN')
     parser.add_argument('--model',          type=str,   default='PointCNN-fast',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='PointCNN_nopf',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='PointCNN_margin03_detach',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=72,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
@@ -40,7 +41,7 @@ def parse_args():
     parser.add_argument('--lr',             type=float, default=0.01,  help='learning rate in training [default: 0.001, 0.1 if using sgd]')
     parser.add_argument('--momentum',       type=float, default=0.9,    help='Initial learning rate [default: 0.9]')
     # pointfield
-    parser.add_argument('--use_pointfield', type=bool,   default=False,         metavar='N', help='Num of nearest neighbors to use')
+    parser.add_argument('--use_pointfield', type=bool,   default=True,         metavar='N', help='Num of nearest neighbors to use')
     args = parser.parse_args()
     args.cuda = torch.cuda.is_available()
     return args
@@ -69,7 +70,8 @@ def main():
     # --- Create Model
     classifier = modelnet_x3_l4().to(device)
     criterion = F.cross_entropy
-    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield).to(device)
+    pf_path = BASE_DIR + '\\logs\\pointfield_margin03_dgcnn\\checkpoints\\best_pointfield.t7'
+    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield, detach=True, pointfield_path=pf_path).to(device)
 
     # --- Optimizer
     if args.optimizer == 'SGD':
@@ -95,4 +97,9 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    scheduler = sched.scheduler(time.time, time.sleep)
+    print('Waiting for start ... ')
+    #分别设置在执行后n秒后执行调用函数
+    scheduler.enter(500, 1, main, ())
+    scheduler.run()

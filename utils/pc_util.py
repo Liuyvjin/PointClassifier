@@ -3,13 +3,13 @@
 Author: Charles R. Qi, Hao Su
 Date: November 2016
 Modified by: Liu Jin
+Modified date: 2021/7/20
 """
 
 import os
 import sys
 from functools import reduce
 
-from numpy.core.defchararray import center
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(BASE_DIR)
 
@@ -95,7 +95,7 @@ def write_ply(points, filename, text=True):
 # Simple Point cloud and Volume Renderers
 # ----------------------------------------
 
-def draw_point_cloud(input_points, canvasSize=500, space=200, diameter=25,
+def draw_pointcloud_gray(input_points, canvasSize=500, space=200, diameter=25,
                      xrot=0, yrot=0, zrot=0, switch_xyz=[0,1,2], normalize=True):
     """ Render point cloud to image with alpha channel.
         Input:
@@ -160,9 +160,9 @@ def point_cloud_three_views(points, diameter=10):
     # xrot is azimuth
     # yrot is in-plane
     # zrot is elevation
-    img1 = draw_point_cloud(points, zrot=110/180.0*np.pi, xrot=45/180.0*np.pi, yrot=0/180.0*np.pi, diameter=diameter)
-    img2 = draw_point_cloud(points, zrot=70/180.0*np.pi, xrot=135/180.0*np.pi, yrot=0/180.0*np.pi, diameter=diameter)
-    img3 = draw_point_cloud(points, zrot=180.0/180.0*np.pi, xrot=90/180.0*np.pi, yrot=0/180.0*np.pi, diameter=diameter)
+    img1 = draw_pointcloud_gray(points, zrot=110/180.0*np.pi, xrot=45/180.0*np.pi, yrot=0/180.0*np.pi, diameter=diameter)
+    img2 = draw_pointcloud_gray(points, zrot=70/180.0*np.pi, xrot=135/180.0*np.pi, yrot=0/180.0*np.pi, diameter=diameter)
+    img3 = draw_pointcloud_gray(points, zrot=180.0/180.0*np.pi, xrot=90/180.0*np.pi, yrot=0/180.0*np.pi, diameter=diameter)
     image_large = np.concatenate([img1, img2, img3], 1)
     return image_large
 
@@ -193,12 +193,21 @@ def pyplot_draw_volume(vol, output_filename):
 
 
 # ----------------------------------------
-#  Point cloud Render with RGB
+#  Point cloud Render with RGB color
 # ----------------------------------------
 
-def draw_pointcloud_rgb(input_points, rgb=None, alpha=0.5, canvasSize=500, space=200, diameter=20,
-                        rot=[0, 0, 0], switch_xyz=[0,1,2], normalize=True, depth_decrease=0.5,
-                        light=True, back_color=[255,255,255]):
+def draw_pointcloud_rgb(    pointcloud,
+                            rgb             =   None,
+                            alpha           =   0.5,
+                            canvasSize      =   500,
+                            space           =   200,
+                            diameter        =   20,
+                            rot             =   [0, 0, 0],
+                            switch_xyz      =   [0,1,2],
+                            normalize       =   True,
+                            depth_decrease  =   0.5,
+                            light           =   True,
+                            bg_color        =   [255,255,255]   ):
     """ Render point cloud to image with alpha channel.
         Input:
             points: Nx3 numpy array (+y is up direction)
@@ -207,18 +216,18 @@ def draw_pointcloud_rgb(input_points, rgb=None, alpha=0.5, canvasSize=500, space
             if rgb is None, output is a gray image
     """
     # initialize image canvas
-    if input_points is None or input_points.shape[0] == 0:
+    if pointcloud is None or pointcloud.shape[0] == 0:
         raise ValueError
     if rgb is not None:
         rgb = np.array(rgb)
-        image = np.ones((canvasSize, canvasSize,3))*back_color
+        image = np.ones((canvasSize, canvasSize,3))*bg_color
         if len(rgb.shape) == 1:
-            rgb = np.tile(rgb, (input_points.shape[0], 1))
+            rgb = np.tile(rgb, (pointcloud.shape[0], 1))
     else:
         image = np.zeros((canvasSize, canvasSize))
 
     # rotate the pointcloud, rot can be euler angle list or rotate matrix
-    points = input_points[:, switch_xyz]
+    points = pointcloud[:, switch_xyz]
     if isinstance(rot, list):
         rot = euler2mat(*rot)
     points = (np.dot(rot, points.transpose())).transpose()
@@ -235,7 +244,7 @@ def draw_pointcloud_rgb(input_points, rgb=None, alpha=0.5, canvasSize=500, space
     else:
         x_light, y_light = radius, radius
 
-    alpha_disk = bresenham_circle_alpha_disk(diameter, alpha)
+    alpha_disk = bresenham_circle_alpha_disk(diameter)
     dx, dy= (alpha_disk > 0).nonzero()
     alpha_disk_val = alpha_disk[dx, dy]
     color_disk_val = np.exp((-(dx-x_light)**2 - (dy-y_light)**2)/(radius**2))
@@ -260,6 +269,7 @@ def draw_pointcloud_rgb(input_points, rgb=None, alpha=0.5, canvasSize=500, space
         y = points[j, 1]
         xc = int(canvasSize/2 + (x*space))
         yc = int(canvasSize/2 + (y*space))
+
         px = dx + xc
         py = dy + yc
         if (px >= canvasSize).any() or (py>=canvasSize).any() or \
@@ -279,8 +289,12 @@ def draw_pointcloud_rgb(input_points, rgb=None, alpha=0.5, canvasSize=500, space
     return image
 
 
-
-def bresenham_circle_alpha_disk(diameter, alpha):
+# ----------------------------------------
+# Tool functions
+# ----------------------------------------
+def bresenham_circle_alpha_disk(diameter):
+    """ using bresenham algrithom to draw a circle
+    """
     radius = (diameter - 1) / 2
     x0, y0 =  radius, radius
     dx, dy = diameter//2-x0, -y0
@@ -288,6 +302,7 @@ def bresenham_circle_alpha_disk(diameter, alpha):
 
     alpha_disk = np.zeros((diameter, diameter))
     while dy < 0:
+        # Anti-aliasing by blurring the edges
         dist = radius - np.sqrt(dy**2 + dx**2)  # -0.5~0.5
         edge_alpha = dist+0.5
         alpha_disk[int(y0+dy), int(x0+dx)] = edge_alpha
@@ -328,12 +343,8 @@ def bresenham_circle_alpha_disk(diameter, alpha):
     return alpha_disk
 
 
-
-# ----------------------------------------
-# Tool function
-# ----------------------------------------
 def normalize_to_unit_sphere(points):
-    """ normalize scale to fit points in a unit sphere """
+    """ normalize scale to fit points in a sphere [-1, 1]"""
     centroid = np.mean(points, axis=0)
     points -= centroid
     furthest_distance = np.max(np.sqrt(np.sum(abs(points)**2,axis=-1)))
@@ -375,7 +386,10 @@ def rot_angle_axis(angle, axis):
     """
     Returns a 3x3 rotation matrix that performs a rotation around axis by angle
     """
-    u = axis / np.linalg.norm(axis)
+    norm_axis = np.linalg.norm(axis)
+    if norm_axis == 0:
+        return np.eye(3)
+    u = axis / norm_axis
     cosval, sinval = np.cos(angle), np.sin(angle)
     cross_prod_mat = np.array([[0.0, -u[2], u[1]],
                                 [u[2], 0.0, -u[0]],
@@ -383,3 +397,9 @@ def rot_angle_axis(angle, axis):
     R = cosval * np.eye(3) + sinval * cross_prod_mat + (1.0 - cosval) * np.outer(u, u)
 
     return R
+
+def in_range(x, interval) -> bool:
+    if isinstance(x, np.ndarray):
+        return np.logical_and(x >= interval[0], x < interval[1]).any()
+    else:
+        return (x >= interval[0] and x < interval[1])

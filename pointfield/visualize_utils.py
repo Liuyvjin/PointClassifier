@@ -39,8 +39,10 @@ def show_grid(grid, channel=None, save=False, img_name=None):
 
 
 def interval_concatenate(arrays, axis=0, interval=0, fill_value=255):
-    # arrays: list of arrays
-    # axis: stack on axis
+    """
+    arrays: list of arrays
+    axis: stack on axis
+    """
     n = len(arrays)
     if interval != 0:
         fill_shape = list(arrays[0].shape)

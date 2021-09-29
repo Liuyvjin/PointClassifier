@@ -21,7 +21,6 @@ def rot_angle_axis(angle, axis):
 
     return R
 
-
 def farthest_point_sample(point, npoint):
     N, D = point.shape
     xyz = point[:,:3]

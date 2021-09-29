@@ -9,6 +9,7 @@ import torch
 from time import time
 from .visualize_utils import show_grid
 
+
 class LogTool():
     def __init__(self, file_path, format=None):
         self.logger = logging.getLogger("Default")
@@ -17,7 +18,7 @@ class LogTool():
         if format:
             formatter = logging.Formatter(format)
         else:
-            formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+            formatter = logging.Formatter('%(asctime)s - %(name)s - %(message)s')
         file_handler = logging.FileHandler(file_path)
         file_handler.setLevel(logging.INFO)
         file_handler.setFormatter(formatter)
@@ -251,7 +252,7 @@ class Trainer():
                 data = self.model(data)
                 tri_loss, _ = self.criterion(data, label)
                 reg_loss = self.model.grid.abs().mean()
-                loss = tri_loss + reg_loss
+                loss = tri_loss #+ 0.1 * reg_loss
                 loss.backward()
                 self.optimizer.step()
 

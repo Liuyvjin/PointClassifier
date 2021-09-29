@@ -23,7 +23,7 @@ def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='DGCNN')
     parser.add_argument('--model',          type=str,   default='pointfield',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='pointfield_margin03_dgcnn',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='pf_margin03_dgcnn_reg0',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=36,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')

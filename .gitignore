@@ -1,4 +1,5 @@
 data/modelnet*
+data/shape_visual
 logs/*/checkpoints
 logs/
 *.pyc
