@@ -312,3 +312,5 @@ def scannet_x8_2048_fps4()->PointCNN:
     ###### Do not change this
     setting["with_X_transformation"] = True
     return PointCNN(setting)
+
+get_loss =  nn.functional.cross_entropy

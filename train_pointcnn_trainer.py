@@ -13,14 +13,13 @@ from data.data_utils import ModelNet40
 import data.data_utils as dutil
 import sched
 import time
-# from models.pointcnn import RandPointCNN_cls, get_loss
 
 from pointfield.model import CombinedModel
 from pointfield.train_utils import Trainer
 """"""
 import torch.nn.functional as F
 from models.pointcnn import config
-from models.pointcnn import modelnet_x3_l4
+from models.pointcnn import modelnet_x3_l4, get_loss
 
 
 BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
@@ -69,7 +68,7 @@ def main():
 
     # --- Create Model
     classifier = modelnet_x3_l4().to(device)
-    criterion = F.cross_entropy
+    criterion = get_loss
     pf_path = BASE_DIR + '\\logs\\pointfield_margin03_dgcnn\\checkpoints\\best_pointfield.t7'
     comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield, detach=True, pointfield_path=pf_path).to(device)
 

@@ -1,5 +1,8 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent
+
 import os.path as osp
 import argparse
 import torch
@@ -11,25 +14,22 @@ from torch.optim.lr_scheduler import CosineAnnealingLR
 import data.data_utils as dutil
 from data.data_utils import ModelNet40, pointnet_train_transforms, pointnet_test_transforms
 
-from pointfield import PointField, get_loss
+from pointfield import PF_1layer, PF_Nlayer, PF_Model
 from pointfield import Trainer
 from pointfield.losses import OnlineTripletLoss
 from pointfield.loss_utils import HardestNegativeTripletSelector, pdist_pc, chamfer_pc
-
-
-BASE_DIR = '/'.join(osp.abspath(__file__).split('\\')[0:-1])
 
 def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='DGCNN')
     parser.add_argument('--model',          type=str,   default='pointfield',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='pf_margin03_dgcnn_reg0',   help='expriment name')
+    parser.add_argument('--exp_name',       type=str,   default='pf_layer',   help='expriment name')
     parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=36,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
     parser.add_argument('--num_epochs',     type=int,   default=200,    help='number of epoch in training [default: 200]')
     parser.add_argument('--num_workers',    type=int,   default=3,      help='Worker Number [default: 8]')
-    parser.add_argument('--optimizer',      type=str,   default='SGD', help='optimizer for training [default: Adam]')
+    parser.add_argument('--optimizer',      type=str,   default='Adam', help='optimizer for training [default: Adam]')
     parser.add_argument('--normal',         type=bool,  default=False,   help='Whether to use normal information [default: True]')
     parser.add_argument('--seed',           type=int,   default=1,      help='random seed [efault: 1]')
     parser.add_argument('--lr',             type=float, default=0.001,  help='learning rate in training [default: 0.001, 0.1 if using sgd]')
@@ -49,7 +49,7 @@ def main():
     device = torch.device("cuda" if args.cuda else "cpu")
 
     # --- DataLoader
-    print('Load dataset...')
+    print('Loading dataset...')
     train_transforms = transforms.Compose([ dutil.translate_pointcloud,
                                             dutil.shuffle_pointcloud])
     # test_transforms = pointnet_test_transforms
@@ -65,7 +65,7 @@ def main():
     criterion = OnlineTripletLoss(   margin = 0.3,
                                     triplet_selector = selector,
                                     dist_func = chamfer_pc)
-    pointfield = PointField(64).to(device)
+    pointfield = PF_Nlayer(dims=[64,64,64], tri_criterion=criterion)  # 3层pointfield
 
     # --- Optimizer
     if args.optimizer == 'SGD':
@@ -77,8 +77,9 @@ def main():
 
     scheduler = CosineAnnealingLR(optimizer, args.num_epochs, eta_min=args.lr)
 
-    trainer = Trainer(train_loader, test_loader, pointfield, criterion, optimizer, scheduler,
-                        num_epochs=args.num_epochs, exp_name=args.exp_name, log_dir=args.log_dir, train_file=__file__)
+    trainer = Trainer(train_loader, test_loader, pointfield, optimizer, scheduler,
+                        num_epochs=args.num_epochs, exp_name=args.exp_name,
+                        log_dir=args.log_dir, train_file=__file__, track_grid=True)
 
     trainer.logger.cprint('PARAMETERS...')
     trainer.logger.cprint(args)
