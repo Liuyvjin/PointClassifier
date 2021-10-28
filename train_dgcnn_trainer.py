@@ -7,14 +7,14 @@ import torch
 import torch.optim as optim
 from torch.utils.data import DataLoader
 from torchvision import transforms
-from torch.optim.lr_scheduler import CosineAnnealingLR
+from torch.optim.lr_scheduler import CosineAnnealingLR, CosineAnnealingWarmRestarts
 
 import data.data_utils as dutil
 from data.data_utils import ModelNet40
 from models.dgcnn import DGCNN, get_loss
 
-from pointfield.model import CombinedModel
-from pointfield.train_utils import Trainer
+from pointfield import PFWithModel, Trainer
+from pointfield.config import pf_tnet_config as pf_config
 
 BASE_DIR = osp.dirname(osp.abspath(__file__))
 
@@ -22,8 +22,8 @@ def parse_args():
     '''PARAMETERS'''
     parser = argparse.ArgumentParser(description='DGCNN')
     parser.add_argument('--model',          type=str,   default='dgcnn',    help='Model to use, [pointnet, dgcnn]')
-    parser.add_argument('--exp_name',       type=str,   default='dgcnn_margin03_detach',   help='expriment name')
-    parser.add_argument('--log_dir',        type=str,   default='logs',     help='log directory')
+    parser.add_argument('--exp_name',       type=str,   default='freeze/dgcnn_pftnet_zero',   help='expriment name')
+    parser.add_argument('--log_dir',        type=str,   default='new_logs',     help='log directory')
     parser.add_argument('--batch_size',     type=int,   default=36,     help='batch size in training [default: 24]')
     parser.add_argument('--num_points',     type=int,   default=1024,   help='Point Number [default: 1024]')
     parser.add_argument('--num_epochs',     type=int,   default=300,    help='number of epoch in training [default: 200]')
@@ -67,27 +67,26 @@ def main():
     # --- Create Model
     classifier = DGCNN(args.k, args.emb_dims, args.dropout).to(device)
     criterion = get_loss
-    # comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield).to(device)
-    pf_path = BASE_DIR + '\\logs\\pointfield_margin03_dgcnn\\checkpoints\\best_pointfield.t7'
-    comb_model = CombinedModel(classifier, use_pointfield=args.use_pointfield, detach=True, pointfield_path=pf_path).to(device)
+    comb_model = PFWithModel(classifier, criterion, pf_config).to(device)
 
     # --- Optimizer
+    params = filter(lambda p: p.requires_grad, comb_model.parameters())
     if args.optimizer == 'SGD':
         print("Use SGD")
-        optimizer = torch.optim.SGD(comb_model.parameters(), lr=args.lr*100, momentum=args.momentum, weight_decay=1e-4)
+        optimizer = torch.optim.SGD(params, lr=args.lr*100, momentum=args.momentum, weight_decay=1e-4)
     else:
         print("Use Adam")
-        optimizer = torch.optim.Adam(comb_model.parameters(), lr=args.lr, weight_decay=1e-4 )
+        optimizer = torch.optim.Adam(params, lr=args.lr, weight_decay=1e-4 )
 
-    scheduler = CosineAnnealingLR(optimizer, args.num_epochs, eta_min=args.lr)
-
-    trainer = Trainer(train_loader, test_loader, comb_model, criterion, optimizer, scheduler,
-                        num_epochs=args.num_epochs, exp_name=args.exp_name, log_dir=args.log_dir, train_file=__file__,
-                        track_grid=True)
+    scheduler = CosineAnnealingLR(optimizer, T_max=args.num_epochs, eta_min=args.lr)
+    # scheduler = CosineAnnealingWarmRestarts(optimizer, T_0=50, eta_min=0.0005)  # SGDR
+    trainer = Trainer(train_loader, test_loader, comb_model, optimizer, scheduler,
+                        num_epochs=args.num_epochs, exp_name=args.exp_name,
+                        log_dir=args.log_dir, train_file=__file__, track_grid=True)
 
     trainer.logger.cprint('PARAMETERS...')
     trainer.logger.cprint(args)
-
+    trainer.logger.cprint(pf_config)
     trainer.train()
 
     # --- Evaluate

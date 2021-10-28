@@ -175,10 +175,11 @@ if __name__ == '__main__':
     train_transforms = transforms.Compose([
         shuffle_pointcloud
     ])
-    train = ModelNet40(1024, transform=train_transforms)
+    # train = ModelNet40(1024, transform=train_transforms)
     test = ModelNet40(1024, 'test')
 
-    DataLoader = torch.utils.data.DataLoader(train, batch_size=12, shuffle=True)
+    DataLoader = torch.utils.data.DataLoader(test, batch_size=12, shuffle=True)
     for data, label in DataLoader:
-        print(data.shape)
-        print(label.shape)
+        for i, pc in enumerate(data):
+            print(f'cls: {label[i,0]:4d} | maxx: {max(data[i,:,0]):5.3f} | minx: {min(data[i,:,0]):5.3f}')
+

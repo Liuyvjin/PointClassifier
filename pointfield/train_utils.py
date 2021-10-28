@@ -5,9 +5,9 @@ import os.path as osp
 from tqdm import tqdm
 import torch
 from time import time
-from .visualize_utils import draw_grid
 from .log_tool import LogTool
 import cv2
+from visdom import Visdom
 
 class Trainer():
 
@@ -44,7 +44,9 @@ class Trainer():
         self.best_inst_acc  = 0
         self.best_class_acc = 0
         self.curr_epoch = 1  # 当前epoch
-
+        # visdom
+        env_name = exp_name.replace('_', '-').replace('/','_')
+        self.viz = Visdom(env=env_name)
 
     def __log_init(self):
         """初始化实验日志
@@ -71,7 +73,6 @@ class Trainer():
         print('Log file: %s' % self.exp_dir + '\\run.log')
         return LogTool(self.exp_dir + '\\run.log')
 
-
     def train_epoch(self):
         self.model.train()
         train_pred = []
@@ -96,10 +97,18 @@ class Trainer():
         self.scheduler.step()
         train_true = torch.cat(train_true)
         train_pred = torch.cat(train_pred)
-        train_inst_acc = self.__accuracy_score( train_true, train_pred)  #　计算本 epoch 分类准确率
+        train_inst_acc = self.__accuracy_score(train_true, train_pred)  #　计算本 epoch 分类准确率
         self.logger.cprint('Train Instance Accuracy: {:f}, loss: cls={:f}, tri={:f}, reg={:f}'.format(
                             train_inst_acc, cls_loss, tri_loss, reg_loss))
 
+        self.viz.line(  # 记录训练准确率
+            X=[self.curr_epoch],
+            Y=[train_inst_acc],
+            win='accuracy',
+            opts=dict(title='Accuracy', showlegend=True),
+            name='train instance acc',
+            update='append'
+        )
 
     def eval_epoch(self):
         self.model.eval()
@@ -126,6 +135,13 @@ class Trainer():
             self.save_checkpoint('recent_model.t7')
         self.logger.cprint('Best Instance Accuracy: %f, Class Accuracy: %f'% (self.best_inst_acc, self.best_class_acc))
 
+        # visdom
+        self.viz.line(X=[self.curr_epoch], Y=[test_inst_acc], win='accuracy',
+            name='test instance acc', update='append')
+        self.viz.line(X=[self.curr_epoch], Y=[test_class_acc], win='accuracy',
+            name='test class acc', update='append')
+        self.viz.line(X=[self.curr_epoch], Y=[self.best_inst_acc], win='accuracy',
+            name='best instance acc', update='append')
 
     def train(self):
         t0 = time()
@@ -143,6 +159,15 @@ class Trainer():
                 grid_img = self.model.pointfield.draw_grid()
                 cv2.imwrite(filename=self.exp_dir+'\\checkpoints\\epoch_{:0>3d}.jpg'.format(self.curr_epoch),
                             img=grid_img)
+                self.viz.image(  # 保存到 visdom
+                    grid_img.transpose(2,0,1),
+                    win='grid_win',
+                    opts={
+                        'title': 'grid',
+                        'caption': f'epoch {self.curr_epoch}',
+                        'store_history': True
+                    }
+                )
 
             self.curr_epoch += 1
             self.logger.info('Epoch elapsed time: ' + self.__format_second(time()-t1))

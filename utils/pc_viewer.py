@@ -44,7 +44,7 @@ class PC_Viewer(QWidget):
         # 数据集
         self.shape_name = load_shape_name()
         self.dataset = dataset
-        self.idx_iter = idx_generator(len(dataset))
+        self.idx_iter = idx_generator(len(dataset))  # 循环读取数据集
         self.pc1 = pointcloud  # 初始点云
         self.label = 0 # 按n后为当前点云 label
         # 渲染

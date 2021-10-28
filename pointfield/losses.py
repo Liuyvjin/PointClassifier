@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-
+from pointfield.loss_utils import (HardestNegativeTripletSelector, RandomNegativeTripletSelector,
+    SemihardNegativeTripletSelector, chamfer_pc, pdist_pc)
 
 class ContrastiveLoss(nn.Module):
     """
@@ -90,3 +91,14 @@ class OnlineTripletLoss(nn.Module):
         losses = F.relu(ap_distances - an_distances + self.margin)
 
         return losses.mean(), len(triplets)
+
+
+def get_triplet_loss(config):
+    margin = config['margin']
+    if config['selector'] == 'hardest_negtive':
+        Selector = HardestNegativeTripletSelector(margin, cpu=False, dist_func=pdist_pc)
+    elif config['selector'] == 'random_negtive':
+        Selector = RandomNegativeTripletSelector(margin, cpu=False, dist_func=pdist_pc)
+    elif config['selector'] == 'semihard_negtive':
+        Selector = SemihardNegativeTripletSelector(margin, cpu=False, dist_func=pdist_pc)
+    return OnlineTripletLoss(margin=margin, triplet_selector=Selector, dist_func=chamfer_pc)
